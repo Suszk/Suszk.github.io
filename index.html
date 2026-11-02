@@ -493,6 +493,25 @@ section.block{padding-block:96px}
 .methods{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:16px clamp(20px,4vw,44px);border-bottom:1px solid var(--line)}
 .methods .label{margin-right:6px}
 .methods .m{font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+
+.pal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal div{border-radius:16px;padding:22px 18px;min-height:110px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px}
+.pal b{font-family:var(--display);font-size:19px}.pal span{font-size:13px;opacity:.8}
+.typ-h{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.01em;margin:8px 0 4px}
+.typ-b{font-size:17px;margin:8px 0 4px}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.post{background:var(--surface);border:1.5px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.post b{font-family:var(--display);font-size:18px;line-height:1.25}.post p{font-size:14.5px;color:var(--muted)}
+.post-k{align-self:flex-start;font-size:12px;font-weight:600;background:#C9F26B;color:#111;border-radius:999px;padding:3px 10px}
+table.cal td{font-size:14px;vertical-align:top}
+blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-height:1.6}
+.quote-old{background:var(--bg);border:1.5px dashed var(--line);color:var(--muted)}
+.quote-new{background:var(--surface);border:1.5px solid var(--fg)}
+.case.zbrand .stats{background:#C9F26B;color:#111}.case.zbrand .stat{border-color:rgba(0,0,0,.15)}
+.case.zsocial .stats{background:#111;color:#fff}.case.zsocial .stat{border-color:rgba(255,255,255,.2)}
+.case.a311 .stats{background:#1C4E9A;color:#fff}.case.a311 .stat{border-color:rgba(255,255,255,.2)}
+.case.tcopy .stats{background:#2A2E33;color:#fff}.case.tcopy .stat{border-color:rgba(255,255,255,.2)}
+@media (max-width:860px){.pal,.posts{grid-template-columns:1fr}}
 </style>
 
 <header class="nav">
@@ -584,6 +603,14 @@ section.block{padding-block:96px}
           <span style="background:#07827F;color:#fff">07827F</span>
           <span style="background:#055D5B;color:#fff">055D5B</span>
         </div>
+
+    <h3 class="subhead">Concept &amp; self-initiated work</h3>
+    <div class="more" style="margin-top:16px">
+      <a class="proj proj-link" href="#zatch-brand"><p class="label">Brand identity</p><h3>Zatch brand guidelines</h3><p>Colour, type, voice and the word "Zatch", in one page of rules.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link" href="#zatch-social"><p class="label">Concept · Social strategy</p><h3>Zatch launch content plan</h3><p>Four content pillars, a two-week calendar and sample posts.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link" href="#audit-311"><p class="label">Self-initiated · UX audit</p><h3>311 Toronto website</h3><p>A heuristic review of the City's help page, with three fixes.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link" href="#tgcsb-copy"><p class="label">UX writing</p><h3>TGCSB plain-language rewrite</h3><p>Reading ease from 16 to 64, with the 1930 helpline up front.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
+    </div>
       </article>
     </div>
   </section>
@@ -1447,6 +1474,205 @@ section.block{padding-block:96px}
       </div>
     </article>
     <a class="nextcase" href="#hopin"><span class="label">Back to the start</span><b>HopIn <span aria-hidden="true">→</span></b></a>
+  </section>
+
+  <section class="view" id="zatch-brand" data-view="zatch-brand" hidden>
+    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
+    <article class="case zbrand" aria-labelledby="zatch-brand-h">
+      <div class="cover">
+        <div class="intro">
+          <p class="label">Brand identity · Zatch</p>
+          <h3 id="zatch-brand-h">Zatch brand guidelines</h3>
+          <p class="sub">The rules behind a loud, playful brand built to feel like a live Indian bazaar.</p>
+          <div class="tags"><span class="tag">Brand strategy</span><span class="tag">Visual identity</span><span class="tag">Tone of voice</span></div>
+        </div>
+        <div class="stats"><div class="stat"><strong>3</strong><span>core colours</span></div><div class="stat"><strong>1</strong><span>brand word: Zatch</span></div><div class="stat"><strong>4</strong><span>voice traits</span></div><div class="stat"><strong>1</strong><span>tagline</span></div></div>
+      </div>
+      <div class="body">
+        <p class="label">Brand idea</p>
+        <div class="change"><p>The bazaar, live. Shopping should feel like a conversation, not a checkout.</p></div>
+
+        <p class="label">Colour</p>
+        <div>
+          <div class="pal">
+            <div style="background:#C9F26B;color:#111"><b>Electric lime</b><span>#C9F26B · energy, deals, highlights</span></div>
+            <div style="background:#111111;color:#fff"><b>Ink</b><span>#111111 · headlines, buttons</span></div>
+            <div style="background:#FFFFFF;color:#111;border:1px solid var(--line)"><b>White</b><span>#FFFFFF · space to breathe</span></div>
+          </div>
+          <p class="note">Lime is for one thing per screen: the deal or the action. Never for body text.</p>
+        </div>
+
+        <p class="label">Type</p>
+        <div>
+          <div class="two">
+            <div><b class="mini-h">Headlines</b><p class="typ-h">HEAVY, CAPS, SHORT</p><p class="note">A heavy display face, set tight. Three to five words.</p></div>
+            <div><b class="mini-h">Body</b><p class="typ-b">Clean and friendly sans for everything people read.</p><p class="note">Regular weight, sentence case, generous line height.</p></div>
+          </div>
+        </div>
+
+        <p class="label">Voice</p>
+        <div>
+          <ul class="findings four">
+            <li><b>Playful</b>"Let's Zatch" over "Make an offer".</li>
+            <li><b>Desi</b>Bazaar words people already use.</li>
+            <li><b>Confident</b>Short claims, no hedging.</li>
+            <li><b>Clear</b>Prices and steps always plain.</li>
+          </ul>
+        </div>
+
+        <p class="label">Do and don't</p>
+        <div>
+          <table class="cmp borrow"><thead><tr><th>Do</th><th>Don't</th></tr></thead><tbody>
+            <tr><td>"Zatch it for ₹900?"</td><td>"Submit a price negotiation request"</td></tr>
+            <tr><td>Use Zatch as a verb: "Let's Zatch"</td><td>Write "zatch" in lowercase or as "ZATCH" in body text</td></tr>
+            <tr><td>One lime highlight per screen</td><td>Lime backgrounds behind long text</td></tr>
+          </tbody></table>
+        </div>
+
+        <p class="label">Graphic details</p>
+        <div><p>Hand-drawn scribbles, stickers and real phone screens keep it human. No stock 3D shapes.</p><p class="note">Built from the Zatch brand work and pitch deck.</p></div>
+      </div>
+    </article>
+    <a class="nextcase" href="#zatch-social"><span class="label">Next</span><b>Zatch launch social strategy <span aria-hidden="true">→</span></b></a>
+  </section>
+  <section class="view" id="zatch-social" data-view="zatch-social" hidden>
+    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
+    <article class="case zsocial" aria-labelledby="zatch-social-h">
+      <div class="cover">
+        <div class="intro">
+          <p class="label">Concept · Social content strategy</p>
+          <h3 id="zatch-social-h">Zatch launch: social content plan</h3>
+          <p class="sub">A two-week plan to get buyers and sellers talking about live bargaining before the Hyderabad beta.</p>
+          <div class="tags"><span class="tag">Content strategy</span><span class="tag">Social media</span><span class="tag">Campaign planning</span></div>
+        </div>
+        <div class="stats"><div class="stat"><strong>4</strong><span>content pillars</span></div><div class="stat"><strong>2</strong><span>week calendar</span></div><div class="stat"><strong>12</strong><span>planned posts</span></div><div class="stat"><strong>50+</strong><span>seller goal for beta</span></div></div>
+      </div>
+      <div class="body">
+        <p class="label">Goal</p>
+        <div><p>Build a buyer waitlist and sign up 50+ Hyderabad sellers for the closed beta.</p><p class="note">Concept plan. Targets below are goals to measure, not results.</p></div>
+
+        <p class="label">Content pillars</p>
+        <div>
+          <ul class="findings four">
+            <li><b>Bazaar culture</b>The joy of bargaining, made for reels.</li>
+            <li><b>How to Zatch</b>15-second "watch, bargain, buy" demos.</li>
+            <li><b>Seller spotlights</b>Local homepreneurs and their stories.</li>
+            <li><b>Live drops</b>Countdowns to live selling sessions.</li>
+          </ul>
+        </div>
+
+        <p class="label">Two-week calendar</p>
+        <div class="scroll-x">
+          <table class="cmp cal"><thead><tr><th>Week</th><th>Mon</th><th>Wed</th><th>Fri</th><th>Sun</th></tr></thead><tbody>
+            <tr><td>1 · Tease</td><td>Reel: "Bargaining is a sport"</td><td>Carousel: What is Zatching?</td><td>Seller spotlight #1</td><td>Poll: your best bargain</td></tr>
+            <tr><td>2 · Launch</td><td>Reel: 15s app demo</td><td>Story: beta sign-up</td><td>Live drop countdown</td><td>UGC: "My first Zatch"</td></tr>
+          </tbody></table>
+          <p class="note">Plus daily stories and a WhatsApp seller broadcast twice a week.</p>
+        </div>
+
+        <p class="label">Sample posts</p>
+        <div>
+          <div class="posts">
+            <div class="post"><span class="post-k">Reel</span><b>"Aunty bargained ₹200 off. Online. Live."</b><p>Hook in the first second, the app in the last three.</p></div>
+            <div class="post"><span class="post-k">Carousel</span><b>"Watch → Zatch → Buy"</b><p>Three slides, one step each, ending with the waitlist link.</p></div>
+            <div class="post"><span class="post-k">Seller story</span><b>"From Instagram DMs to her own online dukaan"</b><p>A real Hyderabad seller, filmed at her stall.</p></div>
+          </div>
+        </div>
+
+        <p class="label">What to measure</p>
+        <div>
+          <div class="mini-stats">
+            <div><strong>Sign-ups</strong><span>buyer waitlist from link in bio</span></div>
+            <div><strong>Applications</strong><span>sellers joining the beta</span></div>
+            <div><strong>Shares + saves</strong><span>better signal than likes for reels</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <a class="nextcase" href="#audit-311"><span class="label">Next</span><b>311 Toronto UX audit <span aria-hidden="true">→</span></b></a>
+  </section>
+  <section class="view" id="audit-311" data-view="audit-311" hidden>
+    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
+    <article class="case a311" aria-labelledby="audit-311-h">
+      <div class="cover">
+        <div class="intro">
+          <p class="label">Self-initiated · UX audit</p>
+          <h3 id="audit-311-h">311 Toronto website: UX audit</h3>
+          <p class="sub">An expert review of the City's main help page, where residents report problems and track requests.</p>
+          <div class="tags"><span class="tag">Heuristic evaluation</span><span class="tag">Accessibility</span><span class="tag">UX recommendations</span></div>
+        </div>
+        <div class="stats"><div class="stat"><strong>10</strong><span>heuristics checked</span></div><div class="stat"><strong>4</strong><span>clear task buttons</span></div><div class="stat"><strong>180+</strong><span>languages supported</span></div><div class="stat"><strong>3</strong><span>fixes proposed</span></div></div>
+      </div>
+      <div class="body">
+        <p class="label">Scope</p>
+        <div><p>Reviewed the 311 Toronto landing page on desktop against Nielsen's 10 usability heuristics, November 2026.</p><p class="note">Expert review only. The next step is a 5-person Maze test with Toronto residents.</p></div>
+
+        <p class="label">What works</p>
+        <div>
+          <ul class="findings">
+            <li><b>Clear tasks</b>Submit, Track, Find information and Explore your neighbourhood are big, plain buttons.</li>
+            <li><b>Inclusive</b>Help in 180+ languages, 24/7, plus text-size controls.</li>
+            <li><b>Two ways in</b>Search by keyword or by request number.</li>
+          </ul>
+        </div>
+
+        <p class="label">Issues found</p>
+        <div class="scroll-x">
+          <table class="cmp"><thead><tr><th>Issue</th><th>Heuristic</th><th>Severity</th></tr></thead><tbody>
+            <tr><td>"Always call 911 for emergencies" sits in small footer text</td><td>Error prevention</td><td>High</td></tr>
+            <tr><td>Two search boxes on one page: site search and 311 search</td><td>Consistency</td><td>Medium</td></tr>
+            <tr><td>Trending links are long strings joined by dots, hard to scan</td><td>Minimalist design</td><td>Medium</td></tr>
+            <tr><td>The 311 mobile app link is buried under Related information</td><td>Flexibility</td><td>Low</td></tr>
+          </tbody></table>
+        </div>
+
+        <p class="label">Recommendations</p>
+        <div>
+          <ol class="flow">
+            <li><b>Emergency first</b>A red "Emergency? Call 911" bar above the tasks</li>
+            <li><b>One search</b>Merge into a single box that understands request numbers</li>
+            <li><b>Scannable trends</b>Short topic chips instead of dotted strings</li>
+            <li><b>Test it</b>Maze first-click test with 5 residents</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+    <a class="nextcase" href="#tgcsb-copy"><span class="label">Next</span><b>TGCSB content rewrite <span aria-hidden="true">→</span></b></a>
+  </section>
+  <section class="view" id="tgcsb-copy" data-view="tgcsb-copy" hidden>
+    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
+    <article class="case tcopy" aria-labelledby="tgcsb-copy-h">
+      <div class="cover">
+        <div class="intro">
+          <p class="label">Content strategy · Plain language</p>
+          <h3 id="tgcsb-copy-h">TGCSB homepage: plain-language rewrite</h3>
+          <p class="sub">Rewriting the bureau's introduction so a scam victim knows what to do in one read.</p>
+          <div class="tags"><span class="tag">UX writing</span><span class="tag">Plain language</span><span class="tag">SEO</span></div>
+        </div>
+        <div class="stats"><div class="stat"><strong>16 → 64</strong><span>Flesch reading ease</span></div><div class="stat"><strong>22 → 12</strong><span>words per sentence</span></div><div class="stat"><strong>1930</strong><span>call to action added</span></div><div class="stat"><strong>3</strong><span>search terms targeted</span></div></div>
+      </div>
+      <div class="body">
+        <p class="label">Before</p>
+        <div><blockquote class="quote-old">"The Telangana Cyber Security Bureau (TGCSB) stands as the state's dedicated leader in combating and preventing cybercrime. Our mission is to create a secure digital environment through transparent, unbiased, and efficient practices supported by cutting-edge technology and advanced forensic expertise. We work in close coordination with national and international cybersecurity agencies to uphold the principle that 'data may be manipulated, but evidence speaks for itself.'"</blockquote></div>
+
+        <p class="label">After</p>
+        <div><blockquote class="quote-new">"The Telangana Cyber Security Bureau (TGCSB) is the state police unit that stops cybercrime and helps victims. If you lose money to a scam, call 1930 right away. The faster you call, the better the chance we can freeze the money. We use modern tools and digital forensics to trace criminals. We also work with police and agencies across India and abroad."</blockquote></div>
+
+        <p class="label">What changed</p>
+        <div>
+          <ul class="findings four">
+            <li><b>Action first</b>The 1930 helpline is now in the second sentence.</li>
+            <li><b>Shorter</b>Sentences cut from 22 to 12 words on average.</li>
+            <li><b>Plain words</b>"Stops cybercrime" instead of "combating and preventing".</li>
+            <li><b>Why it matters</b>Explains that calling fast helps freeze the money.</li>
+          </ul>
+        </div>
+
+        <p class="label">Search terms targeted</p>
+        <div><div class="words"><span>report cyber crime Telangana</span><span>cyber fraud helpline 1930</span><span>TGCSB</span></div><p class="note">Reading ease measured with the Flesch formula: 16 is "very hard", 64 is "plain English".</p></div>
+      </div>
+    </article>
+    <a class="nextcase" href="#hopin"><span class="label">Next</span><b>HopIn <span aria-hidden="true">→</span></b></a>
   </section>
 
   <section class="view block" id="about" data-view="about" hidden>
