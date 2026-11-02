@@ -1,0 +1,1587 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Sushmita Karri, digital strategist and brand consultant in Toronto. Case studies in UX research, content strategy and brand building.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Sushmita Karri</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one long research-board scroll. Left-aligned editorial column, case studies laid out like research findings: numbers, then problem, then decisions. Yellow "highlighter" marks the key insight in each block. */
+:root{
+  --bg:#F4F6F3;
+  --surface:#FFFFFF;
+  --fg:#16201B;
+  --muted:#58635D;
+  --line:#D9DED9;
+  --accent:#2B44E8;
+  --accent-ink:#FFFFFF;
+  --mark:#FFE066;
+  --mark-ink:#16201B;
+  --green:#1E6B4A;
+  --display:"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body:"Instrument Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111613;--surface:#19201C;--fg:#E9EEEA;--muted:#9DA8A1;--line:#2B3530;
+  --accent:#8E9CFF;--accent-ink:#0E1220;--mark:#E8C547;--mark-ink:#16201B;--green:#6CC79B;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111613;--surface:#19201C;--fg:#E9EEEA;--muted:#9DA8A1;--line:#2B3530;
+  --accent:#8E9CFF;--accent-ink:#0E1220;--mark:#E8C547;--mark-ink:#16201B;--green:#6CC79B;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1080px;margin:0 auto}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;text-wrap:balance;margin:0}
+p{margin:0}
+.mark{background:linear-gradient(transparent 55%, var(--mark) 55%);color:inherit;padding:0 .1em}
+.label{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* nav */
+header.nav{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{font-family:var(--display);font-weight:800;font-size:20px;text-decoration:none;color:var(--fg)}
+.nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0;flex-wrap:wrap}
+.nav ul a{color:var(--fg);text-decoration:none;font-weight:500;font-size:15px}
+.nav ul a:hover{color:var(--accent)}
+
+/* hero */
+.hero{padding-block:64px 48px;display:grid;grid-template-columns:1.6fr 1fr;gap:48px;align-items:end}
+.hero h1{font-size:clamp(38px, 5.4vw, 64px);font-weight:800;letter-spacing:-.025em}
+.hero h1 span{color:var(--accent)}
+.hero .lede{font-size:clamp(18px,2vw,21px);max-width:34ch;margin-top:22px;color:var(--fg)}
+.hero aside{display:flex;flex-direction:column;gap:18px;min-width:0}
+.facts{border-top:2px solid var(--fg)}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding-block:11px;border-bottom:1px solid var(--line);font-size:15px}
+.facts dt{color:var(--muted)} .facts dd{margin:0;font-weight:600;text-align:right}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--fg);color:var(--fg);background:transparent;cursor:pointer;font-family:var(--body)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-1px)}
+
+/* process */
+.process{padding-block:28px 64px}
+.steps{display:grid;grid-template-columns:repeat(6,1fr);border:1.5px solid var(--fg);border-radius:14px;overflow:hidden;margin-top:14px;background:var(--surface)}
+.steps li{list-style:none;padding:18px 16px;border-right:1px solid var(--line);min-width:0}
+.steps li:last-child{border-right:0}
+.steps b{display:block;font-family:var(--display);font-size:19px;margin-top:4px}
+.steps span{font-size:14px;color:var(--muted);display:block;margin-top:4px;line-height:1.45}
+.steps{padding:0;margin-bottom:0}
+
+/* section heads */
+section.block{padding-block:64px;border-top:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:36px}
+.sec-head h2{font-size:clamp(34px,4.6vw,52px);font-weight:800;letter-spacing:-.02em}
+
+/* case study */
+.case{background:var(--surface);border:1.5px solid var(--fg);border-radius:20px;overflow:hidden}
+.case + .case{margin-top:40px}
+.cover{display:grid;grid-template-columns:1.1fr 1fr;gap:0;border-bottom:1.5px solid var(--fg)}
+.cover .intro{padding:36px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.cover h3{font-size:clamp(34px,4.4vw,54px);font-weight:800;letter-spacing:-.02em}
+.cover .sub{font-size:19px;max-width:40ch}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-family:var(--mono);font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:1fr 1fr;background:var(--accent);color:var(--accent-ink)}
+.case.green .stats{background:var(--green)}
+.stat{padding:24px;border-left:1px solid color-mix(in srgb, var(--accent-ink) 25%, transparent);border-bottom:1px solid color-mix(in srgb, var(--accent-ink) 25%, transparent);min-width:0}
+.stat strong{display:block;font-family:var(--display);font-size:clamp(38px,5vw,56px);font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;display:block;margin-top:8px;line-height:1.4}
+.case.green .stat{border-color:color-mix(in srgb, #fff 22%, transparent)}
+.case.green .stats{color:#fff}
+
+.body{padding:36px;display:grid;grid-template-columns:200px 1fr;gap:28px 40px}
+.body > .label{padding-top:4px}
+.body > div{min-width:0}
+.body p + p{margin-top:12px}
+.body ul{margin:0;padding-left:20px}
+.body li + li{margin-top:6px}
+.findings{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0;margin:0}
+.findings li{list-style:none;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:15.5px;line-height:1.45}
+.findings li b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:6px}
+.change{border-left:4px solid var(--mark);padding-left:16px}
+.case-foot{padding:20px 36px;border-top:1px solid var(--line);display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.case-foot p{font-size:14.5px;color:var(--muted)}
+
+/* figures */
+.fig{margin:0;grid-column:1 / -1;display:flex;flex-direction:column;gap:10px}
+.fig img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#fff}
+.fig figcaption{font-size:14px;color:var(--muted)}
+.fig-row{grid-column:1 / -1;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fig-row .fig{grid-column:auto;min-width:0}
+.quotes{columns:2;column-gap:12px;margin:0;padding:0}
+.quotes li{list-style:none;break-inside:avoid;margin-bottom:12px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15.5px;font-style:italic}
+.words{display:flex;flex-wrap:wrap;gap:8px}
+.words span{background:var(--mark);color:var(--mark-ink);font-weight:600;padding:4px 12px;border-radius:999px;font-size:15px}
+.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mini-stats div{border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+.mini-stats strong{display:block;font-family:var(--display);font-size:26px;font-variant-numeric:tabular-nums}
+.mini-stats span{font-size:14px;color:var(--muted)}
+table.cmp{border-collapse:collapse;width:100%;font-size:15px;min-width:460px}
+table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left}
+table.cmp th{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+table.cmp td.y{color:var(--green);font-weight:600} table.cmp td.n{color:var(--muted)}
+.scroll-x{overflow-x:auto}
+.case.slm .stats{background:#B4492F;color:#fff}
+.case.slm .stat{border-color:color-mix(in srgb, #fff 22%, transparent)}
+
+/* browser mockups */
+.browser{border:1.5px solid var(--fg);border-radius:14px;overflow:hidden;background:var(--surface);min-width:0}
+.browser .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:1px solid var(--line);background:var(--bg)}
+.browser .bar i{width:9px;height:9px;border-radius:50%;background:var(--line);display:block}
+.browser .bar span{margin-left:8px;font-family:var(--mono);font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.scr{padding:28px 24px;min-height:200px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.scr .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+.scr b{font-family:var(--display);font-size:clamp(24px,3.4vw,36px);line-height:1.05;font-weight:800}
+.scr p{font-size:14px;max-width:44ch;opacity:.85}
+.scr .pill{align-self:flex-start;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600}
+.scr.tg{background:#2A2E33;color:#fff}.scr.tg .pill{background:#fff;color:#16201B}
+.scr.cc{background:radial-gradient(120% 140% at 80% 10%, #1D3A8A 0%, #070B1A 55%, #000 100%);color:#fff}.scr.cc b em{font-style:normal;color:#5AA2FF}
+.scr.sh{background:#0F1E3A;color:#fff}.scr.sh .pill{background:#E8B931;color:#0F1E3A}
+.scr.sc{background:#F2F3F1;color:#111;align-items:center;text-align:center}.scr.sc .pill{background:#2BD13B;color:#06140A;align-self:center}
+.mocks{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.case.tgcsb .stats{background:#2A2E33;color:#fff}
+.case.tgcsb .stat,.case.sec .stat{border-color:color-mix(in srgb, #fff 22%, transparent)}
+.case.sec .stats{background:#0E3B16;color:#fff}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;padding:0;margin:0}
+.flow li{list-style:none;padding:14px;border-right:1px solid var(--line);font-size:15px;min-width:0}
+.flow li:last-child{border-right:0}
+.flow b{display:block;font-family:var(--display);font-size:17px}
+@media (max-width:860px){.mocks{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.flow li:nth-child(2){border-right:0}.flow li:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* more projects */
+.more{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.proj{background:var(--surface);border:1.5px solid var(--fg);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.proj h3{font-size:30px;font-weight:800;letter-spacing:-.015em}
+.swatches{display:grid;grid-template-columns:repeat(6,1fr);border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.swatches span{height:56px;display:flex;align-items:flex-end;padding:6px;font-family:var(--mono);font-size:10.5px}
+.bot{display:flex;gap:14px;align-items:center}
+.bot-face{flex:none;width:64px;height:64px;border-radius:18px;background:var(--accent);position:relative}
+.bot-face::before,.bot-face::after{content:"";position:absolute;top:24px;width:10px;height:14px;border-radius:5px;background:var(--accent-ink)}
+.bot-face::before{left:17px}.bot-face::after{right:17px}
+.proj .btn{align-self:flex-start;margin-top:auto}
+@media (max-width:860px){.fig-row,.more{grid-template-columns:1fr}.quotes{columns:1}.mini-stats{grid-template-columns:1fr 1fr}}
+
+
+/* views & work cards */
+.wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+
+.wcard{display:flex;flex-direction:column;border:1.5px solid var(--fg);border-radius:20px;overflow:hidden;background:var(--surface);color:var(--fg);text-decoration:none;transition:transform .15s ease, box-shadow .15s ease}
+.wcard:hover{transform:translateY(-3px);box-shadow:0 10px 0 -2px var(--fg)}
+.wcard:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wband{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding:22px 24px;min-height:120px}
+.wstats{display:flex;gap:24px;flex-wrap:wrap}
+.wstats span{display:flex;flex-direction:column;font-size:13px;line-height:1.3}
+.wstats strong{font-family:var(--display);font-size:34px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.wbody{padding:22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.wbody h3{font-size:clamp(26px,3vw,34px);font-weight:800;letter-spacing:-.015em}
+.wbody p:not(.label){color:var(--muted);max-width:52ch}
+.wgo{margin-top:auto;padding-top:8px;font-weight:600;color:var(--accent)}
+.wcard:hover .wgo span{display:inline-block;transform:translateX(4px)}
+.subhead{font-size:24px;font-weight:800;margin-top:48px}
+.view[data-view]:not([data-view="home"]){padding-block:28px 24px}
+.back{display:inline-flex;gap:8px;font-weight:600;text-decoration:none;color:var(--fg);margin-bottom:20px}
+.back:hover{color:var(--accent)}
+.nextcase{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:24px;padding:22px 26px;border:1.5px solid var(--fg);border-radius:16px;text-decoration:none;color:var(--fg)}
+.nextcase b{font-family:var(--display);font-size:24px}
+.nextcase:hover{background:var(--surface)}
+.nav ul a[aria-current="page"]{color:var(--accent)}
+/* comparison */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{font:600 14px var(--body);padding:8px 14px;border-radius:999px;border:1.5px solid var(--fg);background:transparent;color:var(--fg);cursor:pointer}
+.chip.on{background:var(--fg);color:var(--bg)}
+table.matrix{min-width:720px}
+table.matrix td.p{color:var(--fg)}
+table.matrix td.n{color:var(--muted);font-size:14px}
+table.matrix .dim{opacity:.28}
+table.matrix .hl{background:color-mix(in srgb, var(--mark) 45%, transparent)}
+table.matrix th[data-col="tg"],table.matrix td[data-col="tg"]{font-weight:600}
+.note{font-size:14px;color:var(--muted);margin-top:8px}
+.takes{margin-top:14px}
+.take{border:1.5px solid var(--fg);border-radius:14px;padding:18px;background:var(--bg)}
+.take b{font-family:var(--display);font-size:19px;display:block;margin-bottom:6px}
+.take p + p{margin-top:8px}
+.teaser .about-grid{align-items:end}
+@media (max-width:860px){.wgrid{grid-template-columns:1fr}}
+
+
+/* tips pass */
+.wgrid .wcard.feat{grid-column:1 / -1;display:grid;grid-template-columns:1.25fr 1fr}
+.wmedia{background:var(--bg);border-bottom:1.5px solid var(--fg);aspect-ratio:16/9;overflow:hidden;display:flex;max-width:100%}
+.wcard.feat .wmedia{border-bottom:0;border-right:1.5px solid var(--fg);aspect-ratio:auto;min-height:320px}
+.wmedia img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;background:#fff}
+.wmedia .scr.mini{flex:1;min-height:0;padding:22px;gap:8px}
+.wmedia .scr.mini b{font-size:clamp(22px,2.6vw,30px)}
+.wcard.feat .wbody{padding:32px;justify-content:center}
+.wcard.feat h3{font-size:clamp(28px,3.4vw,40px)}
+.wbody h3{text-wrap:balance}
+.tldr{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1.5px solid var(--fg);position:relative}
+.tldr > div{padding:22px 26px;border-right:1px solid var(--line);min-width:0}
+.tldr > div:nth-child(3){border-right:0}
+.tldr p{margin-top:6px;font-size:16px;line-height:1.45}
+.rt{position:absolute;right:16px;bottom:-13px;font-family:var(--mono);font-size:12px;background:var(--mark);color:var(--mark-ink);padding:3px 10px;border-radius:999px}
+@media (max-width:860px){.wgrid .wcard.feat{grid-template-columns:1fr}.wcard.feat .wmedia{border-right:0;border-bottom:1.5px solid var(--fg);aspect-ratio:16/9;min-height:0}.tldr{grid-template-columns:1fr}.tldr > div{border-right:0;border-bottom:1px solid var(--line)}}
+
+
+/* deck viewer */
+.deck{padding:28px 36px 8px;display:flex;flex-direction:column;gap:14px;border-bottom:1px solid var(--line)}
+.deck-stage{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;aspect-ratio:1400/788;max-width:100%}
+.deck-stage img{width:100%;height:100%;display:block;object-fit:contain}
+.dnav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1.5px solid #16201B;background:#fff;color:#16201B;font-size:20px;cursor:pointer}
+.dnav.prev{left:12px}.dnav.next{right:12px}
+.dnav:hover{background:#C9F26B}
+.deck-cap{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.deck-cap b{font-family:var(--display);font-size:22px}
+.deck-cap span:last-child{color:var(--muted)}
+.deck-thumbs{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px}
+.zt{flex:none;width:112px;padding:0;border:2px solid transparent;border-radius:8px;overflow:hidden;cursor:pointer;background:none;opacity:.6}
+.zt img{display:block;width:100%}
+.zt.on{border-color:var(--fg);opacity:1}
+.case.zatch .stats{background:#C9F26B;color:#16201B}
+.case.zatch .stat{border-color:rgba(22,32,27,.18)}
+.wcard.alt{grid-template-columns:1fr 1.25fr}
+.wcard.alt .wmedia{order:2;border-right:0;border-left:1.5px solid var(--fg)}
+/* easier-to-skim section headings */
+.body > p.label{font-family:var(--display);font-size:21px;letter-spacing:-.01em;text-transform:none;color:var(--fg);font-weight:700;line-height:1.2}
+@media (max-width:860px){.deck{padding:20px 20px 4px}.dnav{width:38px;height:38px}.wcard.alt .wmedia{order:0;border-left:0}}
+
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.two > div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--bg);min-width:0}
+.two ul{margin-top:8px}
+.mini-h{font-family:var(--display);font-size:18px}
+.journey{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:12px 0 0;counter-reset:j}
+.journey li{list-style:none;counter-increment:j;border:1.5px solid var(--fg);border-radius:999px;padding:6px 12px 6px 8px;font-size:14.5px;display:flex;gap:6px;align-items:center}
+.journey li::before{content:counter(j);font-family:var(--mono);font-size:11px;width:20px;height:20px;border-radius:50%;background:var(--fg);color:var(--bg);display:inline-flex;align-items:center;justify-content:center}
+.journey li.bad{background:var(--mark);color:var(--mark-ink);border-color:var(--mark)}
+.journey li.bad::before{background:var(--mark-ink);color:var(--mark)}
+.findings.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:860px){.two{grid-template-columns:1fr}.findings.four{grid-template-columns:1fr 1fr}}
+
+
+.pmap{position:relative;aspect-ratio:16/9;max-width:100%;border:1.5px solid var(--fg);border-radius:14px;background:
+ linear-gradient(var(--line),var(--line)) center/1px 100% no-repeat,
+ linear-gradient(var(--line),var(--line)) center/100% 1px no-repeat, var(--bg);overflow:hidden}
+.pmap .ax{position:absolute;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pmap .y1{top:10px;left:50%;transform:translateX(-50%)}.pmap .y0{bottom:10px;left:50%;transform:translateX(-50%)}
+.pmap .x0{left:10px;top:50%;transform:translateY(-50%)}.pmap .x1{right:10px;top:50%;transform:translateY(-50%)}
+.pmap .dot{position:absolute;transform:translate(-50%,-50%);background:var(--surface);border:1.5px solid var(--fg);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600;text-align:center;line-height:1.2;white-space:nowrap}
+.pmap .dot small{font-weight:400;color:var(--muted)}
+.pmap .dot.me{background:#C9F26B;color:#16201B;border-color:#16201B;font-size:16px;padding:8px 16px;box-shadow:0 0 0 6px color-mix(in srgb,#C9F26B 40%,transparent)}
+.usp-line{font-family:var(--display);font-weight:800;font-size:clamp(24px,3vw,32px);line-height:1.1;margin-bottom:8px}
+.usp .findings{margin-top:14px}
+@media (max-width:520px){.pmap .d-az{left:32%!important;top:84%!important}.pmap .d-wn{left:70%!important;top:60%!important}.pmap .x0{top:auto;bottom:30px;transform:none}.pmap .x1{top:auto;bottom:30px;transform:none}.logo{font-size:16px;white-space:nowrap}.nav ul{gap:10px!important;flex-wrap:nowrap}.nav ul a{font-size:13.5px}.nav .wrap{gap:10px}.pmap{aspect-ratio:4/5}.pmap .dot{font-size:11.5px;padding:4px 8px}.pmap .dot.me{font-size:14px}}
+
+
+.proj-link{text-decoration:none;color:var(--fg);transition:transform .15s ease, box-shadow .15s ease}
+.proj-link:hover{transform:translateY(-3px);box-shadow:0 10px 0 -2px var(--fg)}
+.case.botto .stats{background:#1F3FBF;color:#fff}
+.case.botto .stat{border-color:color-mix(in srgb,#fff 22%,transparent)}
+.scr.bt{background:linear-gradient(135deg,#1E5FD8,#3B2BB8);color:#fff;align-items:center;text-align:center}
+.bt-tabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.bt-tabs span{background:rgba(255,255,255,.14);border-radius:8px;padding:6px 12px;font-size:13px}
+.bt-tabs span.on{background:#fff;color:#1E3A8A;font-weight:600}
+
+
+table.borrow{min-width:520px}
+table.borrow td{vertical-align:top;width:50%}
+table.borrow td:first-child{color:var(--muted)}
+
+
+.decs{grid-column:1 / -1;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.dec{margin:0;display:flex;flex-direction:column;gap:10px;min-width:0}
+.dec img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;background:#fff}
+.dec figcaption{font-size:15px;color:var(--muted);line-height:1.45}
+.dec figcaption b{display:block;font-family:var(--display);font-size:19px;color:var(--fg);margin-bottom:2px}
+.dec .dn{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.dec:nth-child(1),.dec:nth-child(4),.dec:nth-child(5){grid-column:1 / -1}
+@media (max-width:860px){.decs{grid-template-columns:1fr}}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.about-grid > div{min-width:0}
+.bio{font-size:clamp(20px,2.3vw,25px);line-height:1.45;font-family:var(--display);font-weight:500;max-width:30ch}
+.timeline{list-style:none;margin:16px 0 0;padding:0;border-top:2px solid var(--fg)}
+.timeline li{display:grid;grid-template-columns:118px 1fr;gap:16px;padding-block:18px;border-bottom:1px solid var(--line)}
+.timeline time{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.timeline h4{margin:0;font-size:17px;font-weight:600}
+.timeline .org{color:var(--muted);font-size:15px}
+.timeline p{font-size:15.5px;margin-top:6px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tools span{border:1.5px solid var(--fg);border-radius:8px;padding:6px 12px;font-weight:600;font-size:15px;background:var(--surface)}
+.skills{margin-top:28px}
+
+/* contact */
+.contact{padding-block:72px 96px;border-top:1px solid var(--line)}
+.contact h2{font-size:clamp(40px,6.5vw,76px);font-weight:800;letter-spacing:-.025em;max-width:16ch}
+.contact-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:28px}
+.email{font-family:var(--mono);font-size:clamp(16px,2vw,19px);background:var(--surface);border:1.5px solid var(--fg);border-radius:999px;padding:11px 18px;user-select:all;overflow-wrap:anywhere}
+.copied{font-size:14px;color:var(--green);min-height:1em}
+footer{padding-block:24px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;padding-block:48px 40px;gap:32px}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .steps li:nth-child(3){border-right:0}
+  .steps li:nth-child(-n+3){border-bottom:1px solid var(--line)}
+  .cover{grid-template-columns:1fr}
+  .body{grid-template-columns:1fr;gap:10px 0;padding:26px}
+  .body > .label{padding-top:18px}
+  .body > .label:first-child{padding-top:0}
+  .cover .intro{padding:26px}
+  .case-foot{padding:18px 26px}
+  .findings{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:520px){
+  .nav ul{gap:14px}
+  .steps{grid-template-columns:1fr 1fr}
+  .steps li{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)}
+  .steps li:nth-child(2n){border-right:0!important}
+  .stat{padding:18px}
+  .timeline li{grid-template-columns:1fr;gap:4px}
+}
+
+/* ===== airy pass: one column, more space, less text ===== */
+.case .body{display:block;padding:56px clamp(20px,5vw,72px) 64px;max-width:1000px;margin:0 auto}
+.case .body > p.label{font-size:clamp(26px,3vw,34px);font-weight:800;letter-spacing:-.02em;margin:88px 0 22px}
+.case .body > p.label:first-child{margin-top:0}
+.case .body > div{max-width:none}
+.case .body > div > p{font-size:18px;line-height:1.6;max-width:62ch}
+.case .body > div > p + p{margin-top:14px}
+.case .body > .fig,.case .body > .fig-row,.case .body > .mocks,.case .body > .decs{margin-top:40px}
+.case .body > .fig-row{display:grid}
+.findings{gap:16px}
+.findings li{padding:22px 22px 24px;font-size:16px;border-radius:16px;background:var(--surface);border:1.5px solid var(--line)}
+.findings li b{font-family:var(--display);font-size:20px;letter-spacing:-.01em;text-transform:none;color:var(--fg);font-weight:800;margin-bottom:8px}
+.two{gap:20px}.two > div{padding:24px;border-radius:16px;background:var(--surface);border:1.5px solid var(--line)}
+.two li{font-size:16.5px}.two li + li{margin-top:8px}
+.mini-h{font-size:21px;font-weight:800}
+.change{border-left:0;padding:28px 32px;background:var(--mark);color:var(--mark-ink);border-radius:18px}
+.change p{font-family:var(--display);font-size:clamp(20px,2.4vw,26px);font-weight:700;line-height:1.3;max-width:none!important}
+.change .mark{background:none;padding:0}
+.usp-line{font-size:clamp(28px,4vw,44px)}
+.mini-stats{gap:16px}.mini-stats div{padding:22px;border-radius:16px;background:var(--surface);border-width:1.5px}
+.mini-stats strong{font-size:clamp(30px,4vw,40px)}
+.tldr > div{padding:30px 32px}
+.tldr p{font-size:17px}
+.words span{font-size:16px;padding:7px 16px}
+.cover .intro{padding:44px}
+.cover .sub{font-size:20px}
+.fig figcaption{font-size:15px}
+.note{font-size:14px}
+.chips{margin-top:18px}
+.flow li{padding:20px}.flow b{font-size:20px;margin-bottom:4px}
+.journey li{font-size:15.5px;padding:8px 14px 8px 10px}
+section.block{padding-block:96px}
+.sec-head{margin-bottom:48px}
+.wgrid{gap:28px}
+.wbody{padding:28px 30px}
+.wcard.feat .wbody{padding:44px}
+.hero{padding-block:88px 72px}
+.case + .case{margin-top:56px}
+@media (max-width:860px){.case .body{padding:36px 22px 44px}.case .body > p.label{margin:60px 0 16px}.cover .intro{padding:28px}.tldr > div{padding:22px}.change{padding:22px}.wcard.feat .wbody{padding:28px}}
+
+.case .body > .change > p{font-family:var(--display);font-size:clamp(21px,2.6vw,28px);font-weight:700;line-height:1.3;max-width:none}
+.case .body > .usp > p.usp-line{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,44px);line-height:1.1;max-width:none}
+.sec-decs .dec:nth-child(2){grid-column:1 / -1}
+.sec-decs .dec:nth-child(3){grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:28px;align-items:center}
+@media (max-width:860px){.sec-decs .dec:nth-child(3){grid-template-columns:1fr}}
+
+/* design process */
+.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 60px);z-index:4;display:flex;gap:6px;overflow-x:auto;padding:12px clamp(16px,4vw,44px);background:var(--surface);border-bottom:1.5px solid var(--fg)}
+.rail button{flex:none;display:flex;align-items:center;gap:8px;font:600 14px var(--body);color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:999px;padding:7px 14px 7px 8px;cursor:pointer}
+.rail button span{font-family:var(--mono);font-size:11px;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--line);color:var(--fg)}
+.rail button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.rail button.on span{background:var(--mark);color:var(--mark-ink)}
+.rail button:disabled{opacity:.35;cursor:default}
+.case .body > .stage{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:110px 0 8px;padding-top:28px;border-top:2px solid var(--fg);scroll-margin-top:140px}
+.case .body > .stage:first-child{margin-top:0;border-top:0;padding-top:0}
+.stage-n{font-family:var(--mono);font-size:13px;background:var(--fg);color:var(--bg);border-radius:999px;padding:4px 10px}
+.stage-name{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.6vw,52px);letter-spacing:-.025em;line-height:1}
+.stage-q{color:var(--muted);font-size:17px}
+.case .body > .stage + p.label{margin-top:36px}
+.case .body > p.label{font-size:clamp(22px,2.4vw,27px)}
+@media (max-width:860px){.rail{top:calc(env(safe-area-inset-top,0px) + 56px)}.case .body > .stage{margin-top:72px}}
+
+.case{overflow:clip}
+.hello{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.hello-h{font-family:var(--display);font-size:clamp(34px,4.4vw,48px);font-weight:800;letter-spacing:-.02em}
+.hello-sub{color:var(--muted);font-weight:600;margin-top:6px}
+.sketch{width:150px;max-width:40%;height:auto;color:var(--accent);flex:none}
+.hello-text{margin-top:22px;display:flex;flex-direction:column;gap:16px}
+.hello-text p{font-size:18px;line-height:1.65;max-width:58ch}
+.res-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.res-head .btn{padding:9px 16px;font-size:14px}
+.dl-msg{font-size:14px;color:var(--muted);min-height:1em;margin-top:6px}
+
+.gap{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin-top:28px}
+.gap-src{display:flex;flex-direction:column;gap:10px}
+.gap-src span{border:1.5px solid var(--fg);border-radius:12px;padding:12px 16px;font-weight:600;background:var(--surface)}
+.gap-arrow{font-size:40px;font-family:var(--display);color:var(--accent)}
+.gap-out{background:var(--fg);color:var(--bg);border-radius:18px;padding:26px}
+.gap-out b{font-family:var(--display);font-size:22px;display:block;margin-bottom:6px}
+.gap-out p{font-size:17px;opacity:.85}
+.ext{margin-top:32px}
+.ext-body{display:grid;grid-template-columns:1.4fr 1fr;gap:0;min-height:300px}
+.ext-article{padding:26px;display:flex;flex-direction:column;gap:10px;border-right:1px solid var(--line)}
+.ext-article b{font-family:var(--display);font-size:22px;line-height:1.2;margin-bottom:6px}
+.ext-article i{display:block;height:9px;border-radius:5px;background:var(--line)}
+.ext-article i.s{width:70%}
+.ext-panel{padding:20px;background:var(--bg);display:flex;flex-direction:column;gap:10px}
+.ext-head{display:flex;align-items:center;gap:10px}
+.ext-head b{font-family:var(--display);font-size:18px}
+.bot-face.sm{width:30px;height:30px;border-radius:9px}
+.bot-face.sm::before,.bot-face.sm::after{top:11px;width:5px;height:7px;border-radius:3px}
+.bot-face.sm::before{left:8px}.bot-face.sm::after{right:8px}
+.ext-msg{font-size:14.5px;background:var(--surface);border:1px solid var(--line);border-radius:12px 12px 12px 4px;padding:10px 12px}
+.ext-panel ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.ext-panel li{font-size:14.5px;border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:var(--surface)}
+.ext-cta{margin-top:auto;text-align:center;background:var(--accent);color:var(--accent-ink);border-radius:10px;padding:10px;font-weight:600;font-size:14.5px}
+.chat{margin-top:28px;display:flex;flex-direction:column;gap:12px}
+.chat-q{align-self:flex-end;max-width:520px;background:var(--fg);color:var(--bg);border-radius:18px 18px 4px 18px;padding:14px 18px;font-size:16px}
+.chat-a{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;background:var(--surface);border:1.5px solid var(--line);border-radius:18px 18px 18px 4px;padding:18px}
+.chat-a p{font-size:15px;margin-top:4px}
+@media (max-width:860px){.gap{grid-template-columns:1fr}.gap-arrow{transform:rotate(90deg);justify-self:center}.ext-body{grid-template-columns:1fr}.ext-article{border-right:0;border-bottom:1px solid var(--line)}.chat-a{grid-template-columns:1fr 1fr}}
+
+
+/* smaller, calmer images */
+.case .body > .fig{max-width:720px;margin-left:auto;margin-right:auto}
+.case .body > .fig-row{max-width:820px;margin-left:auto;margin-right:auto}
+.case .body .fig img{max-height:400px;object-fit:contain}
+.case .body .fig figcaption{text-align:center}
+.case .body > .decs{max-width:820px;margin-left:auto;margin-right:auto}
+.dec img{max-height:380px;object-fit:contain}
+.sec-decs .dec:nth-child(3){grid-template-columns:minmax(0,300px) 1fr}
+.deck{align-items:center}
+.deck-stage{width:100%;max-width:760px}
+.deck-cap,.deck-thumbs{width:100%;max-width:760px}
+.case .body .pmap{max-width:720px;margin-left:auto;margin-right:auto}
+.case .body > .mocks{max-width:820px;margin-left:auto;margin-right:auto}
+.case .body > .browser.ext{max-width:760px;margin-left:auto;margin-right:auto}
+.scr{min-height:170px}
+
+.sitemap{margin-top:24px;max-width:900px;margin-left:auto;margin-right:auto;display:flex;flex-direction:column;gap:0}
+.sm-top{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center}
+.sm-home{font-family:var(--display);font-weight:800;font-size:22px;background:var(--fg);color:var(--bg);border-radius:14px;padding:14px 28px;text-align:center}
+.sm-util{border:1.5px dashed var(--line);border-radius:14px;padding:12px;min-width:0}
+.sm-util > div{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.sm-util i{font-style:normal;font-size:13.5px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 10px}
+.sm-util i.hot{background:var(--mark);color:var(--mark-ink);border-color:var(--mark);font-weight:600}
+.sm-cols{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:34px;padding-top:22px;border-top:2px solid var(--fg)}
+.sm-cols::before{content:"";position:absolute;left:50%;top:-36px;height:34px;border-left:2px solid var(--fg)}
+.sm-col{position:relative;min-width:0}
+.sm-col::before{content:"";position:absolute;left:50%;top:-24px;height:22px;border-left:2px solid var(--fg)}
+.sm-col b{display:block;font-family:var(--display);font-size:15px;text-align:center;background:var(--surface);border:1.5px solid var(--fg);border-radius:12px;padding:10px 6px}
+.sm-col ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.sm-col li{font-size:13px;line-height:1.3;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px}
+@media (max-width:860px){.sm-top{grid-template-columns:1fr}.sm-cols{grid-template-columns:1fr 1fr;border-top:0;padding-top:0;margin-top:16px}.sm-cols::before,.sm-col::before{display:none}}
+.fig-link{text-align:center;margin-top:16px}
+</style>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#home-top">Sushmita Karri</a>
+    <ul>
+      <li><a href="#work" data-nav="home">Work</a></li>
+      <li><a href="#about" data-nav="about">About</a></li>
+      <li><a href="#resume" data-nav="about">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap" id="home-top">
+  <div class="view" data-view="home">
+  <section class="hero">
+    <div>
+      <p class="label">Digital Strategist &amp; Brand Consultant · Toronto</p>
+      <h1 style="margin-top:14px">Hi, I'm Sushmita. I turn research and data into <span>brands people remember.</span></h1>
+      <p class="lede">Content strategy, UX research and data-driven presentations, backed by a business and analytics background at Amazon and the City of Toronto.</p>
+    </div>
+    <aside>
+      <dl class="facts" style="margin:0">
+        <div><dt>Focus</dt><dd>Digital strategy, branding, UX, data-driven presentations</dd></div>
+        <div><dt>Training</dt><dd>Interactive Media Mgmt, Centennial</dd></div>
+        <div><dt>Experience</dt><dd>Revolution X Studio, City of Toronto, Amazon</dd></div>
+      </dl>
+      <div class="cta">
+        <a class="btn primary" href="#work">See my work</a>
+        <a class="btn" href="https://www.linkedin.com/in/saisushmitakarri/" target="_blank" rel="noopener">LinkedIn</a>
+        <button type="button" class="btn dl-cv">Resume (PDF)</button>
+      </div>
+    </aside>
+  </section>
+
+
+  <section class="block" id="work">
+    <div class="sec-head">
+      <h2>Selected work</h2>
+      <p class="label">Click a project to open the full case study</p>
+    </div>
+
+    <div class="wgrid">
+      <a class="wcard feat" href="#hopin">
+        <div class="wmedia"><img src="img/hopin-before-after.jpg" alt="HopIn home screen before and after usability testing" loading="lazy"></div>
+        <div class="wbody"><p class="label">Featured · Mobile app · Senior project</p><h3>Commuters said trust mattered more than price. So I redesigned carpooling around it.</h3><p>HopIn, a neighbourhood carpooling app: 7 interviews, 25 surveys, 7 usability tests.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
+      </a>
+      <a class="wcard feat alt" href="#zatch">
+        <div class="wmedia"><img src="img/zatch/s11.jpg" alt="Zatching: a buyer and seller agreeing on a price in the app" loading="lazy"></div>
+        <div class="wbody"><p class="label">App design · Brand building</p><h3>What if online shopping let you bargain like a real bazaar?</h3><p>Zatch: a live shopping app for India, from buyer and seller research to features, market and roadmap.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
+      </a>
+      <a class="wcard" href="#tgcsb">
+        <div class="wmedia"><img src="img/tg-contact.jpg" alt="TGCSB contact page with 1930 helpline" loading="lazy"></div>
+        <div class="wbody"><p class="label">Government websites · Strategy</p><h3>A police brand where help is one click away, on every page</h3><p>Telangana Cyber Security Bureau: a citizen site, a national hackathon and a conclave, checked against 5 cybercrime agencies.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
+      </a>
+      <a class="wcard" href="#green-campus">
+        <div class="wmedia"><img src="img/gcc-impact.jpg" alt="Interactive impact map on a laptop" loading="lazy"></div>
+        <div class="wbody"><p class="label">Website revamp · Team of 4</p><h3>Making fair trade easy to understand, and easy to buy</h3><p>Green Campus Co-op at York University: new product pages and an interactive impact map.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
+      </a>
+      <a class="wcard" href="#securacy">
+        <div class="wmedia"><img src="img/sec-hero.jpg" alt="Securacy site: Stop threat modeling on whiteboards" loading="lazy"></div>
+        <div class="wbody"><p class="label">B2B SaaS · Messaging</p><h3>Explaining AI threat modeling in one scroll</h3><p>Securacy: one headline for engineers and executives, and a message for each of 5 buyer roles.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
+      </a>
+      <a class="wcard" href="#st-lawrence">
+        <div class="wmedia"><img src="img/slm-journey.jpg" alt="Visitor journey map with goals, emotions, problems and ideas" loading="lazy"></div>
+        <div class="wbody"><p class="label">Website redesign · Group project</p><h3>Planning a market visit around a busy parent's weekend</h3><p>St Lawrence Market: site audit, persona, journey map and a clickable prototype.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
+      </a>
+    </div>
+
+    <h3 class="subhead">More projects</h3>
+    <div class="more" style="margin-top:16px">
+      <a class="proj proj-link" href="#bot-about-to" aria-labelledby="bot-h">
+        <p class="label">Hackathon · City of Toronto · AI</p>
+        <div class="bot"><span class="bot-face" aria-hidden="true"></span><h3 id="bot-h">Bot About TO</h3></div>
+        <p>A City of Toronto staff hackathon: an AI messenger that turns council activity and open data into positive civic stories.</p>
+        <span class="wgo">Read case study <span aria-hidden="true">→</span></span>
+      </a>
+
+      <article class="proj" aria-labelledby="tif-h">
+        <p class="label">Brand study</p>
+        <h3 id="tif-h">Tiffany &amp; Co. brand guidelines</h3>
+        <p>A breakdown of how a luxury brand stays consistent: a full tint scale built from its signature blue, supporting neutrals and golds, and a type system that pairs a classic serif with Avenir Next for a modern feel.</p>
+        <div class="swatches" aria-label="Colour palette from the brand study">
+          <span style="background:#E7F8F8;color:#055D5B">E7F8F8</span>
+          <span style="background:#9DE3E1;color:#055D5B">9DE3E1</span>
+          <span style="background:#54CFCB;color:#055D5B">54CFCB</span>
+          <span style="background:#0ABAB5;color:#fff">0ABAB5</span>
+          <span style="background:#07827F;color:#fff">07827F</span>
+          <span style="background:#055D5B;color:#fff">055D5B</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="process block" aria-labelledby="process-h">
+    <p class="label" id="process-h">How I work · every case study follows these steps</p>
+    <ol class="steps">
+      <li><span class="label">01</span><b>Research</b><span>Interviews, surveys, competitors</span></li>
+      <li><span class="label">02</span><b>Define</b><span>Personas, journeys, the real problem</span></li>
+      <li><span class="label">03</span><b>Ideate</b><span>Concepts and a clear USP</span></li>
+      <li><span class="label">04</span><b>Design</b><span>Wireframes to polished screens</span></li>
+      <li><span class="label">05</span><b>Test</b><span>Usability rounds, then fix</span></li>
+      <li><span class="label">06</span><b>Deliver</b><span>Launch, measure, pitch</span></li>
+    </ol>
+  </section>
+
+  <section class="block teaser">
+    <div class="about-grid">
+      <div><p class="bio">Hi, I'm Sushmita. Digital strategist in Toronto, yoga teacher, and sketcher of buildings.</p></div>
+      <div><p style="max-width:52ch">I research first, then turn what I learn into clear products, websites and brand content. Read about my experience, education and tools.</p><a class="btn" href="#about" style="margin-top:16px">More about me <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+  </div>
+
+  <section class="view" id="hopin" data-view="hopin" hidden>
+    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
+    <article class="case" aria-labelledby="hopin-h">
+      <div class="cover">
+        <div class="intro">
+          <p class="label">Case study 01 · Mobile app</p>
+          <h3 id="hopin-h">HopIn</h3>
+          <p class="sub">A carpooling app that helps neighbours and colleagues share rides, so commuting costs less and fewer cars are on the road.</p>
+          <div class="tags"><span class="tag">UX design</span><span class="tag">Content strategy</span><span class="tag">Competitive analysis</span><span class="tag">Figma</span></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>7</strong><span>user interviews in 4 days</span></div>
+          <div class="stat"><strong>25</strong><span>survey responses in 3 days</span></div>
+          <div class="stat"><strong>4</strong><span>personas built from research</span></div>
+          <div class="stat"><strong>2</strong><span>unnecessary booking steps removed</span></div>
+        </div>
+      </div>
+
+      <div class="tldr" aria-label="Summary">
+        <div><span class="label">Problem</span><p>Commuting costs too much, and carpooling feels unsafe with strangers.</p></div>
+        <div><span class="label">What I did</span><p>7 interviews, 25 surveys, 4 personas, a journey map, and 7 usability tests across two rounds.</p></div>
+        <div><span class="label">Outcome</span><p>A verified, community-first concept, and a booking flow with 2 fewer steps.</p></div>
+        <span class="rt">3 min read</span>
+      </div>
+      <nav class="rail" aria-label="Design process"><button type="button" data-go="hopin-st1"><span>01</span>Research</button><button type="button" data-go="hopin-st2"><span>02</span>Define</button><button type="button" data-go="hopin-st3"><span>03</span>Ideate</button><button type="button" data-go="hopin-st4"><span>04</span>Design</button><button type="button" data-go="hopin-st5"><span>05</span>Test</button><button type="button" data-go="hopin-st6"><span>06</span>Deliver</button></nav>
+      <div class="body">
+        <p class="label">The problem</p>
+        <div>
+          <div class="two">
+            <div><b class="mini-h">Commuting today</b><ul><li>Long, solo drives in traffic</li><li>Cabs cost too much</li><li>Transit isn't reliable</li></ul></div>
+            <div><b class="mini-h">Why people don't carpool</b><ul><li>They don't trust strangers</li><li>Booking feels confusing</li><li>Costs aren't clear</li></ul></div>
+          </div>
+        </div>
+
+        <div class="stage" id="hopin-st1" data-stage="1"><span class="stage-n">01</span><span class="stage-name">Research</span><span class="stage-q">What do people need?</span></div>
+        <p class="label">Interviews &amp; surveys</p>
+        <div>
+          <div class="mini-stats">
+            <div><strong>7</strong><span>interviews, 32 questions each</span></div>
+            <div><strong>25</strong><span>survey responses in 3 days</span></div>
+            <div><strong>4</strong><span>personas</span></div>
+          </div>
+          <div class="words" style="margin-top:14px"><span>Reliable</span><span>Affordable</span><span>Safe</span><span>Convenient</span><span>User-friendly</span></div>
+          <p class="note">The five words users used most to describe the ideal app.</p>
+        </div>
+        <figure class="fig"><img src="img/hopin-quotes.jpg" alt="Wall of 12 user quotes from HopIn interviews about cost, safety and community" loading="lazy" width="1600" height="682"><figcaption>Interview quotes, grouped into patterns.</figcaption></figure>
+
+        <p class="label">Competitive analysis</p>
+        <div>
+          <p>Tap a competitor to compare.</p>
+          <div class="chips" role="group" aria-label="Choose a competitor">
+            <button type="button" class="chip on" data-col="all" aria-pressed="true">All</button>
+            <button type="button" class="chip" data-col="pp" aria-pressed="false">Poparide</button>
+            <button type="button" class="chip" data-col="ub" aria-pressed="false">Uber / Lyft</button>
+            <button type="button" class="chip" data-col="fb" aria-pressed="false">Facebook Marketplace &amp; groups</button>
+          </div>
+          <div class="scroll-x" style="margin-top:14px">
+            <table class="cmp matrix" style="min-width:640px">
+              <thead><tr><th>What commuters need</th><th data-col="tg">HopIn</th><th data-col="pp">Poparide</th><th data-col="ub">Uber / Lyft</th><th data-col="fb">Facebook</th></tr></thead>
+              <tbody><tr><td>Built for the daily commute</td><td data-col="tg" class="y">Yes, daily and local</td><td data-col="pp" class="p">City-to-city trips</td><td data-col="ub" class="p">Yes, but on demand</td><td data-col="fb" class="p">One-off posts</td></tr><tr><td>Verified people</td><td data-col="tg" class="y">Verified profiles</td><td data-col="pp" class="y">ID, phone, payment + licence</td><td data-col="ub" class="y">Drivers screened</td><td data-col="fb" class="n">No</td></tr><tr><td>Reviews for drivers and riders</td><td data-col="tg" class="y">Yes</td><td data-col="pp" class="y">Yes</td><td data-col="ub" class="y">Ratings</td><td data-col="fb" class="n">No</td></tr><tr><td>Pay in the app</td><td data-col="tg" class="y">Yes</td><td data-col="pp" class="y">Yes</td><td data-col="ub" class="y">Yes</td><td data-col="fb" class="n">Cash or e-transfer</td></tr><tr><td>Cost per ride</td><td data-col="tg" class="y">Share fuel costs</td><td data-col="pp" class="p">Driver sets seat price</td><td data-col="ub" class="n">Full fare, highest</td><td data-col="fb" class="p">Agreed in chat</td></tr><tr><td>Ride with people you know</td><td data-col="tg" class="y">Neighbours and colleagues</td><td data-col="pp" class="n">Strangers on the same route</td><td data-col="ub" class="n">A stranger driving</td><td data-col="fb" class="p">Local, but unverified</td></tr></tbody>
+            </table>
+          </div>
+          <div class="takes">
+            <div class="take" data-col="pp" hidden><b>Poparide</b><p>Strong: trusted carpooling across Canada, with verified members, reviews and in-app payment.</p><p><span class="mark">HopIn's edge:</span> built for the daily ride to work or school, not occasional trips between cities.</p></div>
+            <div class="take" data-col="ub" hidden><b>Uber / Lyft</b><p>Strong: a ride whenever you need one, with screened drivers and ratings.</p><p><span class="mark">HopIn's edge:</span> commuters share fuel costs instead of paying a full fare every day. One user put it simply: "cheaper than Uber."</p></div>
+            <div class="take" data-col="fb" hidden><b>Facebook Marketplace &amp; groups</b><p>Strong: free, local, and full of people already offering rides.</p><p><span class="mark">HopIn's edge:</span> the same local feel, but with verified profiles, reviews and in-app payment, so riders feel safe.</p></div>
+          </div>
+        </div>
+
+        <div class="stage" id="hopin-st2" data-stage="2"><span class="stage-n">02</span><span class="stage-name">Define</span><span class="stage-q">What's the real problem?</span></div>
+        <p class="label">Key insight</p>
+        <div class="change"><p><span class="mark">Trust mattered more than price.</span> So verified profiles, reviews and an emergency button moved to the top of the feature list.</p></div>
+
+        <figure class="fig"><img src="img/hopin-persona.jpg" alt="Persona Emma, 28, marketing manager in downtown Toronto, with motivations and pain points" loading="lazy" width="1198" height="1093"><figcaption>Emma, one of four personas.</figcaption></figure>
+
+        <figure class="fig"><img src="img/hopin-journey.jpg" alt="Seven-step HopIn user journey from onboarding to ride completion and feedback" loading="lazy" width="1600" height="900"><figcaption>The user journey.</figcaption></figure>
+        <p class="fig-link"><a class="btn" href="https://www.figma.com/board/aiHNgejoKx5HnGI2hSyRBe/user-journey-mapping-HopIn?node-id=0-1" target="_blank" rel="noopener">See the full journey map in FigJam ↗</a></p>
+
+        <p class="label">Pain points found</p>
+        <div>
+          <ul class="findings">
+            <li><b>Finding 1</b>Ride options were hard to tell apart.</li>
+            <li><b>Finding 2</b>Matching drivers took too long.</li>
+            <li><b>Finding 3</b>No live updates on ride status.</li>
+          </ul>
+        </div>
+
+        <div class="stage" id="hopin-st3" data-stage="3"><span class="stage-n">03</span><span class="stage-name">Ideate</span><span class="stage-q">What could solve it?</span></div>
+        <p class="label">Unique selling point</p>
+        <div class="usp">
+          <p class="usp-line">Daily carpooling with verified neighbours and colleagues.</p>
+          <p>Trust, community and low cost, together.</p>
+        </div>
+
+        <div class="stage" id="hopin-st4" data-stage="4"><span class="stage-n">04</span><span class="stage-name">Design</span><span class="stage-q">What does it look like?</span></div>
+        <p class="label">Wireframes</p>
+        <div><p>Low-fidelity screens first, to test the flow before any visuals.</p></div>
+        <figure class="fig"><img src="img/hopin-wireframe.jpg" alt="Low-fidelity HopIn home screen wireframe with map, Drive and Ride toggle, and Where to search" loading="lazy" width="1600" height="900"><figcaption>Home screen wireframe.</figcaption></figure>
+        <div class="stage" id="hopin-st5" data-stage="5"><span class="stage-n">05</span><span class="stage-name">Test</span><span class="stage-q">Does it work?</span></div>
+        <p class="label">Testing</p>
+        <div>
+          <ol class="flow">
+            <li><b>4 tests</b>Low-fidelity wireframes</li>
+            <li><b>Fix</b>Simpler flow and labels</li>
+            <li><b>4 tests</b>Working Figma prototype</li>
+            <li><b>3 retests</b>Confirmed the fixes</li>
+          </ol>
+        </div>
+        <figure class="fig"><img src="img/hopin-before-after.jpg" alt="Before and after HopIn home screen, annotated with usability fixes" loading="lazy" width="1600" height="900"><figcaption>Before → after testing: clearer branding, less clutter, recognisable labels.</figcaption></figure>
+
+        <div class="stage" id="hopin-st6" data-stage="6"><span class="stage-n">06</span><span class="stage-name">Deliver</span><span class="stage-q">What changed?</span></div>
+        <p class="label">Result</p>
+        <div class="change"><p><span class="mark">2 steps cut from booking</span>, plus real-time matching and ride updates.</p></div>
+
+      </div>
+      <div class="case-foot">
+        <p>Try the clickable prototype in Figma.</p>
+        <a class="btn primary" href="https://www.figma.com/proto/1M6Iypx0cT21cUwV8s8GJH/Untitled?node-id=0-1&amp;p=f&amp;t=xrcAVrEg3ru8NjKB-0&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=193%3A761&amp;fuid=1385360873418192003" target="_blank" rel="noopener">Open prototype ↗</a>
+      </div>
+    </article>
+    <a class="nextcase" href="#zatch"><span class="label">Next case study</span><b>Zatch <span aria-hidden="true">→</span></b></a>
+  </section>
+
+  <section class="view" id="zatch" data-view="zatch" hidden>
+    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
+    <article class="case zatch" aria-labelledby="zatch-h">
+      <div class="cover">
+        <div class="intro">
+          <p class="label">Case study 02 · Mobile app</p>
+          <h3 id="zatch-h">Zatch</h3>
+          <p class="sub">A live shopping app where buyers watch, bargain and buy in real time, like an Indian bazaar but online.</p>
+          <div class="tags"><span class="tag">App design</span><span class="tag">Brand building</span><span class="tag">Product strategy</span><span class="tag">Competitive analysis</span><span class="tag">USP</span><span class="tag">Market research</span></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>60–70%</strong><span>of carts abandoned over low trust</span></div>
+          <div class="stat"><strong>8</strong><span>steps to buy from a reel today</span></div>
+          <div class="stat"><strong>5–15%</strong><span>live shopping conversion vs 1–3%</span></div>
+          <div class="stat"><strong>8–12%</strong><span>seller fee vs 15–30% on big marketplaces</span></div>
+        </div>
+      </div>
+      <div class="tldr" aria-label="Summary">
+        <div><span class="label">Problem</span><p>Online shopping feels cold to buyers, and small sellers get lost.</p></div>
+        <div><span class="label">What I did</span><p>Designed the app and built the Zatch brand, from research to pitch.</p></div>
+        <div><span class="label">Outcome</span><p>A live, bargain-first app with an MVP planned for Q1 2026.</p></div>
+        <span class="rt">4 min read</span>
+      </div>
+      <nav class="rail" aria-label="Design process"><button type="button" data-go="zatch-st1"><span>01</span>Research</button><button type="button" data-go="zatch-st2"><span>02</span>Define</button><button type="button" data-go="zatch-st3"><span>03</span>Ideate</button><button type="button" data-go="zatch-st4"><span>04</span>Design</button><button type="button" data-go="zatch-st5" disabled><span>05</span>Test</button><button type="button" data-go="zatch-st6"><span>06</span>Deliver</button></nav>
+      <div class="body">
+        <p class="label">The problem</p>
+        <div>
+          <div class="two">
+            <div><b class="mini-h">Buyers</b><ul><li>Just photos and text, so it's hard to trust</li><li>Can't ask, hear or interact</li><li>No fun, just transactions</li></ul></div>
+            <div><b class="mini-h">Sellers</b><ul><li>Drowned out by big brands</li><li>Can't pitch like in a real market</li><li>Forced to cut prices; buyers remember the platform, not them</li></ul></div>
+          </div>
+        </div>
+
+        <div class="fig-row">
+          <figure class="fig"><img src="img/zatch/s2.jpg" alt="Buyer-side problem slide with a phone mockup" loading="lazy" width="1400" height="788"><figcaption>The buyer side</figcaption></figure>
+          <figure class="fig"><img src="img/zatch/s3.jpg" alt="Seller-side problem slide with a phone mockup" loading="lazy" width="1400" height="788"><figcaption>The seller side</figcaption></figure>
+        </div>
+
+        <div class="stage" id="zatch-st1" data-stage="1"><span class="stage-n">01</span><span class="stage-name">Research</span><span class="stage-q">What do people need?</span></div>
+        <p class="label">Today's journey is broken</p>
+        <div>
+          <p>Buying from a seller's reel today takes 8 steps:</p>
+          <ol class="journey">
+            <li>Sees a reel</li><li>Takes a screenshot</li><li class="bad">Sends a DM</li><li class="bad">Waits hours or days</li><li>Seller checks stock by hand</li><li class="bad">Pays by QR code</li><li>Types address in chat</li><li class="bad">No tracking</li>
+          </ol>
+          <p class="note">Highlighted steps are where buyers lose trust or give up.</p>
+        </div>
+
+        <p class="label">Competitive analysis</p>
+        <div>
+          <p>Tap a competitor to compare.</p>
+          <div class="chips" role="group" aria-label="Choose a competitor">
+            <button type="button" class="chip on" data-col="all" aria-pressed="true">All</button>
+            <button type="button" class="chip" data-col="az" aria-pressed="false">Amazon / Flipkart</button>
+            <button type="button" class="chip" data-col="me" aria-pressed="false">Meesho</button>
+            <button type="button" class="chip" data-col="ig" aria-pressed="false">Instagram / WhatsApp</button>
+            <button type="button" class="chip" data-col="wn" aria-pressed="false">Whatnot (US)</button>
+          </div>
+          <div class="scroll-x" style="margin-top:14px">
+            <table class="cmp matrix">
+              <thead><tr><th>What matters</th><th data-col="tg">Zatch</th><th data-col="az">Amazon / Flipkart</th><th data-col="me">Meesho</th><th data-col="ig">Instagram / WhatsApp</th><th data-col="wn">Whatnot</th></tr></thead>
+              <tbody><tr><td>Shop from live video</td><td data-col="tg" class="y">Core feature</td><td data-col="az" class="p">Amazon Live influencer streams</td><td data-col="me" class="p">Creator videos and live shows</td><td data-col="ig" class="p">Reels and live, no shop tags</td><td data-col="wn" class="y">Core feature</td></tr><tr><td>Bargain with the seller</td><td data-col="tg" class="y">Zatching, in real time</td><td data-col="az" class="n">Fixed prices</td><td data-col="me" class="n">Fixed prices</td><td data-col="ig" class="p">Only by DM</td><td data-col="wn" class="p">Auction bidding</td></tr><tr><td>Pay without leaving the app</td><td data-col="tg" class="y">UPI-native checkout</td><td data-col="az" class="y">Yes</td><td data-col="me" class="y">Yes</td><td data-col="ig" class="n">DMs and QR codes</td><td data-col="wn" class="y">Yes</td></tr><tr><td>Small sellers get noticed</td><td data-col="tg" class="y">Equal stage + own storefront</td><td data-col="az" class="n">Big sellers dominate</td><td data-col="me" class="y">Built for small sellers</td><td data-col="ig" class="p">Reach, but no shop tools</td><td data-col="wn" class="y">Through live shows</td></tr><tr><td>Seller fees</td><td data-col="tg" class="p">8–12% commission</td><td data-col="az" class="n">15–30%</td><td data-col="me" class="y">0% commission, paid shipping and ads</td><td data-col="ig" class="y">Free</td><td data-col="wn" class="p">About 8% + payment fee</td></tr><tr><td>Available in India</td><td data-col="tg" class="y">Hyderabad first</td><td data-col="az" class="y">Yes</td><td data-col="me" class="y">Yes</td><td data-col="ig" class="y">Yes</td><td data-col="wn" class="n">No</td></tr></tbody>
+            </table>
+          </div>
+          <div class="takes">
+            <div class="take" data-col="az" hidden><b>Amazon / Flipkart</b><p>Strong: huge reach, trusted checkout and delivery. Amazon brought back influencer livestreams for its 2023 festival sale.</p><p><span class="mark">Zatch's edge:</span> small sellers aren't buried, and buyers can bargain instead of paying a fixed price.</p></div>
+            <div class="take" data-col="me" hidden><b>Meesho</b><p>Strong: 0% seller commission and a focus on small sellers and value shoppers. It earns from shipping, ads and creator content fees.</p><p><span class="mark">Zatch's edge:</span> real-time bargaining and seller-led live selling. Zatch can't win on fees, so it has to win on experience.</p></div>
+            <div class="take" data-col="ig" hidden><b>Instagram / WhatsApp</b><p>Strong: where small sellers already have followers, and it's free. But Facebook ended live shopping in 2022, and Instagram dropped product tags in live streams in 2023.</p><p><span class="mark">Zatch's edge:</span> keeps the social feel but replaces screenshots, DMs and QR codes with one tap to buy.</p></div>
+            <div class="take" data-col="wn" hidden><b>Whatnot (US)</b><p>Strong: proves live shopping works at scale, built around live auctions. It charges about 8% plus a payment fee.</p><p><span class="mark">Zatch's edge:</span> one-to-one bargaining fits Indian habits better than auctions, with UPI payments built in.</p></div>
+          </div>
+        </div>
+
+        <p class="label">Why now</p>
+        <div>
+          <div class="mini-stats">
+            <div><strong>$274B</strong><span>India e-commerce by 2027, up from $182B</span></div>
+            <div><strong>400M+</strong><span>digital buyers by 2027, nearly double today</span></div>
+            <div><strong>47%</strong><span>yearly growth in social commerce</span></div>
+          </div>
+        </div>
+
+        <div class="stage" id="zatch-st2" data-stage="2"><span class="stage-n">02</span><span class="stage-name">Define</span><span class="stage-q">What's the real problem?</span></div>
+        <p class="label">Where Zatch sits</p>
+        <div>
+          <div class="pmap" role="img" aria-label="Positioning map. Horizontal axis: static to live. Vertical axis: fixed price to negotiable. Amazon and Flipkart and Meesho are static and fixed price. Instagram and WhatsApp are live-ish but negotiation happens in DMs. Whatnot is live with auctions. Zatch is live and fully negotiable.">
+            <span class="ax y1">Negotiable price</span><span class="ax y0">Fixed price</span><span class="ax x0">Photos &amp; text</span><span class="ax x1">Live video</span>
+            <span class="dot d-az" style="left:16%;top:78%">Amazon / Flipkart</span>
+            <span class="dot" style="left:34%;top:70%">Meesho</span>
+            <span class="dot" style="left:52%;top:38%">Instagram / WhatsApp<br><small>bargain by DM</small></span>
+            <span class="dot d-wn" style="left:76%;top:52%">Whatnot<br><small>auctions</small></span>
+            <span class="dot me" style="left:80%;top:16%">Zatch</span>
+          </div>
+          <p class="note">The top-right corner was empty. That's Zatch's space.</p>
+        </div>
+
+        <p class="label">What Zatch must get right</p>
+        <div>
+          <p>Live shopping has struggled in India before: Bulbul was acquired, YouTube's Simsim shut down, Moj scaled back.</p>
+          <ul class="findings" style="margin-top:12px">
+            <li><b>Start with sellers</b>Bring sellers who already have followers, like the planned Hyderabad beta with 50+ sellers.</li>
+            <li><b>Bigger baskets</b>Bargaining and bundles to lift order value above a few dollars.</li>
+            <li><b>Control delivery</b>Built-in shipping and tracking to keep costs and returns down.</li>
+          </ul>
+        </div>
+
+        <div class="stage" id="zatch-st3" data-stage="3"><span class="stage-n">03</span><span class="stage-name">Ideate</span><span class="stage-q">What could solve it?</span></div>
+        <p class="label">The idea</p>
+        <div class="change"><p><span class="mark">Bring the Indian bazaar online.</span> Live, interactive and trusted: watch the product, talk to the seller, bargain, and buy without leaving the app.</p></div>
+
+        <p class="label">Unique selling point</p>
+        <div class="usp">
+          <p class="usp-line">Watch it live. Bargain for it. Buy it in one tap.</p>
+          <p>Of the apps compared, only Zatch does all three.</p>
+          <ul class="findings">
+            <li><b>Bargaining built in</b>A cultural habit no marketplace has made a product feature.</li>
+            <li><b>Trust you can see</b>Live video, token-based orders and tracking replace DMs and QR codes.</li>
+            <li><b>A stage for small sellers</b>Their own storefront and live shows, so buyers remember them.</li>
+          </ul>
+        </div>
+
+        <div class="stage" id="zatch-st4" data-stage="4"><span class="stage-n">04</span><span class="stage-name">Design</span><span class="stage-q">What does it look like?</span></div>
+        <p class="label">Brand building</p>
+        <div>
+          <ul class="findings four">
+            <li><b>Tagline</b>Shop live. Bargain real. Buy instantly.</li>
+            <li><b>A brand word</b>"Zatching", so people say "Let's Zatch".</li>
+            <li><b>Bold look</b>Electric lime and black, loud like a bazaar.</li>
+            <li><b>Playful details</b>Hand-drawn scribbles and stickers.</li>
+          </ul>
+        </div>
+        <p class="label">Key features</p>
+        <div>
+          <div class="two">
+            <div><b class="mini-h">For buyers</b><ul><li><b>Live feed</b> of shows and short product reels</li><li><b>Zatching:</b> bargain with the seller in real time</li><li><b>Instant UPI checkout</b>, no redirects</li><li><b>Zatch AI</b> answers questions and suggests a fair price</li><li><b>Order tracking</b> in one place</li></ul></div>
+            <div><b class="mini-h">For sellers</b><ul><li><b>Own storefront</b>, their "online dukaan"</li><li><b>Go live</b> and sell to viewers</li><li><b>Buy Bits:</b> shoppable short reels</li><li><b>Dashboard</b> for stock, orders and payments</li><li><b>Built-in shipping</b> with tracking</li></ul></div>
+          </div>
+        </div>
+
+        <div class="fig-row">
+          <figure class="fig"><img src="img/zatch/s7.jpg" alt="Buyer features slide with app screens" loading="lazy" width="1400" height="788"><figcaption>Buyer features</figcaption></figure>
+          <figure class="fig"><img src="img/zatch/s8.jpg" alt="Seller features slide with a performance dashboard" loading="lazy" width="1400" height="788"><figcaption>Seller features</figcaption></figure>
+        </div>
+
+        <p class="label">Signature feature: Zatching</p>
+        <div>
+          <p>Agree on a price, close the deal. Bargaining, built in.</p>
+          <div class="words" style="margin-top:12px"><span>Catch the seller</span><span>Match the price</span><span>Snatch the deal</span></div>
+        </div>
+        <figure class="fig"><img src="img/zatch/s11.jpg" alt="Introducing Zatching slide showing a buyer and seller agreeing on a price" loading="lazy" width="1400" height="788"><figcaption>Giving the core feature a name people can use: "Let's Zatch."</figcaption></figure>
+
+        <div class="stage" id="zatch-st6" data-stage="6"><span class="stage-n">06</span><span class="stage-name">Deliver</span><span class="stage-q">What changed?</span></div>
+        <p class="label">Business model</p>
+        <div>
+          <ul class="findings four">
+            <li><b>8–12%</b>Commission, below big marketplaces</li>
+            <li><b>Ads</b>Paid promotions for sellers</li>
+            <li><b>Video</b>Making product videos for sellers</li>
+            <li><b>Fintech</b>Small fee on shipping and payments</li>
+          </ul>
+        </div>
+
+        <p class="label">Roadmap</p>
+        <div>
+          <ol class="flow">
+            <li><b>Q1 2026</b>MVP for buyers and sellers</li>
+            <li><b>Q2</b>Closed beta with 50+ Hyderabad sellers</li>
+            <li><b>Q3</b>Shipping partners, new categories and regions</li>
+            <li><b>Q4</b>India-wide launch, AI personalisation, local languages</li>
+          </ol>
+        </div>
+
+        <p class="label">The pitch</p>
+        <div><p>The research became a 16-slide investor deck.</p></div>
+      </div>
+      <div class="deck">
+        <div class="deck-stage">
+          <img id="zimg" src="img/zatch/s1.jpg" alt="Zatch pitch deck slide 1: The hook" width="1400" height="788">
+          <button type="button" class="dnav prev" id="zprev" aria-label="Previous slide">←</button>
+          <button type="button" class="dnav next" id="znext" aria-label="Next slide">→</button>
+        </div>
+        <div class="deck-cap"><span class="label" id="zcount">01 / 10</span><b id="zt">The hook</b><span id="zc">Shop live. Bargain real. Buy instantly.</span></div>
+        <div class="deck-thumbs" role="group" aria-label="Choose a slide"><button type="button" class="zt on" data-i="0" aria-label="Slide 1: The hook"><img src="img/zatch/s1.jpg" alt="" loading="lazy"></button><button type="button" class="zt" data-i="1" aria-label="Slide 2: The problem"><img src="img/zatch/s2.jpg" alt="" loading="lazy"></button><button type="button" class="zt" data-i="2" aria-label="Slide 3: Why it's broken"><img src="img/zatch/s4.jpg" alt="" loading="lazy"></button><button type="button" class="zt" data-i="3" aria-label="Slide 4: The solution"><img src="img/zatch/s5.jpg" alt="" loading="lazy"></button><button type="button" class="zt" data-i="4" aria-label="Slide 5: The product"><img src="img/zatch/s7.jpg" alt="" loading="lazy"></button><button type="button" class="zt" data-i="5" aria-label="Slide 6: The competition"><img src="img/zatch/s9.jpg" alt="" loading="lazy"></button><button type="button" class="zt" data-i="6" aria-label="Slide 7: The big idea"><img src="img/zatch/s11.jpg" alt="" loading="lazy"></button><button type="button" class="zt" data-i="7" aria-label="Slide 8: Why now"><img src="img/zatch/s12.jpg" alt="" loading="lazy"></button><button type="button" class="zt" data-i="8" aria-label="Slide 9: The money"><img src="img/zatch/s13.jpg" alt="" loading="lazy"></button><button type="button" class="zt" data-i="9" aria-label="Slide 10: What's next"><img src="img/zatch/s14.jpg" alt="" loading="lazy"></button></div>
+      </div>
+      <div class="body">
+        <p class="label">What I learned</p>
+        <div>
+          <ul class="findings">
+            <li><b>Culture is a feature</b>Bargaining isn't a bug to remove. It's why people shop.</li>
+            <li><b>Trust beats price</b>Live video, verified orders and tracking fix what DMs can't.</li>
+            <li><b>Serve both sides</b>A marketplace only works if sellers win too.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    <a class="nextcase" href="#tgcsb"><span class="label">Next case study</span><b>Telangana Cyber Security Bureau <span aria-hidden="true">→</span></b></a>
+  </section>
+
+  <section class="view" id="tgcsb" data-view="tgcsb" hidden>
+    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
+    <article class="case tgcsb" aria-labelledby="tg-h">
+      <div class="cover">
+        <div class="intro">
+          <p class="label">Case study 03 · Government websites</p>
+          <h3 id="tg-h">Telangana Cyber Security Bureau</h3>
+          <p class="sub">A citizen website for the state's cybercrime police, plus two event sites for its national hackathon and annual conclave.</p>
+          <div class="tags"><span class="tag">Digital strategy</span><span class="tag">Information architecture</span><span class="tag">Content</span><span class="tag">Event microsites</span></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>3</strong><span>websites for one public brand</span></div>
+          <div class="stat"><strong>1930</strong><span>the helpline every page leads to</span></div>
+          <div class="stat"><strong>6</strong><span>SHIELD focus areas explained in plain language</span></div>
+          <div class="stat"><strong>₹437 Cr</strong><span>refunded to victims, shown up front</span></div>
+        </div>
+      </div>
+      <div class="tldr" aria-label="Summary">
+        <div><span class="label">Problem</span><p>One police brand has to serve scam victims, the public and tech innovators.</p></div>
+        <div><span class="label">What I did</span><p>Planned the structure of a citizen site and two event sites, and compared 5 cybercrime agencies.</p></div>
+        <div><span class="label">Outcome</span><p>Help is one click away on every page, and 3 opportunities came out of the comparison.</p></div>
+        <span class="rt">3 min read</span>
+      </div>
+      <nav class="rail" aria-label="Design process"><button type="button" data-go="tgcsb-st1"><span>01</span>Research</button><button type="button" data-go="tgcsb-st2"><span>02</span>Define</button><button type="button" data-go="tgcsb-st3"><span>03</span>Ideate</button><button type="button" data-go="tgcsb-st4"><span>04</span>Design</button><button type="button" data-go="tgcsb-st5" disabled><span>05</span>Test</button><button type="button" data-go="tgcsb-st6"><span>06</span>Deliver</button></nav>
+      <div class="body">
+        <p class="label">The brief</p>
+        <div><p>One police brand, three very different audiences, three websites.</p><p class="note">My role: Strategist, Research &amp; Insights at Revolution X Studio.</p></div>
+
+        <div class="stage" id="tgcsb-st1" data-stage="1"><span class="stage-n">01</span><span class="stage-name">Research</span><span class="stage-q">What do people need?</span></div>
+        <p class="label">Inspiration</p>
+        <div>
+          <p>Benchmark: Australia's <a href="https://www.cyber.gov.au/" target="_blank" rel="noopener">cyber.gov.au</a>.</p>
+          <div class="scroll-x" style="margin-top:12px">
+            <table class="cmp borrow">
+              <thead><tr><th>Australia does</th><th>TGCSB does</th></tr></thead>
+              <tbody>
+                <tr><td>Opens with "Affected by a cyber issue?" and Report / Recover buttons</td><td><b>"Dial 1930"</b> first, with Report and Track a complaint on every page</td></tr>
+                <tr><td>Clearly labelled alerts and advice</td><td><b>Scam alerts</b> with short, plain headlines</td></tr>
+                <tr><td>Advice split by audience: individuals, businesses, government</td><td><b>Separate sites</b> for citizens, the hackathon and the conclave</td></tr>
+                <tr><td>Invites people to join in: alerts sign-up and partner program</td><td><b>Fraud Ka Full Stop</b> citizen pledge and Get Involved</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+        <p class="label">Competitive analysis</p>
+        <div>
+          <p>Tap a site to compare.</p>
+          <div class="chips" role="group" aria-label="Choose a site to compare">
+            <button type="button" class="chip on" data-col="all" aria-pressed="true">All</button>
+            <button type="button" class="chip" data-col="i4c" aria-pressed="false">India national portal</button>
+            <button type="button" class="chip" data-col="mh" aria-pressed="false">Maharashtra Cyber</button>
+            <button type="button" class="chip" data-col="uk" aria-pressed="false">Report Fraud (UK)</button>
+            <button type="button" class="chip" data-col="ca" aria-pressed="false">RCMP (Canada)</button>
+            <button type="button" class="chip" data-col="au" aria-pressed="false">cyber.gov.au (Australia)</button>
+          </div>
+          <div class="scroll-x" style="margin-top:14px">
+            <table class="cmp matrix" style="min-width:860px">
+              <thead><tr><th>What a victim needs</th><th data-col="tg">TGCSB</th><th data-col="i4c">India national</th><th data-col="mh">Maharashtra</th><th data-col="uk">UK</th><th data-col="ca">Canada</th><th data-col="au">Australia</th></tr></thead>
+              <tbody>
+                <tr><td>Phone helpline</td><td data-col="tg" class="y">1930, top of homepage</td><td data-col="i4c" class="y">1930</td><td data-col="mh" class="y">Yes</td><td data-col="uk" class="y">0300 123 2040</td><td data-col="ca" class="n">Not found</td><td data-col="au" class="y">1300 CYBER1</td></tr>
+                <tr><td>Report online</td><td data-col="tg" class="p">Links to national portal</td><td data-col="i4c" class="y">Yes, guided</td><td data-col="mh" class="y">Portal + app</td><td data-col="uk" class="y">Yes</td><td data-col="ca" class="y">Yes</td><td data-col="au" class="y">Yes, ReportCyber</td></tr>
+                <tr><td>Track a complaint</td><td data-col="tg" class="y">Button on every page</td><td data-col="i4c" class="y">Reference number</td><td data-col="mh" class="n">Not found</td><td data-col="uk" class="n">Not found</td><td data-col="ca" class="n">Not found</td><td data-col="au" class="y">Report number + email</td></tr>
+                <tr><td>Upload evidence</td><td data-col="tg" class="p">Via national portal</td><td data-col="i4c" class="y">Yes</td><td data-col="mh" class="n">Not found</td><td data-col="uk" class="n">Not found</td><td data-col="ca" class="y">Yes</td><td data-col="au" class="n">Not found</td></tr>
+                <tr><td>Report anonymously</td><td data-col="tg" class="p">Via national portal</td><td data-col="i4c" class="y">Yes</td><td data-col="mh" class="n">Not found</td><td data-col="uk" class="n">Not found</td><td data-col="ca" class="y">Yes</td><td data-col="au" class="y">Yes</td></tr>
+                <tr><td>Report a suspicious number or link</td><td data-col="tg" class="p">Via national portal</td><td data-col="i4c" class="y">Yes</td><td data-col="mh" class="n">Not found</td><td data-col="uk" class="n">Not found</td><td data-col="ca" class="n">Not found</td><td data-col="au" class="n">Not found</td></tr>
+                <tr><td>Report as a witness</td><td data-col="tg" class="n">Not yet</td><td data-col="i4c" class="n">Not found</td><td data-col="mh" class="n">Not found</td><td data-col="uk" class="n">Not found</td><td data-col="ca" class="y">Yes</td><td data-col="au" class="n">Not found</td></tr>
+                <tr><td>Safety tips and awareness</td><td data-col="tg" class="y">Articles + citizen pledge</td><td data-col="i4c" class="n">Not found</td><td data-col="mh" class="y">Awareness programmes</td><td data-col="uk" class="y">What to report and why</td><td data-col="ca" class="n">Not found</td><td data-col="au" class="y">Advice by audience + labelled alerts</td></tr>
+                <tr><td>News and public events</td><td data-col="tg" class="y">Newsroom + 2 event sites</td><td data-col="i4c" class="n">Not found</td><td data-col="mh" class="n">Not found</td><td data-col="uk" class="n">Not found</td><td data-col="ca" class="n">Not found</td><td data-col="au" class="y">Alerts, news, alert sign-up</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">"Not found" means the feature didn't show up in public descriptions of that site. It may still exist.</p>
+          <div class="takes">
+            <div class="take" data-col="i4c" hidden><b>India's national portal (cybercrime.gov.in)</b><p>Does well: a guided step-by-step report, evidence upload, anonymous reporting, a reference number to follow up, and reports on suspicious numbers, links and social handles.</p><p><span class="mark">For TGCSB:</span> send people straight to the right form on this portal instead of making them start over.</p></div>
+            <div class="take" data-col="mh" hidden><b>Maharashtra Cyber</b><p>Does well: lets citizens report by helpline, website or app, backed by a command centre and awareness programmes.</p><p><span class="mark">For TGCSB:</span> a mobile-first experience matters, since many victims report from their phones right after a scam.</p></div>
+            <div class="take" data-col="uk" hidden><b>Report Fraud, UK (replaced Action Fraud in December 2025)</b><p>Does well: puts phone and online reporting side by side and explains what to report and how the information is used.</p><p><span class="mark">For TGCSB:</span> add a short "what happens after you report" section to reduce anxiety and repeat calls.</p></div>
+            <div class="take" data-col="ca" hidden><b>RCMP and Canadian Anti-Fraud Centre (launched November 2025)</b><p>Does well: anonymous reports, evidence upload, and reports from witnesses and businesses, not just victims.</p><p><span class="mark">For TGCSB:</span> add "Saw a scam? Report it", so people who spot fraud can warn the police before anyone loses money.</p></div>
+            <div class="take" data-col="au" hidden><b>cyber.gov.au, Australia (our benchmark)</b><p>Does well: opens with "Affected by a cyber issue?" and Report / Recover buttons. It runs a 1300 CYBER1 hotline, gives advice by audience, labels alerts by severity, and lets you check a report with its number.</p><p><span class="mark">For TGCSB:</span> the model for putting help first. Next step: a "Recover" guide for after the report.</p></div>
+          </div>
+        </div>
+
+        <div class="stage" id="tgcsb-st2" data-stage="2"><span class="stage-n">02</span><span class="stage-name">Define</span><span class="stage-q">What's the real problem?</span></div>
+        <p class="label">Who it's for</p>
+        <div>
+          <ul class="findings">
+            <li><b>Victims</b>Just scammed. Need to report or track a complaint, fast.</li>
+            <li><b>Public &amp; media</b>Want scam alerts, safety tips and news.</li>
+            <li><b>Innovators</b>Students, hackers and startups joining the events.</li>
+          </ul>
+        </div>
+
+        <div class="stage" id="tgcsb-st3" data-stage="3"><span class="stage-n">03</span><span class="stage-name">Ideate</span><span class="stage-q">What could solve it?</span></div>
+        <p class="label">Opportunities</p>
+        <div>
+          <ul class="findings">
+            <li><b>Witness reports</b>Report a scam you spotted, not just one you fell for.</li>
+            <li><b>Check a number</b>Link to the national portal's suspect search.</li>
+            <li><b>After you report</b>Explain next steps in plain language.</li>
+          </ul>
+          <p class="note" style="margin-top:12px">Sources: <a href="https://www.cyber.gov.au/" target="_blank" rel="noopener">cyber.gov.au</a>, <a href="https://the420.in/report-cybercrime-india-national-portal-guide-scam-number-fake-website-cyber-fraud/" target="_blank" rel="noopener">I4C portal guide</a>, <a href="https://cyberpeace.org/resources/blogs/maharashtras-approach-to-tackling-evolving-cyber-crimes" target="_blank" rel="noopener">CyberPeace on Maharashtra Cyber</a>, <a href="https://www.cityoflondon.police.uk/news/city-of-london/news/2025/december/report-fraud-service-goes-live-with-full-public-launch-in-january-2026/" target="_blank" rel="noopener">City of London Police</a>, <a href="https://rcmp.ca/en/news/2025/11/rcmp-launches-new-national-cybercrime-and-fraud-reporting-system" target="_blank" rel="noopener">RCMP</a>.</p>
+        </div>
+
+        <div class="stage" id="tgcsb-st4" data-stage="4"><span class="stage-n">04</span><span class="stage-name">Design</span><span class="stage-q">What does it look like?</span></div>
+        <p class="label">Sitemap</p>
+        <div>
+          <p>Every page planned around one rule: help is never more than a click away.</p>
+          <div class="sitemap" role="img" aria-label="TGCSB sitemap. Home links to six sections: About us, Report and Track, Resources, Threats, Protect yourself and Get involved. The header holds search, news and alerts, media and a Report button. The footer holds the 1930 helpline, careers and socials.">
+            <div class="sm-top">
+              <div class="sm-util"><span class="label">Header</span><div><i>Search</i><i>News &amp; alerts</i><i>Media</i><i class="hot">Report button</i></div></div>
+              <div class="sm-home">Home</div>
+              <div class="sm-util"><span class="label">Footer</span><div><i class="hot">Helpline 1930</i><i>Careers</i><i>Socials</i></div></div>
+            </div>
+            <div class="sm-cols"><div class="sm-col"><b>About us</b><ul><li>Intro</li><li>What makes us different</li><li>Branches</li><li>Units</li><li>Work &amp; achievements</li></ul></div><div class="sm-col"><b>Report &amp; Track</b><ul><li>Tabs + processing times</li></ul></div><div class="sm-col"><b>Resources</b><ul><li>Useful links</li></ul></div><div class="sm-col"><b>Threats</b><ul><li>Types of threats</li><li>Call 1930 to report</li><li>Sign up for alerts</li></ul></div><div class="sm-col"><b>Protect yourself</b><ul><li>Safety measures</li><li>Guidelines</li><li>Steps to report</li></ul></div><div class="sm-col"><b>Get involved</b><ul><li>Internships &amp; volunteering</li><li>Careers</li></ul></div></div>
+          </div>
+        </div>
+        <p class="label">Low-fidelity prototype</p>
+        <div>
+          <p>First, a quick Wix Studio prototype to test structure and content.</p>
+          <div class="two" style="margin-top:20px">
+            <div><b class="mini-h">Prototype</b><ul><li>"Dial 1930" hero, Report and Track in the header</li><li>Blogs, news and director's message on the homepage</li><li>About page: mission, firsts, services, 1930 call centre</li></ul></div>
+            <div><b class="mini-h">What changed in the final</b><ul><li>Six quick links added for faster paths</li><li>A contact page built around 1930</li><li>Live impact numbers moved up front</li><li>Fraud Ka Full Stop pledge added</li></ul></div>
+          </div>
+          <ol class="flow" style="margin-top:20px">
+            <li><b>Sitemap</b>Pages and paths</li><li><b>Prototype</b>Structure in Wix Studio</li>
+            <li><b>Review</b>What's missing, what's buried</li>
+            <li><b>Refine</b>Simpler paths, stronger proof</li>
+            <li><b>Build</b>Final site</li>
+          </ol>
+          <a class="btn" href="https://hi6026.wixstudio.com/tgcsbpreview" target="_blank" rel="noopener" style="margin-top:20px">See the prototype ↗</a>
+        </div>
+        <p class="label">Key decisions</p>
+        <div class="decs">
+          <figure class="dec"><img src="img/tg-header.jpg" alt="TGCSB header with Track a complaint and Report buttons" loading="lazy" width="1149" height="232"><figcaption><span class="dn">01</span><b>Help on every page</b>Report and Track a complaint sit in the header, always one click away.</figcaption></figure>
+          <figure class="dec"><img src="img/tg-contact.jpg" alt="Contact page with 1930 helpline, Report Crime and Track Complaint buttons" loading="lazy" width="1181" height="702"><figcaption><span class="dn">02</span><b>Urgent help first</b>1930 is the biggest thing on the page: 24/7, free. Report and Track are separate buttons.</figcaption></figure>
+          <figure class="dec"><img src="img/tg-pledge.jpg" alt="Fraud Ka Full Stop citizen pledge card" loading="lazy" width="943" height="315"><figcaption><span class="dn">03</span><b>Invite people in</b>The Fraud Ka Full Stop pledge turns visitors into allies.</figcaption></figure>
+          <figure class="dec"><img src="img/tg-quicklinks.jpg" alt="Quick links: About cyber crimes, Report, Track, About us, Get involved, Media gallery" loading="lazy" width="1400" height="292"><figcaption><span class="dn">04</span><b>Six clear doors</b>Quick links with simple icons, so nobody has to dig through menus.</figcaption></figure>
+          <figure class="dec"><img src="img/tg-impact.jpg" alt="Director message with impact numbers: Rs 437 crore refunded, 58,157 victims helped" loading="lazy" width="1400" height="720"><figcaption><span class="dn">05</span><b>Proof builds trust</b>Real impact up front: ₹437 Cr refunded to victims and 58,157 people helped.</figcaption></figure>
+        </div>
+
+        <p class="label">The event sites</p>
+        <div>
+          <div class="two">
+            <div><b class="mini-h">CipherCop 2025</b><ul><li>National policing hackathon</li><li>Each challenge in one pattern: problem, goals, output</li><li>Dark, high-tech look</li></ul></div>
+            <div><b class="mini-h">SHIELD 2026</b><ul><li>Annual cybersecurity conclave + CipherSprint challenge</li><li>6 focus areas, one line each</li><li>Who can join and how entries are judged</li></ul></div>
+          </div>
+        </div>
+
+        <p class="label">The three sites</p>
+        <div class="mocks">
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>tgcsb-website.vercel.app</span></div>
+            <div class="scr tg"><span class="k">Citizen website</span><b>Dial 1930</b><p>To report any kind of cybercrime, or log in to cybercrime.gov.in</p><span class="pill">Report</span></div></div>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>CipherCop 2025</span></div>
+            <div class="scr cc"><span class="k">National hackathon</span><b>Cipher<em>Cop</em> 2025</b><p>Code. Protect. Transform. Reimagining policing through AI and cybersecurity.</p></div></div>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><span>shieldconference.com</span></div>
+            <div class="scr sh"><span class="k">Annual conclave</span><b>SHIELD 2026</b><p>Presenting CipherSprint, a national cyber innovation challenge.</p><span class="pill">Agenda</span></div></div>
+        </div>
+        <div class="stage" id="tgcsb-st6" data-stage="6"><span class="stage-n">06</span><span class="stage-name">Deliver</span><span class="stage-q">What changed?</span></div>
+        <p class="label">Result</p>
+        <div class="change"><p><span class="mark">Help is one click away on every page</span>, and each site does one job well.</p></div>
+      </div>
+      <div class="case-foot">
+        <p>See the live sites.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://tgcsb-website.vercel.app/" target="_blank" rel="noopener">TGCSB ↗</a>
+          <a class="btn" href="https://design2550.wixstudio.com/my-site" target="_blank" rel="noopener">CipherCop ↗</a>
+          <a class="btn" href="https://www.shieldconference.com/" target="_blank" rel="noopener">SHIELD ↗</a>
+        </div>
+      </div>
+    </article>
+    <a class="nextcase" href="#green-campus"><span class="label">Next case study</span><b>Green Campus Co-op <span aria-hidden="true">→</span></b></a>
+  </section>
+
+  <section class="view" id="green-campus" data-view="green-campus" hidden>
+    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
+    <article class="case green" aria-labelledby="gcc-h">
+      <div class="cover">
+        <div class="intro">
+          <p class="label">Case study 04 · Website revamp</p>
+          <h3 id="gcc-h">Green Campus Co-op</h3>
+          <p class="sub">A content and UX revamp for a sustainability co-op started by students and faculty at York University.</p>
+          <div class="tags"><span class="tag">UX strategy</span><span class="tag">Content strategy</span><span class="tag">Figma</span><span class="tag">Miro</span><span class="tag">Maze</span></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>3</strong><span>core problems identified</span></div>
+          <div class="stat"><strong>4</strong><span>person team</span></div>
+          <div class="stat"><strong>3</strong><span>key pages redesigned: home, products, impact</span></div>
+          <div class="stat"><strong>1</strong><span>new interactive impact page</span></div>
+        </div>
+      </div>
+
+      <div class="tldr" aria-label="Summary">
+        <div><span class="label">Problem</span><p>Students weren't engaging, wholesale buyers struggled, and the mission was unclear.</p></div>
+        <div><span class="label">What I did</span><p>Audience research, competitor review, a content rewrite and 3 page redesigns.</p></div>
+        <div><span class="label">Outcome</span><p>An interactive impact page and simpler product pages for bulk buyers.</p></div>
+        <span class="rt">1 min read</span>
+      </div>
+      <nav class="rail" aria-label="Design process"><button type="button" data-go="green-campus-st1" disabled><span>01</span>Research</button><button type="button" data-go="green-campus-st2" disabled><span>02</span>Define</button><button type="button" data-go="green-campus-st3" disabled><span>03</span>Ideate</button><button type="button" data-go="green-campus-st4"><span>04</span>Design</button><button type="button" data-go="green-campus-st5" disabled><span>05</span>Test</button><button type="button" data-go="green-campus-st6"><span>06</span>Deliver</button></nav>
+      <div class="body">
+        <p class="label">The problem</p>
+        <div>
+          <ul class="findings">
+            <li><b>Low engagement</b>Few people read the fair trade content.</li>
+            <li><b>Hard to buy</b>Wholesale ordering was confusing.</li>
+            <li><b>Unclear mission</b>The brand story didn't come through.</li>
+          </ul>
+        </div>
+
+        <div class="stage" id="green-campus-st4" data-stage="4"><span class="stage-n">04</span><span class="stage-name">Design</span><span class="stage-q">What does it look like?</span></div>
+        <p class="label">What I did</p>
+        <div>
+          <ul class="findings four">
+            <li><b>Research</b>Audience behaviour and competitor review</li>
+            <li><b>Structure</b>Clearer homepage and product pages</li>
+            <li><b>Content</b>Plain-language fair trade, with infographics</li>
+            <li><b>Prototype</b>Home, product and impact pages</li>
+          </ul>
+          <p class="note">UX strategist in a team of 4.</p>
+        </div>
+
+        <figure class="fig"><img src="img/gcc-impact.jpg" alt="Interactive impact map on a laptop, showing cotton farmers and workers around the world" loading="lazy" width="1600" height="1066"><figcaption>Interactive impact map.</figcaption></figure>
+        <div class="fig-row">
+          <figure class="fig"><img src="img/gcc-product.jpg" alt="Redesigned Fair Trade t-shirt product page with sourcing callouts, size picker and wholesale section" loading="lazy" width="1512" height="2451"><figcaption>Product page with sourcing facts and a wholesale section.</figcaption></figure>
+          <figure class="fig"><img src="img/gcc-report.jpg" alt="Impact report section on a laptop: world map with key figures and a timeline" loading="lazy" width="1600" height="1066"><figcaption>Impact report as a map, not paragraphs.</figcaption></figure>
+        </div>
+
+        <div class="stage" id="green-campus-st6" data-stage="6"><span class="stage-n">06</span><span class="stage-name">Deliver</span><span class="stage-q">What changed?</span></div>
+        <p class="label">Result</p>
+        <div class="change"><p><span class="mark">An interactive impact page</span> and product pages that make bulk buying simple.</p></div>
+      </div>
+    </article>
+    <a class="nextcase" href="#securacy"><span class="label">Next case study</span><b>Securacy <span aria-hidden="true">→</span></b></a>
+  </section>
+
+  <section class="view" id="securacy" data-view="securacy" hidden>
+    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
+    <article class="case sec" aria-labelledby="sec-h">
+      <div class="cover">
+        <div class="intro">
+          <p class="label">Case study 05 · B2B SaaS marketing site</p>
+          <h3 id="sec-h">Securacy</h3>
+          <p class="sub">A marketing website for an AI-powered threat modeling platform that explains a deeply technical product to both engineers and executives.</p>
+          <div class="tags"><span class="tag">Positioning</span><span class="tag">Messaging</span><span class="tag">Content strategy</span><span class="tag">Web design</span></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>3</strong><span>report types: AppSec, Privacy, AI</span></div>
+          <div class="stat"><strong>13</strong><span>security and compliance frameworks named</span></div>
+          <div class="stat"><strong>5</strong><span>buyer roles, each with its own message</span></div>
+          <div class="stat"><strong>4</strong><span>step product story</span></div>
+        </div>
+      </div>
+      <div class="tldr" aria-label="Summary">
+        <div><span class="label">Problem</span><p>A deep-tech product that is hard to grasp quickly.</p></div>
+        <div><span class="label">What I did</span><p>Wrote the core message, a line for each buyer role, and a 4-step product story.</p></div>
+        <div><span class="label">Outcome</span><p>A single scroll from "what is this?" to "book a demo".</p></div>
+        <span class="rt">1 min read</span>
+      </div>
+      <nav class="rail" aria-label="Design process"><button type="button" data-go="securacy-st1" disabled><span>01</span>Research</button><button type="button" data-go="securacy-st2"><span>02</span>Define</button><button type="button" data-go="securacy-st3"><span>03</span>Ideate</button><button type="button" data-go="securacy-st4"><span>04</span>Design</button><button type="button" data-go="securacy-st5" disabled><span>05</span>Test</button><button type="button" data-go="securacy-st6"><span>06</span>Deliver</button></nav>
+      <div class="body">
+        <p class="label">The brief</p>
+        <div><p>Explain AI threat modeling in seconds to a busy security lead, without losing the developers who'll use it.</p></div>
+
+        <div class="stage" id="securacy-st2" data-stage="2"><span class="stage-n">02</span><span class="stage-name">Define</span><span class="stage-q">What's the real problem?</span></div>
+        <p class="label">Pains it names</p>
+        <div>
+          <ul class="findings">
+            <li><b>Manual</b>Whiteboards and one-off docs.</li>
+            <li><b>Too late</b>Risks found after shipping.</li>
+            <li><b>Gaps</b>Privacy and AI risks get missed.</li>
+          </ul>
+        </div>
+
+        <div class="stage" id="securacy-st3" data-stage="3"><span class="stage-n">03</span><span class="stage-name">Ideate</span><span class="stage-q">What could solve it?</span></div>
+        <p class="label">The message</p>
+        <div class="usp"><p class="usp-line">Understand your design. Act on your risks.</p></div>
+
+
+        <p class="label">The story</p>
+        <div><ol class="flow">
+            <li><b>Describe</b>Plain-language system description, diagrams, documents or Terraform files.</li>
+            <li><b>Generate</b>A data flow diagram, findings and mitigations.</li>
+            <li><b>Review</b>Your team checks every output before acting.</li>
+            <li><b>Share &amp; act</b>Update statuses, export reports, send threats to Jira.</li>
+          </ol></div>
+
+        <div class="stage" id="securacy-st4" data-stage="4"><span class="stage-n">04</span><span class="stage-name">Design</span><span class="stage-q">What does it look like?</span></div>
+        <p class="label">Key decisions</p>
+        <div class="decs sec-decs">
+          <figure class="dec"><img src="img/sec-hero.jpg" alt="Securacy section: Stop threat modeling on whiteboards, with findings mapped to OWASP, LINDDUN and MITRE ATLAS" loading="lazy" width="1300" height="880"><figcaption><span class="dn">01</span><b>Lead with the pain</b>"Stop threat modeling on whiteboards." Real findings show the product, not stock art.</figcaption></figure>
+          <figure class="dec"><img src="img/sec-reports.jpg" alt="Three report types: Application security, Privacy, AI security" loading="lazy" width="1400" height="701"><figcaption><span class="dn">02</span><b>One door per risk</b>AppSec, Privacy and AI security, each tagged with the standard it follows.</figcaption></figure>
+          <figure class="dec"><img src="img/sec-platform.jpg" alt="Platform versus Services toggle: your team runs the review, or our experts join" loading="lazy" width="800" height="860"><figcaption><span class="dn">03</span><b>Self-serve or expert help</b>A simple toggle: "Your team" runs the review, or "Our experts" join it.</figcaption></figure>
+        </div>
+
+        <div class="stage" id="securacy-st6" data-stage="6"><span class="stage-n">06</span><span class="stage-name">Deliver</span><span class="stage-q">What changed?</span></div>
+        <p class="label">Result</p>
+        <div class="change"><p>One scroll from <span class="mark">"what is this?" to "book a demo"</span>.</p></div>
+      </div>
+      <div class="case-foot">
+        <p>See the live site.</p>
+        <a class="btn primary" href="https://securacy-marketing.vercel.app/" target="_blank" rel="noopener">Securacy ↗</a>
+      </div>
+    </article>
+    <a class="nextcase" href="#st-lawrence"><span class="label">Next case study</span><b>St Lawrence Market <span aria-hidden="true">→</span></b></a>
+  </section>
+
+  <section class="view" id="st-lawrence" data-view="st-lawrence" hidden>
+    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
+    <article class="case slm" aria-labelledby="slm-h">
+      <div class="cover">
+        <div class="intro">
+          <p class="label">Case study 06 · Website redesign</p>
+          <h3 id="slm-h">St Lawrence Market</h3>
+          <p class="sub">Reimagining the website of one of Toronto's best-known food markets, so visitors can plan a trip and find what's on.</p>
+          <div class="tags"><span class="tag">UX research</span><span class="tag">Competitive analysis</span><span class="tag">Personas</span><span class="tag">Prototyping</span></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>3</strong><span>problem areas on the current site</span></div>
+          <div class="stat"><strong>3</strong><span>markets compared</span></div>
+          <div class="stat"><strong>5</strong><span>person team</span></div>
+          <div class="stat"><strong>2024</strong><span>March, group project</span></div>
+        </div>
+      </div>
+      <div class="tldr" aria-label="Summary">
+        <div><span class="label">Problem</span><p>Planning a visit on the market's website was hard.</p></div>
+        <div><span class="label">What I did</span><p>Audited the site, compared 2 markets, built a persona and journey map.</p></div>
+        <div><span class="label">Outcome</span><p>A prototype with vendor categories, an events calendar and an exact map.</p></div>
+        <span class="rt">1 min read</span>
+      </div>
+      <nav class="rail" aria-label="Design process"><button type="button" data-go="st-lawrence-st1"><span>01</span>Research</button><button type="button" data-go="st-lawrence-st2"><span>02</span>Define</button><button type="button" data-go="st-lawrence-st3" disabled><span>03</span>Ideate</button><button type="button" data-go="st-lawrence-st4" disabled><span>04</span>Design</button><button type="button" data-go="st-lawrence-st5" disabled><span>05</span>Test</button><button type="button" data-go="st-lawrence-st6"><span>06</span>Deliver</button></nav>
+      <div class="body">
+        <p class="label">The problem</p>
+        <div>
+          <ul class="findings">
+            <li><b>Looks</b>Clashing colours and textures.</li>
+            <li><b>Content</b>Little to explore before a visit.</li>
+            <li><b>Social</b>Broken links, no reviews or photos.</li>
+          </ul>
+        </div>
+
+        <div class="stage" id="st-lawrence-st1" data-stage="1"><span class="stage-n">01</span><span class="stage-name">Research</span><span class="stage-q">What do people need?</span></div>
+        <p class="label">Competitors</p>
+        <div><p>Compared with <b>Kensington Market</b> and <b>Stackt</b> on: exact-location maps, vendors by category, events calendars.</p></div>
+
+        <figure class="fig"><img src="img/slm-journey.jpg" alt="Journey map with user goals, emotions, problems and ideas across five stages: aware, search, booking, on the way, whilst there" loading="lazy" width="1600" height="745"><figcaption>Visitor journey map.</figcaption></figure>
+        <div class="stage" id="st-lawrence-st2" data-stage="2"><span class="stage-n">02</span><span class="stage-name">Define</span><span class="stage-q">What's the real problem?</span></div>
+        <p class="label">Persona: Jennifer</p>
+        <div>
+          <div class="two">
+            <div><b class="mini-h">Wants</b><ul><li>Events and workshops to plan around</li><li>To know where produce comes from</li></ul></div>
+            <div><b class="mini-h">Worries</b><ul><li>Crowds</li><li>Not knowing what to do there</li></ul></div>
+          </div>
+          <p class="note">Busy business owner and mom of two. Shops on weekends, finds ideas on social media.</p>
+        </div>
+
+        <div class="stage" id="st-lawrence-st6" data-stage="6"><span class="stage-n">06</span><span class="stage-name">Deliver</span><span class="stage-q">What changed?</span></div>
+        <p class="label">Result</p>
+        <div class="change"><p>A prototype with <span class="mark">vendor categories, an events calendar and an exact map</span>, plus room for visitor reviews.</p></div>
+        <p class="note" style="grid-column:1 / -1">Group project with Sanket, MJ, Gouri and Jill.</p>
+      </div>
+    </article>
+    <a class="nextcase" href="#hopin"><span class="label">Next case study</span><b>HopIn <span aria-hidden="true">→</span></b></a>
+  </section>
+
+
+  <section class="view" id="bot-about-to" data-view="bot-about-to" hidden>
+    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
+    <article class="case botto" aria-labelledby="bot2-h">
+      <div class="cover">
+        <div class="intro">
+          <p class="label">Hackathon · City of Toronto Data &amp; AI Innovation Challenge · 2025</p>
+          <h3 id="bot2-h">Bot About TO</h3>
+          <p class="sub">A friendly AI messenger that turns council activity and open data into positive, timely civic stories.</p>
+          <div class="tags"><span class="tag">User research</span><span class="tag">Content strategy</span><span class="tag">Responsible AI</span><span class="tag">Civic tech</span></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>4</strong><span>City divisions on one team</span></div>
+          <div class="stat"><strong>500+</strong><span>open datasets scanned</span></div>
+          <div class="stat"><strong>100+</strong><span>City social accounts connected</span></div>
+          <div class="stat"><strong>6</strong><span>digital strategy principles met</span></div>
+        </div>
+      </div>
+      <div class="tldr" aria-label="Summary">
+        <div><span class="label">Problem</span><p>Too much civic information, and bad news drowns out the good.</p></div>
+        <div><span class="label">What I did</span><p>User research, content strategy and the design process.</p></div>
+        <div><span class="label">Outcome</span><p>A browser-extension concept, tested with real prompts in Microsoft Chat.</p></div>
+        <span class="rt">2 min read</span>
+      </div>
+      <nav class="rail" aria-label="Design process"><button type="button" data-go="bot-about-to-st1"><span>01</span>Research</button><button type="button" data-go="bot-about-to-st2"><span>02</span>Define</button><button type="button" data-go="bot-about-to-st3"><span>03</span>Ideate</button><button type="button" data-go="bot-about-to-st4"><span>04</span>Design</button><button type="button" data-go="bot-about-to-st5"><span>05</span>Test</button><button type="button" data-go="bot-about-to-st6"><span>06</span>Deliver</button></nav>
+      <div class="body">
+        <p class="label">The challenge</p>
+        <div><p>An internal City of Toronto challenge: how can staff use data and AI to serve residents better?</p><p class="note">Team of 4 from Toronto Water, Development Review, the Office of the CISO, and Parks &amp; Recreation (me).</p></div>
+
+        <div class="stage" id="bot-about-to-st1" data-stage="1"><span class="stage-n">01</span><span class="stage-name">Research</span><span class="stage-q">What do people need?</span></div>
+        <p class="label">Why people distrust AI</p>
+        <div>
+          <ul class="findings">
+            <li><b>Surveillance</b>Privacy and transparency feel at odds.</li>
+            <li><b>Loss of control</b>Fear of a system without empathy.</li>
+            <li><b>Past lessons</b>Toronto's Sidewalk Labs "smart city" was not well received.</li>
+          </ul>
+        </div>
+        <p class="label">What's out there</p>
+        <div>
+          <ul class="findings">
+            <li><b>News media</b>Picks and chooses, and negative stories sell.</li>
+            <li><b>toronto.ca &amp; Open Data</b>Rich, but hard to connect to what's in the news.</li>
+            <li><b>Other cities</b>None we researched pulls it all together.</li>
+          </ul>
+        </div>
+
+        <div class="stage" id="bot-about-to-st2" data-stage="2"><span class="stage-n">02</span><span class="stage-name">Define</span><span class="stage-q">What's the real problem?</span></div>
+        <p class="label">The civic story gap</p>
+        <div><p>Council meetings, datasets and 100+ social accounts produce more information than residents can follow, so many only see the negative headlines.</p></div>
+        <div class="gap">
+          <div class="gap-src"><span>Council meetings</span><span>500+ open datasets</span><span>100+ City social accounts</span><span>News media</span></div>
+          <div class="gap-arrow" aria-hidden="true">→</div>
+          <div class="gap-out"><b>What residents see</b><p>Too much to follow, and mostly the negative headlines.</p></div>
+        </div>
+
+        <div class="stage" id="bot-about-to-st3" data-stage="3"><span class="stage-n">03</span><span class="stage-name">Ideate</span><span class="stage-q">What could solve it?</span></div>
+        <p class="label">The idea</p>
+        <div class="change"><p>A friendly messenger that shows how the City is responding to the news, as it happens.</p></div>
+        <p class="label">Design principles</p>
+        <div>
+          <ul class="findings">
+            <li><b>Accessible</b>Plain language, screen-reader and AODA friendly.</li>
+            <li><b>Timely</b>Real-time scans of news and council agendas.</li>
+            <li><b>Trusted</b>Open about the data it uses. Responsible AI.</li>
+          </ul>
+        </div>
+
+        <div class="stage" id="bot-about-to-st4" data-stage="4"><span class="stage-n">04</span><span class="stage-name">Design</span><span class="stage-q">What does it look like?</span></div>
+        <p class="label">How it works</p>
+        <div>
+          <ul class="findings four">
+            <li><b>Browser extension</b>Wakes up on credible news sites.</li>
+            <li><b>Council context</b>Summarises how Council is responding.</li>
+            <li><b>What's next</b>Flags upcoming meetings.</li>
+            <li><b>Stay connected</b>Suggests City social accounts and e-updates.</li>
+          </ul>
+        </div>
+        <div class="browser ext">
+          <div class="bar"><i></i><i></i><i></i><span>news site · Toronto housing story</span></div>
+          <div class="ext-body">
+            <div class="ext-article" aria-hidden="true"><b>Toronto home sales see biggest increase in nine months</b><i></i><i></i><i class="s"></i><i></i><i class="s"></i><i></i><i class="s"></i></div>
+            <div class="ext-panel">
+              <div class="ext-head"><span class="bot-face sm" aria-hidden="true"></span><b>Bot About TO</b></div>
+              <p class="ext-msg">You're reading about housing. Here's what the City is doing:</p>
+              <ul><li>See housing market trends</li><li>Next City Council meeting</li><li>Affordable housing programs</li><li>Ask a question</li></ul>
+              <span class="ext-cta">Open full chat</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="label">The data behind it</p>
+        <div>
+          <div class="mini-stats">
+            <div><strong>Gold</strong><span>grade council and committee schedule data</span></div>
+            <div><strong>500+</strong><span>open datasets matched to each topic</span></div>
+            <div><strong>100+</strong><span>City social accounts to connect people with</span></div>
+          </div>
+        </div>
+
+        <div class="stage" id="bot-about-to-st5" data-stage="5"><span class="stage-n">05</span><span class="stage-name">Test</span><span class="stage-q">Does it work?</span></div>
+        <p class="label">Scaled-down test</p>
+        <div><p>Before building anything, we tested the idea with two prompts in Microsoft Chat, the City's existing AI assistant.</p>
+          <ol class="flow" style="margin-top:18px">
+            <li><b>Prompt 1</b>Pick an urgent council item and summarise it</li>
+            <li><b>Prompt 2</b>Match it to the best open datasets</li>
+            <li><b>Output</b>Gold-grade data, plus gaps to fix</li>
+            <li><b>Insight</b>The Open Data team can use it today</li>
+          </ol>
+        </div>
+        <div class="chat">
+          <div class="chat-q">Find an urgent or widely discussed item on the City Council agenda and match it to open data.</div>
+          <div class="chat-a">
+            <div><span class="label">Summary</span><p>The agenda item, in plain language</p></div>
+            <div><span class="label">Why this one</span><p>Why it was picked as urgent</p></div>
+            <div><span class="label">Best data</span><p>Gold-grade datasets to explore</p></div>
+            <div><span class="label">Watch list</span><p>Lower-grade datasets the Open Data team should improve</p></div>
+          </div>
+          <p class="note">The structure of the real Microsoft Chat output.</p>
+        </div>
+
+        <div class="stage" id="bot-about-to-st6" data-stage="6"><span class="stage-n">06</span><span class="stage-name">Deliver</span><span class="stage-q">What changed?</span></div>
+        <p class="label">Result</p>
+        <div class="change"><p>A feasible plan built on tools the City already has: Microsoft Chat, the Open Data portal and toronto.ca.</p></div>
+        <p class="label">Room to grow</p>
+        <div>
+          <div class="two">
+            <div><b class="mini-h">Scale up</b><ul><li>Multilingual support</li><li>Libraries and live council events</li><li>Federal and other open data</li></ul></div>
+            <div><b class="mini-h">Scale down</b><ul><li>Staff intranet plug-in</li><li>Insights for the Open Data team</li><li>Human checks on every output</li></ul></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-foot">
+        <p>Try the clickable prototype.</p>
+        <a class="btn primary" href="https://www.figma.com/make/SKGeyH4E95rOA9UoRb7aYA/Bot-About-TO---City-of-Toronto-AI-Mascot-Prototype--Copy-?code-node-id=0-9&amp;p=f&amp;fullscreen=1" target="_blank" rel="noopener">Open prototype ↗</a>
+      </div>
+    </article>
+    <a class="nextcase" href="#hopin"><span class="label">Back to the start</span><b>HopIn <span aria-hidden="true">→</span></b></a>
+  </section>
+
+  <section class="view block" id="about" data-view="about" hidden>
+    <div class="sec-head"><h2>About me</h2><p class="label">Experience, education &amp; tools</p></div>
+    <div class="about-grid">
+      <div>
+        <div class="hello">
+          <div>
+            <h3 class="hello-h">Hi, I'm Sushmita.</h3>
+            <p class="hello-sub">Digital strategist · Toronto</p>
+          </div>
+          <svg class="sketch" viewBox="0 0 220 150" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 140h200"/><path d="M30 140V62l80-38 80 38v78"/><path d="M22 66l88-44 88 44"/><path d="M50 140V84a14 14 0 0 1 28 0v56M96 140V80a14 14 0 0 1 28 0v60M142 140V84a14 14 0 0 1 28 0v56"/><path d="M98 50h24v14H98z"/><path d="M110 24V10"/><path d="M110 10l12 4-12 4"/><path d="M36 108h8M176 108h8M36 120h8M176 120h8"/></svg>
+        </div>
+        <div class="hello-text">
+          <p>I studied business in India, started my career at Amazon, then moved to Canada to study analytics and interactive media. Since then I've worked in very different places: client services at the City of Toronto, and now research consulting at Revolution X Studio, where my work runs from police websites to startup pitches.</p>
+          <p>What ties it together is people. I like talking to users, finding the moment they get stuck, and fixing it with clearer words, simpler screens and honest data.</p>
+          <p>Outside work I teach yoga, and I'm usually sketching buildings: old facades, bridges, anything with good lines. Both teach me to notice structure, which turns out to be most of design.</p>
+        </div>
+
+        <div class="skills">
+          <p class="label">Tools I use</p>
+          <div class="tools"><span>Figma</span><span>Miro</span><span>Maze</span><span>Notion</span><span>Google Forms</span><span>Excel (advanced)</span><span>SQL</span><span>Salesforce</span><span>SharePoint</span><span>Confluence</span><span>Adobe tools</span><span>Canva</span><span>Mailchimp</span><span>Google Analytics</span><span>CMS</span></div>
+        </div>
+        <div class="skills">
+          <p class="label">Skills</p>
+          <div class="tools"><span>User interviews</span><span>Surveys</span><span>Personas</span><span>Journey mapping</span><span>Wireframing</span><span>Prototyping</span><span>Usability testing</span><span>Content strategy</span><span>Brand strategy</span><span>Brand guidelines</span><span>Competitive analysis</span><span>Data analysis</span><span>Data-driven presentations</span><span>Pitch decks</span><span>Social media strategy</span><span>Content calendars</span><span>Visual design</span><span>Short-form video &amp; reels</span><span>SOP &amp; documentation writing</span><span>Stakeholder communication</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="res-head"><p class="label" id="resume">Experience</p><button type="button" class="btn primary dl-cv">Download resume (PDF)</button></div>
+        <p class="dl-msg" aria-live="polite"></p>
+        <ol class="timeline">
+          <li><time>Current</time><div><h4>Research Consultant</h4><p class="org">Revolution X Studio</p><p>User research, insights and digital strategy for government and tech clients, including the TGCSB websites. Reports and presentations for senior officials.</p></div></li>
+          <li><time>2023 – Present</time><div><h4>Client Services Representative</h4><p class="org">City of Toronto · Permits &amp; Bookings</p><p>First point of contact for residents and councillors' offices. Process permits and bookings, and report on facility use.</p></div></li>
+          <li><time>2022 – 2023</time><div><h4>Transaction Risk Investigator</h4><p class="org">Amazon</p><p>Investigated fraud cases and wrote SOPs used by global teams. Cut turnaround time by 20%.</p></div></li>
+          <li><time>2021 – 2022</time><div><h4>Transportation Specialist</h4><p class="org">Amazon</p><p>UK freight scheduling, automated planning and KPI reports.</p></div></li>
+        </ol>
+
+        <p class="label" style="margin-top:36px">Education</p>
+        <ol class="timeline">
+          <li><time>2024</time><div><h4>PG Certificate, Interactive Media Management</h4><p class="org">Centennial College</p><p>UX workshops, design challenges and the HopIn case study.</p></div></li>
+          <li><time>2023</time><div><h4>PG Certificate, Business Analytics</h4><p class="org">Conestoga College</p><p>Descriptive and diagnostic analytics: turning data into insights for business decisions.</p></div></li>
+          <li><time>2018 – 2021</time><div><h4>Bachelor's in Business, Marketing &amp; HR</h4><p class="org">ICFAI Business School</p><p>Marketing, project management, data analysis and design thinking.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <p class="label">Contact</p>
+    <h2 style="margin-top:12px">Let's make something easier to use.</h2>
+    <p style="margin-top:16px;max-width:52ch;color:var(--muted)">I'm open to digital strategy, branding and UX roles. The fastest way to reach me is email.</p>
+    <div class="contact-row">
+      <span class="email" id="email">saisushmita999@gmail.com</span>
+      <button class="btn primary" id="copy" type="button">Copy email</button>
+      <a class="btn" href="https://www.linkedin.com/in/saisushmitakarri/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn" href="https://www.instagram.com/Sushmit.a" target="_blank" rel="noopener">Instagram ↗</a>
+    </div>
+    <p class="copied" id="copied" aria-live="polite"></p>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 Sushmita Karri</div></footer>
+
+<script>
+document.getElementById('copy').addEventListener('click', function(){
+  var t = document.getElementById('email').textContent.trim(), msg = document.getElementById('copied');
+  function sel(){ var r=document.createRange(); r.selectNodeContents(document.getElementById('email')); var s=getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent='Email selected. Press Ctrl+C or ⌘C to copy.'; }
+  try { navigator.clipboard.writeText(t).then(function(){ msg.textContent='Email copied.'; }, sel); } catch(e){ sel(); }
+});
+</script>
+
+<script>
+(function(){
+  var views=[].slice.call(document.querySelectorAll('.view[data-view]'));
+  var names=views.map(function(v){return v.getAttribute('data-view')});
+  var baseTitle=document.title;
+  function show(){
+    var h=(location.hash||'').slice(1);
+    var alias={resume:'about'}; var target=alias[h]||(names.indexOf(h)>-1&&h!=='home'?h:'home');
+    views.forEach(function(v){v.hidden=v.getAttribute('data-view')!==target});
+    document.querySelectorAll('[data-nav]').forEach(function(a){ if(a.getAttribute('data-nav')===target) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+    if(target==='home'){
+      document.title=baseTitle;
+      var el=h&&document.getElementById(h);
+      if(el){ el.scrollIntoView(); } else { window.scrollTo(0,0); }
+    } else {
+      var hd=document.querySelector('#'+target+' h2, #'+target+' h3');
+      document.title=(hd?hd.textContent+' · ':'')+baseTitle;
+      var a=alias[h]&&document.getElementById(h);
+      if(a){ a.scrollIntoView(); } else { window.scrollTo(0,0); }
+    }
+  }
+  window.addEventListener('hashchange',show); show();
+
+  document.querySelectorAll('.chips').forEach(function(group){
+    var wrap=group.parentNode, table=wrap.querySelector('table.matrix');
+    group.addEventListener('click',function(e){
+      var b=e.target.closest('.chip'); if(!b) return;
+      var col=b.getAttribute('data-col');
+      group.querySelectorAll('.chip').forEach(function(c){var on=c===b; c.classList.toggle('on',on); c.setAttribute('aria-pressed',on)});
+      table.querySelectorAll('[data-col]').forEach(function(c){var k=c.getAttribute('data-col'); c.classList.toggle('dim', col!=='all' && k!==col && k!=='tg'); c.classList.toggle('hl', col!=='all' && k===col)});
+      wrap.querySelectorAll('.take').forEach(function(t){t.hidden=t.getAttribute('data-col')!==col});
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var S=[{"src": "img/zatch/s1.jpg", "t": "The hook", "c": "Shop live. Bargain real. Buy instantly."}, {"src": "img/zatch/s2.jpg", "t": "The problem", "c": "Told from the buyer's side"}, {"src": "img/zatch/s4.jpg", "t": "Why it's broken", "c": "The real buyer journey, step by step"}, {"src": "img/zatch/s5.jpg", "t": "The solution", "c": "Buyers and sellers, side by side"}, {"src": "img/zatch/s7.jpg", "t": "The product", "c": "Features as quick, scannable icons"}, {"src": "img/zatch/s9.jpg", "t": "The competition", "c": "Four rivals in one row"}, {"src": "img/zatch/s11.jpg", "t": "The big idea", "c": "Giving it a name: \"Zatching\""}, {"src": "img/zatch/s12.jpg", "t": "Why now", "c": "Market data with sources"}, {"src": "img/zatch/s13.jpg", "t": "The money", "c": "Business model in four numbers"}, {"src": "img/zatch/s14.jpg", "t": "What's next", "c": "Roadmap from MVP to national launch"}], i=0, img=document.getElementById('zimg'); if(!img) return;
+  var th=[].slice.call(document.querySelectorAll('.zt'));
+  function go(n){ i=(n+S.length)%S.length; img.src=S[i].src; img.alt='Zatch pitch deck slide: '+S[i].t;
+    document.getElementById('zt').textContent=S[i].t; document.getElementById('zc').textContent=S[i].c;
+    document.getElementById('zcount').textContent=String(i+1).padStart(2,'0')+' / '+String(S.length).padStart(2,'0');
+    th.forEach(function(b,k){b.classList.toggle('on',k===i); if(k===i) b.scrollIntoView({block:'nearest',inline:'nearest'});}); }
+  document.getElementById('zprev').onclick=function(){go(i-1)}; document.getElementById('znext').onclick=function(){go(i+1)};
+  th.forEach(function(b,k){b.onclick=function(){go(k)}});
+  document.addEventListener('keydown',function(e){ if(document.getElementById('zatch').hidden) return; if(e.key==='ArrowRight') go(i+1); if(e.key==='ArrowLeft') go(i-1); });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.rail').forEach(function(rail){
+    var btns=[].slice.call(rail.querySelectorAll('button[data-go]'));
+    rail.addEventListener('click',function(e){var b=e.target.closest('button[data-go]'); if(!b||b.disabled) return; var t=document.getElementById(b.getAttribute('data-go')); if(t) t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});});
+    var targets=btns.map(function(b){return document.getElementById(b.getAttribute('data-go'))});
+    function upd(){ var cur=-1; targets.forEach(function(t,i){ if(t && t.getBoundingClientRect().top<300) cur=i; }); btns.forEach(function(b,i){b.classList.toggle('on',i===cur)}); }
+    window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('hashchange',function(){setTimeout(upd,50)}); upd();
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.dl-cv'));
+  var msg=document.querySelector('.dl-msg');
+  function say(t){ if(msg) msg.textContent=t; }
+  async function get(){ try{ return window.claude ? await window.claude.use('downloads') : null; }catch(e){ return null; } }
+  btns.forEach(function(b){ b.addEventListener('click', async function(){
+    var d=await get();
+    if(!d){ window.open('files/Sushmita_Karri_Resume.pdf','_blank'); return; }
+    try{
+      var r=await fetch('files/Sushmita_Karri_Resume.pdf'); var blob=await r.blob();
+      await d.save({filename:'Sushmita_Karri_Resume.pdf', data:blob});
+      say('Resume saved.');
+    }catch(e){
+      if(e && e.code==='declined') say('');
+      else if(e && e.code==='rate_limited') say('One moment, then try again.');
+      else say('Download isn\'t available here. Email me and I\'ll send it.');
+    }
+  }); });
+})();
+</script>
+
+</body>
+</html>
