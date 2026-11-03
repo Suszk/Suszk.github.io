@@ -567,6 +567,12 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 .showmore:hover{background:var(--fg);color:var(--bg)}
 .avail{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:8px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px;font-weight:500}
 .avail i{width:8px;height:8px;border-radius:50%;background:#1f9d55;box-shadow:0 0 0 3px rgba(31,157,85,.18)}
+.wgrid .wmedia{position:relative}
+.wgrid .wmedia img{object-position:center;background:transparent;transition:transform .35s ease}
+.wgrid .wcard:hover .wmedia img,.wgrid .wcard:focus-visible .wmedia img{transform:scale(1.04)}
+.wgrid .wmedia::after{content:"View case study \2192";position:absolute;right:16px;bottom:16px;padding:10px 16px;border-radius:999px;background:var(--fg);color:var(--bg);font:600 14px var(--body);opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s}
+.wgrid .wcard:hover .wmedia::after,.wgrid .wcard:focus-visible .wmedia::after{opacity:1;transform:none}
+@media (hover:none){.wgrid .wmedia::after{opacity:1;transform:none}}
 .rolegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .rolecard{display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:18px;background:var(--surface);border:1.5px solid var(--line);text-decoration:none;color:var(--fg);transition:transform .15s ease,border-color .15s ease}
 .rolecard:hover{transform:translateY(-2px);border-color:var(--fg)}
@@ -621,19 +627,19 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 
     <div class="wgrid">
       <a class="wcard feat" href="#tgcsb">
-        <div class="wmedia"><img src="img/tg-contact.jpg" alt="TGCSB contact page with 1930 helpline" loading="lazy"></div>
+        <div class="wmedia"><img src="img/cover-tg.jpg" alt="TGCSB citizen website in a browser, with the 1930 helpline and reading-ease highlights" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">Government websites · Strategy</p><h3>A police brand where help is one click away, on every page</h3><p>Telangana Cyber Security Bureau: a citizen site, a national hackathon and a conclave, checked against 5 cybercrime agencies.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
       <a class="wcard feat alt" href="#hopin">
-        <div class="wmedia"><img src="img/hopin-before-after.jpg" alt="HopIn home screen before and after usability testing" loading="lazy"></div>
+        <div class="wmedia"><img src="img/cover-hop.jpg" alt="Redesigned HopIn home screen on a phone, with research highlights" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">Mobile app · Senior project · Research to prototype</p><h3>Commuters said trust mattered more than price. So I redesigned carpooling around it.</h3><p>HopIn, a neighbourhood carpooling app: 7 interviews, 25 surveys, 7 usability tests.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
       <a class="wcard" href="#bot-about-to">
-        <div class="wmedia"><div class="scr bt mini"><span class="k">City of Toronto · AI challenge</span><b>Bot About TO</b><span class="pill" style="background:#fff;color:#1E3A8A">Ask about Toronto</span></div></div>
+        <div class="wmedia"><img src="img/cover-bot.jpg" alt="Bot About TO chat widget suggesting City data next to a Toronto news article" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">Hackathon · Civic tech · Team of 4</p><h3>An AI messenger that turns council news into stories residents trust</h3><p>Bot About TO: City of Toronto Data &amp; AI Innovation Challenge, 2025.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
       <a class="wcard" href="#zatch">
-        <div class="wmedia"><img src="img/zatch/s11.jpg" alt="Zatching: a buyer and seller agreeing on a price in the app" loading="lazy"></div>
+        <div class="wmedia"><img src="img/cover-za.jpg" alt="Three Zatch Instagram posts in lime and black" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">App design · Brand building</p><h3>What if online shopping let you bargain like a real bazaar?</h3><p>Zatch: a live shopping app for India, from buyer and seller research to features, market and roadmap.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
     </div>
