@@ -525,6 +525,26 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 .galrow img{flex:0 0 auto;height:300px;width:auto;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start;background:var(--surface)}
 .galrow img.wide{height:220px}.galrow img.sq{height:220px}
 @media (max-width:520px){.galrow img{height:240px}.galrow img.wide,.galrow img.sq{height:170px}}
+
+.toolkit{margin-top:28px}.toolkit>p.label{margin:0 0 10px}
+.tkgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.tk{display:flex;flex-direction:column;gap:4px;padding:14px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;color:var(--fg);transition:border-color .15s}
+.tk:hover{border-color:var(--fg)}.tk b{font-size:15px;line-height:1.2}.tk span{font-size:13px;color:var(--muted)}.tk em{font-style:normal;font-size:12.5px;font-weight:600;color:var(--accent);margin-top:auto}
+@media (max-width:980px){.tkgrid{grid-template-columns:repeat(3,1fr)}}@media (max-width:520px){.tkgrid{grid-template-columns:1fr 1fr}}
+.case.sbp .stats,.case.sb .stats{background:#1f3b36;color:#fff}.case.sbp .stat,.case.sb .stat{border-color:rgba(255,255,255,.2)}
+.bp{display:grid;grid-template-columns:150px repeat(5,minmax(170px,1fr));min-width:1000px;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13.5px;line-height:1.4}
+.bp>div{padding:10px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
+.bp>.h{font-weight:700;background:var(--surface)}.bp>.rl{font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:var(--surface)}
+.bp>.ln{grid-column:1/-1;padding:4px 12px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px) bottom/100% 1px no-repeat,var(--bg)}
+.bp>.pain{background:#fdecea;color:#7a1f16}.bp>.opp{background:#e8f5ee;color:#14532d}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bp>.pain{background:#3a1d1a;color:#f6c9c3}:root:not([data-theme="light"]) .bp>.opp{background:#16301f;color:#bfe8cc}}
+:root[data-theme="dark"] .bp>.pain{background:#3a1d1a;color:#f6c9c3}:root[data-theme="dark"] .bp>.opp{background:#16301f;color:#bfe8cc}
+.sboard{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0;margin:0;list-style:none}
+.sboard li{border:1.5px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg)}
+.sboard figure{margin:0;aspect-ratio:4/3;display:grid;place-items:center;background:var(--surface);border-bottom:1.5px solid var(--line)}
+.sboard svg{width:58%;height:auto;stroke:var(--fg);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.sboard svg .ac{stroke:var(--accent)}.sboard .cap{padding:12px 14px}.sboard .cap b{display:block;font-size:15px}.sboard .cap span{font-size:14px;color:var(--muted)}.sboard .n{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.06em}
+@media (max-width:860px){.sboard{grid-template-columns:1fr 1fr}}@media (max-width:520px){.sboard{grid-template-columns:1fr}}
 .rolegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .rolecard{display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:18px;background:var(--surface);border:1.5px solid var(--line);text-decoration:none;color:var(--fg);transition:transform .15s ease,border-color .15s ease}
 .rolecard:hover{transform:translateY(-2px);border-color:var(--fg)}
@@ -607,8 +627,22 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
     </ol>
   </div>
 
+    <div class="toolkit">
+      <p class="label">Service design toolkit · where to see each deliverable</p>
+      <div class="tkgrid">
+        <a class="tk" href="#service-blueprint"><b>Service blueprint</b><span>Frontstage, backstage and support for a City permit</span><em>Concept →</em></a>
+        <a class="tk" href="#hopin"><b>Journey maps</b><span>HopIn and St Lawrence Market</span><em>HopIn →</em></a>
+        <a class="tk" href="#storyboard"><b>Storyboard</b><span>Emma's commute, frame by frame</span><em>Concept →</em></a>
+        <a class="tk" href="#hopin"><b>Wireframes</b><span>Low-fi to polished Figma screens</span><em>HopIn →</em></a>
+        <a class="tk" href="#tgcsb"><b>Sitemap &amp; IA</b><span>A police site rebuilt around tasks</span><em>TGCSB →</em></a>
+        <a class="tk" href="#hopin"><b>Personas</b><span>4 personas from 7 interviews and 25 surveys</span><em>HopIn →</em></a>
+      </div>
+    </div>
+
     <h3 class="subhead">More projects &amp; concepts</h3>
     <div class="more three" style="margin-top:16px">
+      <a class="proj proj-link" href="#service-blueprint"><p class="label">Concept · Service design</p><h3>City permit service blueprint</h3><p>Booking a City facility, mapped from the resident's first search to the day of the event.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link" href="#storyboard"><p class="label">Concept · Storyboard</p><h3>HopIn storyboard</h3><p>Six frames showing why a stressed commuter tries carpooling, and what makes her stay.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link" href="#audit-311"><p class="label">Self-initiated · UX audit</p><h3>311 Toronto website</h3><p>A heuristic review of the City's help page, with three fixes.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link" href="#tgcsb-copy"><p class="label">UX writing</p><h3>TGCSB plain-language rewrite</h3><p>Reading ease from 16 to 64, with the 1930 helpline up front.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link" href="#securacy"><p class="label">B2B SaaS · Messaging</p><h3>Securacy</h3><p>Explaining AI threat modeling to engineers and executives in one scroll.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
@@ -646,7 +680,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
   <section class="block roles-sec" aria-labelledby="roles-h">
     <div class="sec-head"><h2 id="roles-h">Roles I can step into</h2><p class="label">Adaptive, multifunctional, always learning</p></div>
     <p class="roles-lead">I've moved from fraud analytics at Amazon to public services at the City of Toronto to UX and brand work, and I pick up new tools fast. Here's where my work fits.</p>
-    <div class="rolegrid"><a class="rolecard" href="#hopin"><b>UX Research</b><span>Interviews, surveys, usability tests, Maze studies</span><em>See: HopIn →</em></a><a class="rolecard" href="#tgcsb-copy"><b>Content Design &amp; UX Writing</b><span>Plain language, microcopy, messaging</span><em>See: TGCSB rewrite →</em></a><a class="rolecard" href="#tgcsb"><b>Service Design</b><span>Journeys, sitemaps, public services</span><em>See: TGCSB →</em></a><a class="rolecard" href="#zatch"><b>Product Design</b><span>Wireframes to polished Figma prototypes</span><em>See: Zatch →</em></a><a class="rolecard" href="#zatch-social"><b>Content &amp; Social Strategy</b><span>Calendars, posts, carousels and engagement tracking for SHIELD, TGCSB, Zatch and others</span><em>See: Zatch launch plan →</em></a><a class="rolecard" href="#zatch-brand"><b>Digital Marketing &amp; Brand</b><span>Brand guidelines, ads, posters, event collateral, pitch decks</span><em>See: Zatch brand →</em></a><a class="rolecard" href="#resume"><b>Research &amp; Data Analysis</b><span>SQL, Excel, dashboards, fraud analytics</span><em>See: Experience →</em></a><a class="rolecard" href="#bot-about-to"><b>Project &amp; Stakeholder Coordination</b><span>Cross-team work with councillors and officials</span><em>See: Bot About TO →</em></a></div>
+    <div class="rolegrid"><a class="rolecard" href="#hopin"><b>UX Research</b><span>Interviews, surveys, usability tests, Maze studies</span><em>See: HopIn →</em></a><a class="rolecard" href="#tgcsb-copy"><b>Content Design &amp; UX Writing</b><span>Plain language, microcopy, messaging</span><em>See: TGCSB rewrite →</em></a><a class="rolecard" href="#service-blueprint"><b>Service Design</b><span>Blueprints, journeys, storyboards, sitemaps, public services</span><em>See: Service blueprint →</em></a><a class="rolecard" href="#zatch"><b>Product Design</b><span>Wireframes to polished Figma prototypes</span><em>See: Zatch →</em></a><a class="rolecard" href="#zatch-social"><b>Content &amp; Social Strategy</b><span>Calendars, posts, carousels and engagement tracking for SHIELD, TGCSB, Zatch and others</span><em>See: Zatch launch plan →</em></a><a class="rolecard" href="#zatch-brand"><b>Digital Marketing &amp; Brand</b><span>Brand guidelines, ads, posters, event collateral, pitch decks</span><em>See: Zatch brand →</em></a><a class="rolecard" href="#resume"><b>Research &amp; Data Analysis</b><span>SQL, Excel, dashboards, fraud analytics</span><em>See: Experience →</em></a><a class="rolecard" href="#bot-about-to"><b>Project &amp; Stakeholder Coordination</b><span>Cross-team work with councillors and officials</span><em>See: Bot About TO →</em></a></div>
   </section>
 
 
@@ -1708,6 +1742,64 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
     <a class="nextcase" href="#hopin"><span class="label">Next</span><b>HopIn <span aria-hidden="true">→</span></b></a>
   </section>
 
+  <section class="view" id="service-blueprint" data-view="service-blueprint" hidden>
+    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
+    <article class="case sbp" aria-labelledby="sbp-h">
+      <div class="cover">
+        <div class="intro">
+          <p class="label">Concept · Service design</p>
+          <h3 id="sbp-h">Booking a City facility: a service blueprint</h3>
+          <p class="sub">What a resident sees, what happens behind the scenes, and where the process breaks, on one page.</p>
+          <div class="tags"><span class="tag">Service blueprint</span><span class="tag">Front-line insight</span><span class="tag">Plain language</span></div>
+        </div>
+        <div class="stats"><div class="stat"><strong>5</strong><span>stages mapped</span></div><div class="stat"><strong>3</strong><span>lines: interaction, visibility, internal</span></div><div class="stat"><strong>5</strong><span>opportunities</span></div></div>
+      </div>
+      <div class="body">
+        <p class="label">Why</p>
+        <div><p>I answer residents' questions about permits and bookings every day. The same questions come up again and again, and most of them start before the resident ever contacts us. A blueprint shows where.</p><p class="note">Concept based on the public booking process and my front-line experience. It is not an official City of Toronto document and includes no internal data.</p></div>
+        <p class="label">The blueprint</p>
+        <div class="scroll-x"><div class="bp" role="table" aria-label="Service blueprint for booking a City facility"><div class="rl">Stage</div><div class="h">1. Find out</div><div class="h">2. Request</div><div class="h">3. Review &amp; quote</div><div class="h">4. Pay &amp; get permit</div><div class="h">5. Event day</div><div class="rl">Evidence</div><div class="">City webpage, facility listings</div><div class="">Online form or email confirmation</div><div class="">Email with quote and conditions</div><div class="">Payment receipt, permit PDF</div><div class="">Permit on hand, signage at the site</div><div class="rl">Resident actions</div><div class="">Searches for a space, checks dates and rules</div><div class="">Submits date, space, group size and purpose</div><div class="">Reads the conditions; sends insurance or extra details</div><div class="">Pays and saves the permit</div><div class="">Arrives, sets up, runs the event</div><div class="ln">Line of interaction</div><div class="rl">Frontstage</div><div class="">Website content and facility pages</div><div class="">Client services by phone and email</div><div class="">Rep explains requirements and next steps</div><div class="">Payment confirmation and permit email</div><div class="">Site staff check the permit</div><div class="ln">Line of visibility</div><div class="rl">Backstage</div><div class="">Content kept up to date by the division</div><div class="">Rep checks availability and policy</div><div class="">Coordination with the facility and other divisions</div><div class="">Permit issued and filed</div><div class="">Issues logged after the event</div><div class="ln">Line of internal interaction</div><div class="rl">Support systems</div><div class="">City website</div><div class="">Booking system (ActiveNet)</div><div class="">Policies on SharePoint, insurance rules</div><div class="">Payment processing</div><div class="">Facility operations</div><div class="rl">Pain points</div><div class="pain">Rules and fees spread across pages</div><div class="pain">Residents don't know what details we need</div><div class="pain">Back-and-forth emails over missing documents</div><div class="pain">Permit wording is dense</div><div class="pain">Questions on the day go to voicemail</div><div class="rl">Opportunities</div><div class="opp">One page: rules, fees and a checklist</div><div class="opp">Ask for everything up front, in plain language</div><div class="opp">Status updates so people stop chasing</div><div class="opp">A one-page permit summary</div><div class="opp">An event-day contact on the permit</div></div></div>
+        <p class="label">What I'd test first</p>
+        <div>
+          <ol class="flow">
+            <li><b>Checklist</b>A plain-language "what you'll need" list before the form</li>
+            <li><b>Status</b>Automatic updates at each step</li>
+            <li><b>Summary</b>A one-page permit with the key conditions</li>
+            <li><b>Measure</b>Fewer follow-up emails per booking</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+    <a class="nextcase" href="#storyboard"><span class="label">Next</span><b>HopIn storyboard <span aria-hidden="true">→</span></b></a>
+  </section>
+  <section class="view" id="storyboard" data-view="storyboard" hidden>
+    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
+    <article class="case sb" aria-labelledby="sb-h">
+      <div class="cover">
+        <div class="intro">
+          <p class="label">Concept · Storyboard</p>
+          <h3 id="sb-h">HopIn: Emma's commute, in six frames</h3>
+          <p class="sub">A storyboard built from the HopIn research, so the team could see the problem as a story before looking at screens.</p>
+          <div class="tags"><span class="tag">Storyboard</span><span class="tag">Persona</span><span class="tag">Research synthesis</span></div>
+        </div>
+        <div class="stats"><div class="stat"><strong>6</strong><span>frames</span></div><div class="stat"><strong>1</strong><span>persona: Emma, 28</span></div><div class="stat"><strong>2</strong><span>moments that decide it: trust and time</span></div></div>
+      </div>
+      <div class="body">
+        <p class="label">The story</p>
+        <div><ol class="sboard"><li><figure><svg viewBox="0 0 100 90" aria-hidden="true"><rect x="14" y="10" width="72" height="56" rx="8"/><path d="M14 40h72M30 66v10M70 66v10"/><circle cx="30" cy="54" r="4"/><circle cx="70" cy="54" r="4"/><path class="ac" d="M50 84v-8"/></svg></figure><div class="cap"><span class="n">FRAME 1</span><b>7:40 am, again</b><span>Emma's bus is full. The next one is 20 minutes away.</span></div></li><li><figure><svg viewBox="0 0 100 90" aria-hidden="true"><circle cx="50" cy="48" r="32"/><path class="ac" d="M50 30v18l12 8"/><path d="M28 14l-10 8M72 14l10 8"/></svg></figure><div class="cap"><span class="n">FRAME 2</span><b>Late, every week</b><span>Transit takes almost twice as long as driving. She's stressed before work starts.</span></div></li><li><figure><svg viewBox="0 0 100 90" aria-hidden="true"><rect x="32" y="8" width="36" height="72" rx="6"/><path d="M44 70h12"/><path class="ac" d="M40 30h20M40 40h14M40 50h20"/></svg></figure><div class="cap"><span class="n">FRAME 3</span><b>Someone mentions HopIn</b><span>She checks the app. A neighbour drives her route at 7:50.</span></div></li><li><figure><svg viewBox="0 0 100 90" aria-hidden="true"><path d="M50 10l30 10v24c0 20-14 32-30 38-16-6-30-18-30-38V20z"/><path class="ac" d="M37 46l9 9 17-18"/></svg></figure><div class="cap"><span class="n">FRAME 4</span><b>Can she trust a stranger?</b><span>Verified profiles, reviews and a shared trip status help her say yes.</span></div></li><li><figure><svg viewBox="0 0 100 90" aria-hidden="true"><path d="M14 58l8-20h56l8 20v14H14z"/><circle cx="30" cy="72" r="6"/><circle cx="70" cy="72" r="6"/><path class="ac" d="M36 38l4-10h20l4 10"/></svg></figure><div class="cap"><span class="n">FRAME 5</span><b>The first ride</b><span>Booked in a few taps. The driver arrives on time, and the cost is split.</span></div></li><li><figure><svg viewBox="0 0 100 90" aria-hidden="true"><path class="ac" d="M50 12l11 23 25 3-18 17 5 25-23-12-23 12 5-25-18-17 25-3z"/></svg></figure><div class="cap"><span class="n">FRAME 6</span><b>She keeps using it</b><span>She rates the ride and books the same driver for next week.</span></div></li></ol></div>
+        <p class="label">What it showed</p>
+        <div>
+          <ul class="findings">
+            <li><b>Trust comes first</b>Frame 4 is where people drop off. Commuters told us trust mattered more than price.</li>
+            <li><b>Time is the trigger</b>The switch starts with a late bus, not a discount.</li>
+            <li><b>Habit is the goal</b>Rebooking the same driver turns one ride into a routine.</li>
+          </ul>
+        </div>
+        <p class="note">Concept storyboard based on the HopIn persona and interview themes. <a href="#hopin">See the full HopIn case study →</a></p>
+      </div>
+    </article>
+    <a class="nextcase" href="#hopin"><span class="label">Next case study</span><b>HopIn <span aria-hidden="true">→</span></b></a>
+  </section>
   <section class="view block" id="about" data-view="about" hidden>
     <div class="sec-head"><h2>About me</h2><p class="label">Experience, education &amp; tools</p></div>
     <div class="about-grid">
