@@ -164,6 +164,10 @@ table.cmp td.y{color:var(--green);font-weight:600} table.cmp td.n{color:var(--mu
 
 /* more projects */
 .more{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.more.three{grid-template-columns:repeat(3,1fr)}
+.process.inwork{margin-top:40px}
+@media (max-width:1100px){.more.three{grid-template-columns:1fr 1fr}}
+@media (max-width:860px){.more.three{grid-template-columns:1fr}}
 .proj{background:var(--surface);border:1.5px solid var(--fg);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
 .proj h3{font-size:30px;font-weight:800;letter-spacing:-.015em}
 .swatches{display:grid;grid-template-columns:repeat(6,1fr);border-radius:10px;overflow:hidden;border:1px solid var(--line)}
@@ -591,11 +595,27 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
       </a>
     </div>
 
-    <h3 class="subhead">More projects</h3>
-    <div class="more" style="margin-top:16px">
+  <div class="process inwork" aria-labelledby="process-h">
+    <p class="label" id="process-h">How I work · every case study follows these steps</p>
+    <ol class="steps">
+      <li><span class="label">01</span><b>Research</b><span>Interviews, surveys, competitors</span></li>
+      <li><span class="label">02</span><b>Define</b><span>Personas, journeys, the real problem</span></li>
+      <li><span class="label">03</span><b>Ideate</b><span>Concepts and a clear USP</span></li>
+      <li><span class="label">04</span><b>Design</b><span>Wireframes to polished screens</span></li>
+      <li><span class="label">05</span><b>Test</b><span>Usability rounds, then fix</span></li>
+      <li><span class="label">06</span><b>Deliver</b><span>Launch, measure, pitch</span></li>
+    </ol>
+  </div>
+
+    <h3 class="subhead">More projects &amp; concepts</h3>
+    <div class="more three" style="margin-top:16px">
+      <a class="proj proj-link" href="#audit-311"><p class="label">Self-initiated · UX audit</p><h3>311 Toronto website</h3><p>A heuristic review of the City's help page, with three fixes.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link" href="#tgcsb-copy"><p class="label">UX writing</p><h3>TGCSB plain-language rewrite</h3><p>Reading ease from 16 to 64, with the 1930 helpline up front.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link" href="#securacy"><p class="label">B2B SaaS · Messaging</p><h3>Securacy</h3><p>Explaining AI threat modeling to engineers and executives in one scroll.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link" href="#green-campus"><p class="label">Website revamp · Team of 4</p><h3>Green Campus Co-op</h3><p>Making fair trade easy to understand and buy for a York University co-op.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link" href="#st-lawrence"><p class="label">Website redesign · Group project</p><h3>St Lawrence Market</h3><p>Planning a market visit around a busy parent's weekend.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link" href="#zatch-brand"><p class="label">Brand identity</p><h3>Zatch brand guidelines</h3><p>Colour, type, voice and the word "Zatch", in one page of rules.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link" href="#zatch-social"><p class="label">Concept · Social strategy</p><h3>Zatch launch content plan</h3><p>Four content pillars, a two-week calendar and sample posts.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
       <article class="proj" aria-labelledby="tif-h">
         <p class="label">Brand study</p>
         <h3 id="tif-h">Tiffany &amp; Co. brand guidelines</h3>
@@ -610,25 +630,17 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         </div>
       </article>
     </div>
-
-    <h3 class="subhead">Concept &amp; self-initiated work</h3>
-    <div class="more" style="margin-top:16px">
-      <a class="proj proj-link" href="#audit-311"><p class="label">Self-initiated · UX audit</p><h3>311 Toronto website</h3><p>A heuristic review of the City's help page, with three fixes.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
-      <a class="proj proj-link" href="#tgcsb-copy"><p class="label">UX writing</p><h3>TGCSB plain-language rewrite</h3><p>Reading ease from 16 to 64, with the 1930 helpline up front.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
-      <a class="proj proj-link" href="#zatch-brand"><p class="label">Brand identity</p><h3>Zatch brand guidelines</h3><p>Colour, type, voice and the word "Zatch", in one page of rules.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
-      <a class="proj proj-link" href="#zatch-social"><p class="label">Concept · Social strategy</p><h3>Zatch launch content plan</h3><p>Four content pillars, a two-week calendar and sample posts.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
-    </div>
   </section>
 
 
   <section class="block gal-sec" aria-labelledby="gal-h">
     <div class="sec-head"><h2 id="gal-h">Social, campaign &amp; print design</h2><p class="label">Made in Canva · real client work</p></div>
     <p class="gal-lead">Alongside research, I design what people actually see: social posts, carousels, event collateral and brand marks. Swipe through each set.</p>
-    <div class="galgrp"><h3>Zatch Instagram</h3><p>Posts for <a href="https://www.instagram.com/zatch.shop/" target="_blank" rel="noopener">@zatch.shop</a>, the live-bargain shopping app: a "Zatch Hours" launch teaser, bargaining one-liners and festive posts, all in one lime-and-black system.</p><div class="galrow"><img src="img/canva/zatch-hours-soon.jpg" alt="Zatch Hours coming soon teaser post" loading="lazy"><img src="img/canva/zatch-hours.jpg" alt="Zatch Hours explainer post" loading="lazy"><img src="img/canva/zatch-roadster.jpg" alt="The roadster might not land, but your price will post" loading="lazy"><img src="img/canva/zatch-calc.jpg" alt="Based on our calculations, you need Zatch post" loading="lazy"><img src="img/canva/zatch-muse.jpg" alt="Muse said let me zatch that post" loading="lazy"><img src="img/canva/zatch-sensitive.jpg" alt="Sensitive content, deals that might be dangerously good post" loading="lazy"><img src="img/canva/zatch-dussehra.jpg" alt="Happy Dussehra festive post" loading="lazy"></div></div>
-    <div class="galgrp"><h3>SHIELD 2026 launch campaign</h3><p>Instagram and LinkedIn posts announcing CipherSprint, the Telangana Police national cyber-innovation challenge. One visual system for the grant call, the Technology Experience Zone and the student track.</p><div class="galrow"><img src="img/canva/shield-1.jpg" alt="SHIELD 2026 CipherSprint launch post" loading="lazy"><img src="img/canva/shield-3.jpg" alt="Student Innovation Track announcement post" loading="lazy"><img src="img/canva/shield-2.jpg" alt="Technology Experience Zone post" loading="lazy"></div></div>
-    <div class="galgrp"><h3>Cyber-safety awareness carousel</h3><p>A four-slide Sankranti festival scam alert for TGCSB, in English and Telugu: the scams, how they work, what to do right away and how to report. Plain language, helpline on every slide.</p><div class="galrow"><img src="img/canva/sank-1.jpg" alt="Common Sankranthi season cyber scams slide" loading="lazy"><img src="img/canva/sank-2.jpg" alt="How the fraud happens slide" loading="lazy"><img src="img/canva/sank-3.jpg" alt="What to do immediately slide" loading="lazy"><img src="img/canva/sank-4.jpg" alt="Prevention and reporting slide" loading="lazy"></div></div>
-    <div class="galgrp"><h3>Event collateral &amp; reports</h3><p>The SHIELD 2026 two-pager for partners and delegates, and the SHIELD 2025 event report that turned a two-day conclave into a readable record.</p><div class="galrow"><img src="img/canva/twopager.jpg" alt="SHIELD 2026 two-pager" loading="lazy"><img src="img/canva/report-1.jpg" alt="SHIELD 2025 event report cover" loading="lazy"><img src="img/canva/report-2.jpg" alt="Event report key discussions page" loading="lazy"></div></div>
-    <div class="galgrp"><h3>Brand marks &amp; data storytelling</h3><p>Logo explorations for Cipher Sprint, and data slides from the HopIn pitch that make the research numbers easy to read.</p><div class="galrow"><img src="img/canva/cipher-1.jpg" alt="Cipher Sprint logo on dark" loading="lazy" class=sq><img src="img/canva/cipher-2.jpg" alt="Cipher Sprint shield wordmark" loading="lazy" class=sq><img src="img/canva/hopin-data-1.jpg" alt="HopIn commute time chart slide" loading="lazy" class=wide><img src="img/canva/hopin-data-2.jpg" alt="HopIn environmental benefits slide" loading="lazy" class=wide></div></div>
+    <div class="galgrp"><h3>Zatch Instagram</h3><p>Posts for <a href="https://www.instagram.com/zatch.shop/" target="_blank" rel="noopener">@zatch.shop</a>, the live-bargain shopping app: a "Zatch Hours" launch teaser, bargaining one-liners and festive posts, all in one lime-and-black system.</p><div class="galrow"><img src="img/canva/zatch-hours-soon.jpg" width="310" height="414" alt="Zatch Hours coming soon teaser post" loading="lazy"><img src="img/canva/zatch-hours.jpg" width="310" height="414" alt="Zatch Hours explainer post" loading="lazy"><img src="img/canva/zatch-roadster.jpg" width="309" height="414" alt="The roadster might not land, but your price will post" loading="lazy"><img src="img/canva/zatch-calc.jpg" width="310" height="414" alt="Based on our calculations, you need Zatch post" loading="lazy"><img src="img/canva/zatch-muse.jpg" width="309" height="414" alt="Muse said let me zatch that post" loading="lazy"><img src="img/canva/zatch-sensitive.jpg" width="309" height="414" alt="Sensitive content, deals that might be dangerously good post" loading="lazy"><img src="img/canva/zatch-dussehra.jpg" width="309" height="414" alt="Happy Dussehra festive post" loading="lazy"></div></div>
+    <div class="galgrp"><h3>SHIELD 2026 launch campaign</h3><p>Instagram and LinkedIn posts announcing CipherSprint, the Telangana Police national cyber-innovation challenge. One visual system for the grant call, the Technology Experience Zone and the student track.</p><div class="galrow"><img src="img/canva/shield-1.jpg" width="400" height="500" alt="SHIELD 2026 CipherSprint launch post" loading="lazy"><img src="img/canva/shield-3.jpg" width="400" height="500" alt="Student Innovation Track announcement post" loading="lazy"><img src="img/canva/shield-2.jpg" width="400" height="500" alt="Technology Experience Zone post" loading="lazy"></div></div>
+    <div class="galgrp"><h3>Cyber-safety awareness carousel</h3><p>A four-slide Sankranti festival scam alert for TGCSB, in English and Telugu: the scams, how they work, what to do right away and how to report. Plain language, helpline on every slide.</p><div class="galrow"><img src="img/canva/sank-1.jpg" width="400" height="500" alt="Common Sankranthi season cyber scams slide" loading="lazy"><img src="img/canva/sank-2.jpg" width="400" height="500" alt="How the fraud happens slide" loading="lazy"><img src="img/canva/sank-3.jpg" width="400" height="500" alt="What to do immediately slide" loading="lazy"><img src="img/canva/sank-4.jpg" width="400" height="500" alt="Prevention and reporting slide" loading="lazy"></div></div>
+    <div class="galgrp"><h3>Event collateral &amp; reports</h3><p>The SHIELD 2026 two-pager for partners and delegates, and the SHIELD 2025 event report that turned a two-day conclave into a readable record.</p><div class="galrow"><img src="img/canva/twopager.jpg" width="376" height="532" alt="SHIELD 2026 two-pager" loading="lazy"><img src="img/canva/report-1.jpg" width="376" height="532" alt="SHIELD 2025 event report cover" loading="lazy"><img src="img/canva/report-2.jpg" width="376" height="532" alt="Event report key discussions page" loading="lazy"></div></div>
+    <div class="galgrp"><h3>Brand marks &amp; data storytelling</h3><p>Logo explorations for Cipher Sprint, and data slides from the HopIn pitch that make the research numbers easy to read.</p><div class="galrow"><img src="img/canva/cipher-1.jpg" width="447" height="447" alt="Cipher Sprint logo on dark" loading="lazy" class=sq><img src="img/canva/cipher-2.jpg" width="447" height="447" alt="Cipher Sprint shield wordmark" loading="lazy" class=sq><img src="img/canva/hopin-data-1.jpg" width="596" height="335" alt="HopIn commute time chart slide" loading="lazy" class=wide><img src="img/canva/hopin-data-2.jpg" width="596" height="335" alt="HopIn environmental benefits slide" loading="lazy" class=wide></div></div>
   </section>
 
   <section class="block roles-sec" aria-labelledby="roles-h">
@@ -637,17 +649,6 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
     <div class="rolegrid"><a class="rolecard" href="#hopin"><b>UX Research</b><span>Interviews, surveys, usability tests, Maze studies</span><em>See: HopIn →</em></a><a class="rolecard" href="#tgcsb-copy"><b>Content Design &amp; UX Writing</b><span>Plain language, microcopy, messaging</span><em>See: TGCSB rewrite →</em></a><a class="rolecard" href="#tgcsb"><b>Service Design</b><span>Journeys, sitemaps, public services</span><em>See: TGCSB →</em></a><a class="rolecard" href="#zatch"><b>Product Design</b><span>Wireframes to polished Figma prototypes</span><em>See: Zatch →</em></a><a class="rolecard" href="#zatch-social"><b>Content &amp; Social Strategy</b><span>Calendars, posts, carousels and engagement tracking for SHIELD, TGCSB, Zatch and others</span><em>See: Zatch launch plan →</em></a><a class="rolecard" href="#zatch-brand"><b>Digital Marketing &amp; Brand</b><span>Brand guidelines, ads, posters, event collateral, pitch decks</span><em>See: Zatch brand →</em></a><a class="rolecard" href="#resume"><b>Research &amp; Data Analysis</b><span>SQL, Excel, dashboards, fraud analytics</span><em>See: Experience →</em></a><a class="rolecard" href="#bot-about-to"><b>Project &amp; Stakeholder Coordination</b><span>Cross-team work with councillors and officials</span><em>See: Bot About TO →</em></a></div>
   </section>
 
-  <section class="process block" aria-labelledby="process-h">
-    <p class="label" id="process-h">How I work · every case study follows these steps</p>
-    <ol class="steps">
-      <li><span class="label">01</span><b>Research</b><span>Interviews, surveys, competitors</span></li>
-      <li><span class="label">02</span><b>Define</b><span>Personas, journeys, the real problem</span></li>
-      <li><span class="label">03</span><b>Ideate</b><span>Concepts and a clear USP</span></li>
-      <li><span class="label">04</span><b>Design</b><span>Wireframes to polished screens</span></li>
-      <li><span class="label">05</span><b>Test</b><span>Usability rounds, then fix</span></li>
-      <li><span class="label">06</span><b>Deliver</b><span>Launch, measure, pitch</span></li>
-    </ol>
-  </section>
 
   <section class="block teaser">
     <div class="about-grid">
@@ -969,7 +970,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <div><p>The research became a 16-slide investor deck.</p></div>
         <p class="label">Social media</p>
         <div><p>I run Zatch's Instagram, <a href="https://www.instagram.com/zatch.shop/" target="_blank" rel="noopener">@zatch.shop</a>. The voice is playful and a little cheeky, built around the brand's lime green: launch teasers for Zatch Hours, bargaining jokes and festive posts.</p></div>
-        <div class="galrow"><img src="img/canva/zatch-hours-soon.jpg" alt="Zatch Hours coming soon teaser post" loading="lazy"><img src="img/canva/zatch-hours.jpg" alt="Zatch Hours explainer post" loading="lazy"><img src="img/canva/zatch-roadster.jpg" alt="The roadster might not land, but your price will post" loading="lazy"><img src="img/canva/zatch-calc.jpg" alt="Based on our calculations, you need Zatch post" loading="lazy"><img src="img/canva/zatch-muse.jpg" alt="Muse said let me zatch that post" loading="lazy"><img src="img/canva/zatch-sensitive.jpg" alt="Sensitive content, deals that might be dangerously good post" loading="lazy"><img src="img/canva/zatch-dussehra.jpg" alt="Happy Dussehra festive post" loading="lazy"></div>
+        <div class="galrow"><img src="img/canva/zatch-hours-soon.jpg" width="310" height="414" alt="Zatch Hours coming soon teaser post" loading="lazy"><img src="img/canva/zatch-hours.jpg" width="310" height="414" alt="Zatch Hours explainer post" loading="lazy"><img src="img/canva/zatch-roadster.jpg" width="309" height="414" alt="The roadster might not land, but your price will post" loading="lazy"><img src="img/canva/zatch-calc.jpg" width="310" height="414" alt="Based on our calculations, you need Zatch post" loading="lazy"><img src="img/canva/zatch-muse.jpg" width="309" height="414" alt="Muse said let me zatch that post" loading="lazy"><img src="img/canva/zatch-sensitive.jpg" width="309" height="414" alt="Sensitive content, deals that might be dangerously good post" loading="lazy"><img src="img/canva/zatch-dussehra.jpg" width="309" height="414" alt="Happy Dussehra festive post" loading="lazy"></div>
       </div>
       <div class="deck">
         <div class="deck-stage">
