@@ -573,6 +573,14 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 .wgrid .wmedia::after{content:"View case study \2192";position:absolute;right:16px;bottom:16px;padding:10px 16px;border-radius:999px;background:var(--fg);color:var(--bg);font:600 14px var(--body);opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s}
 .wgrid .wcard:hover .wmedia::after,.wgrid .wcard:focus-visible .wmedia::after{opacity:1;transform:none}
 @media (hover:none){.wgrid .wmedia::after{opacity:1;transform:none}}
+.skillset{margin-top:32px}
+.sk-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 0}
+.sk-grid>div{padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);display:flex;flex-direction:column;gap:4px}
+.sk-grid dt{font-weight:700;font-size:16px}.sk-grid dd{margin:0;font-size:14.5px;color:var(--muted);line-height:1.45}
+.sk-grid a{margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:600;color:var(--accent);text-decoration:none}
+.tool-lines{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px;font-size:15px}
+.tool-lines b{display:inline-block;min-width:64px;font-weight:600;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+@media (max-width:520px){.sk-grid{grid-template-columns:1fr}}
 .rolegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .rolecard{display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:18px;background:var(--surface);border:1.5px solid var(--line);text-decoration:none;color:var(--fg);transition:transform .15s ease,border-color .15s ease}
 .rolecard:hover{transform:translateY(-2px);border-color:var(--fg)}
@@ -1098,11 +1106,11 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <span class="rt">3 min read</span>
       </div>
       <div class="methods"><span class="label">Methods</span><span class="m">Benchmarking</span><span class="m">Competitive analysis</span><span class="m">Audience mapping</span><span class="m">Sitemap / IA</span><span class="m">Low-fi prototype</span></div>
-      <div class="roleline"><span class="label">My role</span><b>Senior Manager at Revolution X Studio · led research and content strategy</b></div>
+      <div class="roleline"><span class="label">My role</span><b>Strategy Consultant at Revolution X Studio · led research and content strategy</b></div>
       <nav class="rail" aria-label="Design process"><button type="button" data-go="tgcsb-st1"><span>01</span>Research</button><button type="button" data-go="tgcsb-st2"><span>02</span>Define</button><button type="button" data-go="tgcsb-st3"><span>03</span>Ideate</button><button type="button" data-go="tgcsb-st4"><span>04</span>Design</button><button type="button" data-go="tgcsb-st5" disabled><span>05</span>Test</button><button type="button" data-go="tgcsb-st6"><span>06</span>Deliver</button></nav>
       <div class="body">
         <p class="label">The brief</p>
-        <div><p>One police brand, three very different audiences, three websites.</p><p class="note">My role: Senior Manager at Revolution X Studio, leading research and content strategy.</p></div>
+        <div><p>One police brand, three very different audiences, three websites.</p><p class="note">My role: Strategy Consultant at Revolution X Studio, leading research and content strategy.</p></div>
 
         <div class="stage" id="tgcsb-st1" data-stage="1"><span class="stage-n">01</span><span class="stage-name">Research</span><span class="stage-q">What do people need?</span></div>
         <p class="label">Inspiration</p>
@@ -1887,18 +1895,26 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
           <svg class="sketch" viewBox="0 0 220 150" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 140h200"/><path d="M30 140V62l80-38 80 38v78"/><path d="M22 66l88-44 88 44"/><path d="M50 140V84a14 14 0 0 1 28 0v56M96 140V80a14 14 0 0 1 28 0v60M142 140V84a14 14 0 0 1 28 0v56"/><path d="M98 50h24v14H98z"/><path d="M110 24V10"/><path d="M110 10l12 4-12 4"/><path d="M36 108h8M176 108h8M36 120h8M176 120h8"/></svg>
         </div>
         <div class="hello-text">
-          <p>I studied business in India, started my career at Amazon, then moved to Canada to study analytics and interactive media. Since then I've worked in very different places: client services at the City of Toronto, and now research consulting at Revolution X Studio, where my work runs from police websites to startup pitches.</p>
+          <p>I studied business in India, started my career at Amazon, then moved to Canada to study analytics and interactive media. Since then I've worked in very different places: client services at the City of Toronto, and Revolution X Studio, where I started as a strategy consultant and now lead client work as a senior manager. My work there runs from police websites to startup pitches.</p>
           <p>What ties it together is people. I like talking to users, finding the moment they get stuck, and fixing it with clearer words, simpler screens and honest data.</p>
           <p>Outside work I teach yoga, and I'm usually sketching buildings: old facades, bridges, anything with good lines. Both teach me to notice structure, which turns out to be most of design.</p>
         </div>
 
-        <div class="skills">
-          <p class="label">Tools I use</p>
-          <div class="tools"><span>Figma</span><span>Miro</span><span>Maze</span><span>Notion</span><span>Google Forms</span><span>Excel (advanced)</span><span>SQL</span><span>Salesforce</span><span>SharePoint</span><span>Confluence</span><span>Adobe tools</span><span>Canva</span><span>Mailchimp</span><span>Google Analytics</span><span>CMS</span><span>ChatGPT</span><span>Claude</span><span>Microsoft Copilot</span><span>Canva &amp; Figma AI</span></div>
-        </div>
-        <div class="skills">
-          <p class="label">Skills</p>
-          <div class="tools"><span>User interviews</span><span>Surveys</span><span>Personas</span><span>Journey mapping</span><span>Wireframing</span><span>Prototyping</span><span>Usability testing</span><span>Content strategy</span><span>Brand strategy</span><span>Brand guidelines</span><span>Competitive analysis</span><span>Data analysis</span><span>Data-driven presentations</span><span>Pitch decks</span><span>Social media strategy</span><span>Content calendars</span><span>Visual design</span><span>Short-form video &amp; reels</span><span>SOP &amp; documentation writing</span><span>Stakeholder communication</span></div>
+        <div class="skillset">
+          <p class="label">What I do</p>
+          <dl class="sk-grid">
+            <div><dt>Research</dt><dd>Interviews, surveys, usability testing, competitive analysis</dd><a href="#hopin">See HopIn →</a></div>
+            <div><dt>Service &amp; UX design</dt><dd>Journey maps, service blueprints, sitemaps, wireframes, prototypes</dd><a href="#service-blueprint">See blueprint →</a></div>
+            <div><dt>Content &amp; brand</dt><dd>Plain-language writing, brand guidelines, social strategy, content calendars</dd><a href="#tgcsb-copy">See rewrite →</a></div>
+            <div><dt>Data &amp; delivery</dt><dd>Data analysis, data-driven presentations, SOPs, stakeholder communication</dd><a href="#bot-about-to">See Bot About TO →</a></div>
+          </dl>
+          <p class="label" style="margin-top:28px">Tools</p>
+          <ul class="tool-lines">
+            <li><b>Design</b>Figma, Miro, Maze, Canva, Adobe</li>
+            <li><b>Data</b>Excel (advanced), SQL, Google Analytics</li>
+            <li><b>Work</b>Salesforce, SharePoint, Confluence, Notion, Mailchimp</li>
+            <li><b>AI</b>ChatGPT, Claude, Microsoft Copilot</li>
+          </ul>
         </div>
       </div>
 
@@ -1906,7 +1922,8 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <div class="res-head"><p class="label" id="resume">Experience</p><button type="button" class="btn primary dl-cv">Download resume (PDF)</button></div>
         <p class="dl-msg" aria-live="polite"></p>
         <ol class="timeline">
-          <li><time>Current</time><div><h4>Senior Manager</h4><p class="org">Revolution X Studio</p><p>Manage multiple clients' brands, websites and social media, including Zatch, and lead the team that delivers them, assigning and reviewing work. Led research and content strategy for the TGCSB websites. Reports and presentations for senior officials.</p></div></li>
+          <li><time>2026 – Present</time><div><h4>Senior Manager</h4><p class="org">Revolution X Studio</p><p>Manage multiple clients' brands, websites and social media, including Zatch, and lead the team that delivers them, assigning and reviewing work. Reports and presentations for clients and senior officials.</p></div></li>
+          <li><time>2024 – 2026</time><div><h4>Strategy Consultant</h4><p class="org">Revolution X Studio</p><p>Led research and content strategy for the TGCSB citizen website and two national event sites. Benchmarked 5 cybercrime agencies, planned the sitemap and rewrote copy in plain language.</p></div></li>
           <li><time>2023 – Present</time><div><h4>Client Services Representative</h4><p class="org">City of Toronto · Permits &amp; Bookings</p><p>First point of contact for residents and councillors' offices. Process permits and bookings, and report on facility use.</p></div></li>
           <li><time>2022 – 2023</time><div><h4>Transaction Risk Investigator</h4><p class="org">Amazon</p><p>Investigated fraud cases and wrote SOPs used by global teams. Cut turnaround time by 20%.</p></div></li>
           <li><time>2021 – 2022</time><div><h4>Transportation Specialist</h4><p class="org">Amazon</p><p>UK freight scheduling, automated planning and KPI reports.</p></div></li>
