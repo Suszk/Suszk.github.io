@@ -561,6 +561,10 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 .casenav .nextcase{flex-direction:column;align-items:flex-end;justify-content:center;gap:4px}
 .keyhint{font-size:13px;color:var(--muted);text-align:center;margin-top:10px}
 @media (max-width:640px){.casenav{grid-template-columns:1fr}.keyhint{display:none}}
+.showmore{display:block;margin:20px auto 0;min-height:48px;padding:0 24px;border-radius:999px;border:1.5px solid var(--fg);background:var(--bg);color:var(--fg);font:600 15px var(--body);cursor:pointer}
+.showmore:hover{background:var(--fg);color:var(--bg)}
+.avail{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:8px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px;font-weight:500}
+.avail i{width:8px;height:8px;border-radius:50%;background:#1f9d55;box-shadow:0 0 0 3px rgba(31,157,85,.18)}
 .rolegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .rolecard{display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:18px;background:var(--surface);border:1.5px solid var(--line);text-decoration:none;color:var(--fg);transition:transform .15s ease,border-color .15s ease}
 .rolecard:hover{transform:translateY(-2px);border-color:var(--fg)}
@@ -588,8 +592,9 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
   <section class="hero">
     <div>
       <p class="label">UX Researcher &amp; Content Strategist · Toronto</p>
-      <h1 style="margin-top:14px">Hi, I'm Sushmita. I make public services and digital products <span>easier to use.</span></h1>
+      <h1 style="margin-top:14px">Hi, I'm Sushmita. I&nbsp;make public services and digital products <span>easier to use.</span></h1>
       <p class="lede">UX research, content design and service design, plus content, brand and data work. Backed by managing client brands at Revolution X Studio, fraud and risk analytics at Amazon, and client services at the City of Toronto.</p>
+      <p class="avail"><i aria-hidden="true"></i>Open to UX, service design and content roles in Toronto</p>
     </div>
     <aside>
       <dl class="facts" style="margin:0">
@@ -663,6 +668,8 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
       <a class="proj proj-link" href="#tgcsb-copy"><p class="label">UX writing</p><h3>TGCSB plain-language rewrite</h3><p>Reading ease from 16 to 64, with the 1930 helpline up front.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link" href="#securacy"><p class="label">B2B SaaS · Messaging</p><h3>Securacy</h3><p>Explaining AI threat modeling to engineers and executives in one scroll.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link" href="#green-campus"><p class="label">Website revamp · Team of 4</p><h3>Green Campus Co-op</h3><p>Making fair trade easy to understand and buy for a York University co-op.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
+    </div>
+    <div class="more three" id="more-extra" hidden style="margin-top:20px">
       <a class="proj proj-link" href="#st-lawrence"><p class="label">Website redesign · Group project</p><h3>St Lawrence Market</h3><p>Planning a market visit around a busy parent's weekend.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link" href="#zatch-brand"><p class="label">Brand identity</p><h3>Zatch brand guidelines</h3><p>Colour, type, voice and the word "Zatch", in one page of rules.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link" href="#zatch-social"><p class="label">Concept · Social strategy</p><h3>Zatch launch content plan</h3><p>Four content pillars, a two-week calendar and sample posts.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
@@ -680,6 +687,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         </div>
       </article>
     </div>
+    <button type="button" class="showmore" id="showmore" aria-expanded="false" aria-controls="more-extra">Show 4 more projects</button>
   </section>
 
 
@@ -838,6 +846,16 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
       <div class="case-foot">
         <p>Try the polished, clickable prototype in Figma.</p>
         <a class="btn primary" href="https://www.figma.com/proto/1M6Iypx0cT21cUwV8s8GJH/?node-id=575-383&amp;page-id=575%3A2&amp;starting-point-node-id=575%3A383&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener">Open prototype ↗</a>
+      </div>
+      <div class="body">
+        <p class="label">What I'd do next</p>
+        <div>
+          <ul class="findings">
+            <li><b>Test trust features</b>Run a focused round on verification and trip sharing, the moment people drop off.</li>
+            <li><b>Measure in Maze</b>A clickable test to time booking end to end against the old flow.</li>
+            <li><b>Follow real commutes</b>A two-week diary study to see when carpooling actually fits.</li>
+          </ul>
+        </div>
       </div>
     </article>
     <a class="nextcase" href="#bot-about-to"><span class="label">Next case study</span><b>Bot About TO <span aria-hidden="true">→</span></b></a>
@@ -1217,6 +1235,16 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
           <a class="btn" href="https://www.shieldconference.com/" target="_blank" rel="noopener">SHIELD ↗</a>
         </div>
       </div>
+      <div class="body">
+        <p class="label">What I'd do next</p>
+        <div>
+          <ul class="findings">
+            <li><b>Tree-test the sitemap</b>Ask 10 residents to find "report a crime" and "track my complaint" before build.</li>
+            <li><b>Measure what matters</b>Track reports started vs. finished, and calls to 1930 after launch.</li>
+            <li><b>Plain language in Telugu</b>Bring the same reading-level rules to the Telugu pages.</li>
+          </ul>
+        </div>
+      </div>
     </article>
     <a class="nextcase" href="#hopin"><span class="label">Next case study</span><b>HopIn <span aria-hidden="true">→</span></b></a>
   </section>
@@ -1352,6 +1380,16 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
       <div class="case-foot">
         <p>See the live site.</p>
         <a class="btn primary" href="https://securacy-marketing.vercel.app/" target="_blank" rel="noopener">Securacy ↗</a>
+      </div>
+      <div class="body">
+        <p class="label">What I'd do next</p>
+        <div>
+          <ul class="findings">
+            <li><b>Test the headline</b>A/B test the hero message with engineers and with executives.</li>
+            <li><b>Talk to buyers</b>Interview 5 security leads about how they choose a tool.</li>
+            <li><b>Track the funnel</b>Measure demo requests per visit before and after the new page.</li>
+          </ul>
+        </div>
       </div>
     </article>
     <a class="nextcase" href="#green-campus"><span class="label">Next case study</span><b>Green Campus Co-op <span aria-hidden="true">→</span></b></a>
@@ -1554,6 +1592,16 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
       <div class="case-foot">
         <p>Try the clickable prototype.</p>
         <a class="btn primary" href="https://www.figma.com/make/SKGeyH4E95rOA9UoRb7aYA/Bot-About-TO---City-of-Toronto-AI-Mascot-Prototype--Copy-?code-node-id=0-9&amp;p=f&amp;fullscreen=1" target="_blank" rel="noopener">Open prototype ↗</a>
+      </div>
+      <div class="body">
+        <p class="label">What I'd do next</p>
+        <div>
+          <ul class="findings">
+            <li><b>Test beyond City Hall</b>Put the prototype in front of residents, not just City staff.</li>
+            <li><b>Measure trust</b>Ask the same trust questions before and after people use it.</li>
+            <li><b>Add more data</b>Connect more open datasets so answers cover more of council's work.</li>
+          </ul>
+        </div>
       </div>
     </article>
     <a class="nextcase" href="#zatch"><span class="label">Next case study</span><b>Zatch <span aria-hidden="true">→</span></b></a>
@@ -2016,6 +2064,8 @@ document.getElementById('copy').addEventListener('click', function(){
   });
 })();
 </script>
+<script>(function(){var b=document.getElementById('showmore'),x=document.getElementById('more-extra');if(!b||!x)return;var n=b.textContent;b.onclick=function(){var o=x.hidden;x.hidden=!o;b.setAttribute('aria-expanded',String(o));b.textContent=o?'Show fewer projects':n;};})();</script>
+
 
 
 </body>
