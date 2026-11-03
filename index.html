@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Sushmita Karri, digital strategist and brand consultant in Toronto. Case studies in UX research, content strategy and brand building.">
+<meta name="description" content="Sushmita Karri, UX researcher and content strategist in Toronto. Case studies in UX research, content design and service design.">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
@@ -512,6 +512,8 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 .case.a311 .stats{background:#1C4E9A;color:#fff}.case.a311 .stat{border-color:rgba(255,255,255,.2)}
 .case.tcopy .stats{background:#2A2E33;color:#fff}.case.tcopy .stat{border-color:rgba(255,255,255,.2)}
 @media (max-width:860px){.pal,.posts{grid-template-columns:1fr}}
+.roleline{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;padding:14px clamp(20px,4vw,44px);border-bottom:1px solid var(--line);background:var(--bg)}
+.roleline b{font-weight:600;font-size:15.5px}
 </style>
 
 <header class="nav">
@@ -530,13 +532,13 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
   <div class="view" data-view="home">
   <section class="hero">
     <div>
-      <p class="label">Digital Strategist &amp; Brand Consultant · Toronto</p>
-      <h1 style="margin-top:14px">Hi, I'm Sushmita. I turn research and data into <span>brands people remember.</span></h1>
-      <p class="lede">Content strategy, UX research and data-driven presentations, backed by a business and analytics background at Amazon and the City of Toronto.</p>
+      <p class="label">UX Researcher &amp; Content Strategist · Toronto</p>
+      <h1 style="margin-top:14px">Hi, I'm Sushmita. I make public services and digital products <span>easier to use.</span></h1>
+      <p class="lede">UX research, content design and service design, backed by fraud and risk analytics at Amazon and client services at the City of Toronto.</p>
     </div>
     <aside>
       <dl class="facts" style="margin:0">
-        <div><dt>Focus</dt><dd>Digital strategy, branding, UX, data-driven presentations</dd></div>
+        <div><dt>Focus</dt><dd>UX research, content design, service design</dd></div>
         <div><dt>Training</dt><dd>Interactive Media Mgmt, Centennial</dd></div>
         <div><dt>Experience</dt><dd>Revolution X Studio, City of Toronto, Amazon</dd></div>
       </dl>
@@ -556,41 +558,29 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
     </div>
 
     <div class="wgrid">
-      <a class="wcard feat" href="#hopin">
-        <div class="wmedia"><img src="img/hopin-before-after.jpg" alt="HopIn home screen before and after usability testing" loading="lazy"></div>
-        <div class="wbody"><p class="label">Featured · Mobile app · Senior project</p><h3>Commuters said trust mattered more than price. So I redesigned carpooling around it.</h3><p>HopIn, a neighbourhood carpooling app: 7 interviews, 25 surveys, 7 usability tests.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
-      </a>
-      <a class="wcard feat alt" href="#zatch">
-        <div class="wmedia"><img src="img/zatch/s11.jpg" alt="Zatching: a buyer and seller agreeing on a price in the app" loading="lazy"></div>
-        <div class="wbody"><p class="label">App design · Brand building</p><h3>What if online shopping let you bargain like a real bazaar?</h3><p>Zatch: a live shopping app for India, from buyer and seller research to features, market and roadmap.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
-      </a>
-      <a class="wcard" href="#tgcsb">
+      <a class="wcard feat" href="#tgcsb">
         <div class="wmedia"><img src="img/tg-contact.jpg" alt="TGCSB contact page with 1930 helpline" loading="lazy"></div>
         <div class="wbody"><p class="label">Government websites · Strategy</p><h3>A police brand where help is one click away, on every page</h3><p>Telangana Cyber Security Bureau: a citizen site, a national hackathon and a conclave, checked against 5 cybercrime agencies.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="wcard" href="#green-campus">
-        <div class="wmedia"><img src="img/gcc-impact.jpg" alt="Interactive impact map on a laptop" loading="lazy"></div>
-        <div class="wbody"><p class="label">Website revamp · Team of 4</p><h3>Making fair trade easy to understand, and easy to buy</h3><p>Green Campus Co-op at York University: new product pages and an interactive impact map.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
+      <a class="wcard feat alt" href="#hopin">
+        <div class="wmedia"><img src="img/hopin-before-after.jpg" alt="HopIn home screen before and after usability testing" loading="lazy"></div>
+        <div class="wbody"><p class="label">Mobile app · Senior project · Research to prototype</p><h3>Commuters said trust mattered more than price. So I redesigned carpooling around it.</h3><p>HopIn, a neighbourhood carpooling app: 7 interviews, 25 surveys, 7 usability tests.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="wcard" href="#securacy">
-        <div class="wmedia"><img src="img/sec-hero.jpg" alt="Securacy site: Stop threat modeling on whiteboards" loading="lazy"></div>
-        <div class="wbody"><p class="label">B2B SaaS · Messaging</p><h3>Explaining AI threat modeling in one scroll</h3><p>Securacy: one headline for engineers and executives, and a message for each of 5 buyer roles.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
+      <a class="wcard" href="#bot-about-to">
+        <div class="wmedia"><div class="scr bt mini"><span class="k">City of Toronto · AI challenge</span><b>Bot About TO</b><span class="pill" style="background:#fff;color:#1E3A8A">Ask about Toronto</span></div></div>
+        <div class="wbody"><p class="label">Hackathon · Civic tech · Team of 4</p><h3>An AI messenger that turns council news into stories residents trust</h3><p>Bot About TO: City of Toronto Data &amp; AI Innovation Challenge, 2025.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="wcard" href="#st-lawrence">
-        <div class="wmedia"><img src="img/slm-journey.jpg" alt="Visitor journey map with goals, emotions, problems and ideas" loading="lazy"></div>
-        <div class="wbody"><p class="label">Website redesign · Group project</p><h3>Planning a market visit around a busy parent's weekend</h3><p>St Lawrence Market: site audit, persona, journey map and a clickable prototype.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
+      <a class="wcard" href="#zatch">
+        <div class="wmedia"><img src="img/zatch/s11.jpg" alt="Zatching: a buyer and seller agreeing on a price in the app" loading="lazy"></div>
+        <div class="wbody"><p class="label">App design · Brand building</p><h3>What if online shopping let you bargain like a real bazaar?</h3><p>Zatch: a live shopping app for India, from buyer and seller research to features, market and roadmap.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
     </div>
 
     <h3 class="subhead">More projects</h3>
     <div class="more" style="margin-top:16px">
-      <a class="proj proj-link" href="#bot-about-to" aria-labelledby="bot-h">
-        <p class="label">Hackathon · City of Toronto · AI</p>
-        <div class="bot"><span class="bot-face" aria-hidden="true"></span><h3 id="bot-h">Bot About TO</h3></div>
-        <p>A City of Toronto staff hackathon: an AI messenger that turns council activity and open data into positive civic stories.</p>
-        <span class="wgo">Read case study <span aria-hidden="true">→</span></span>
-      </a>
-
+      <a class="proj proj-link" href="#securacy"><p class="label">B2B SaaS · Messaging</p><h3>Securacy</h3><p>Explaining AI threat modeling to engineers and executives in one scroll.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link" href="#green-campus"><p class="label">Website revamp · Team of 4</p><h3>Green Campus Co-op</h3><p>Making fair trade easy to understand and buy for a York University co-op.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link" href="#st-lawrence"><p class="label">Website redesign · Group project</p><h3>St Lawrence Market</h3><p>Planning a market visit around a busy parent's weekend.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
       <article class="proj" aria-labelledby="tif-h">
         <p class="label">Brand study</p>
         <h3 id="tif-h">Tiffany &amp; Co. brand guidelines</h3>
@@ -603,15 +593,15 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
           <span style="background:#07827F;color:#fff">07827F</span>
           <span style="background:#055D5B;color:#fff">055D5B</span>
         </div>
+      </article>
+    </div>
 
     <h3 class="subhead">Concept &amp; self-initiated work</h3>
     <div class="more" style="margin-top:16px">
-      <a class="proj proj-link" href="#zatch-brand"><p class="label">Brand identity</p><h3>Zatch brand guidelines</h3><p>Colour, type, voice and the word "Zatch", in one page of rules.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
-      <a class="proj proj-link" href="#zatch-social"><p class="label">Concept · Social strategy</p><h3>Zatch launch content plan</h3><p>Four content pillars, a two-week calendar and sample posts.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link" href="#audit-311"><p class="label">Self-initiated · UX audit</p><h3>311 Toronto website</h3><p>A heuristic review of the City's help page, with three fixes.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link" href="#tgcsb-copy"><p class="label">UX writing</p><h3>TGCSB plain-language rewrite</h3><p>Reading ease from 16 to 64, with the 1930 helpline up front.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
-    </div>
-      </article>
+      <a class="proj proj-link" href="#zatch-brand"><p class="label">Brand identity</p><h3>Zatch brand guidelines</h3><p>Colour, type, voice and the word "Zatch", in one page of rules.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link" href="#zatch-social"><p class="label">Concept · Social strategy</p><h3>Zatch launch content plan</h3><p>Four content pillars, a two-week calendar and sample posts.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
     </div>
   </section>
 
@@ -629,7 +619,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 
   <section class="block teaser">
     <div class="about-grid">
-      <div><p class="bio">Hi, I'm Sushmita. Digital strategist in Toronto, yoga teacher, and sketcher of buildings.</p></div>
+      <div><p class="bio">Hi, I'm Sushmita. UX researcher in Toronto, yoga teacher, and sketcher of buildings.</p></div>
       <div><p style="max-width:52ch">I research first, then turn what I learn into clear products, websites and brand content. Read about my experience, education and tools.</p><a class="btn" href="#about" style="margin-top:16px">More about me <span aria-hidden="true">→</span></a></div>
     </div>
   </section>
@@ -640,7 +630,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
     <article class="case" aria-labelledby="hopin-h">
       <div class="cover">
         <div class="intro">
-          <p class="label">Case study 01 · Mobile app</p>
+          <p class="label">Case study 02 · Mobile app</p>
           <h3 id="hopin-h">HopIn</h3>
           <p class="sub">A carpooling app that helps neighbours and colleagues share rides, so commuting costs less and fewer cars are on the road.</p>
           <div class="tags"><span class="tag">UX design</span><span class="tag">Content strategy</span><span class="tag">Competitive analysis</span><span class="tag">Figma</span></div>
@@ -660,6 +650,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <span class="rt">3 min read</span>
       </div>
       <div class="methods"><span class="label">Methods</span><span class="m">User interviews (7)</span><span class="m">Surveys (25)</span><span class="m">Personas</span><span class="m">Journey mapping</span><span class="m">Competitive analysis</span><span class="m">Usability testing (7)</span></div>
+      <div class="roleline"><span class="label">My role</span><b>Solo senior project, research to prototype · Centennial College, 2024</b></div>
       <nav class="rail" aria-label="Design process"><button type="button" data-go="hopin-st1"><span>01</span>Research</button><button type="button" data-go="hopin-st2"><span>02</span>Define</button><button type="button" data-go="hopin-st3"><span>03</span>Ideate</button><button type="button" data-go="hopin-st4"><span>04</span>Design</button><button type="button" data-go="hopin-st5"><span>05</span>Test</button><button type="button" data-go="hopin-st6"><span>06</span>Deliver</button></nav>
       <div class="body">
         <p class="label">The problem</p>
@@ -766,7 +757,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <a class="btn primary" href="https://www.figma.com/proto/1M6Iypx0cT21cUwV8s8GJH/?node-id=575-383&amp;page-id=575%3A2&amp;starting-point-node-id=575%3A383&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener">Open prototype ↗</a>
       </div>
     </article>
-    <a class="nextcase" href="#zatch"><span class="label">Next case study</span><b>Zatch <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#bot-about-to"><span class="label">Next case study</span><b>Bot About TO <span aria-hidden="true">→</span></b></a>
   </section>
 
   <section class="view" id="zatch" data-view="zatch" hidden>
@@ -774,7 +765,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
     <article class="case zatch" aria-labelledby="zatch-h">
       <div class="cover">
         <div class="intro">
-          <p class="label">Case study 02 · Mobile app</p>
+          <p class="label">Case study 04 · Mobile app</p>
           <h3 id="zatch-h">Zatch</h3>
           <p class="sub">A live shopping app where buyers watch, bargain and buy in real time, like an Indian bazaar but online.</p>
           <div class="tags"><span class="tag">App design</span><span class="tag">Brand building</span><span class="tag">Product strategy</span><span class="tag">Competitive analysis</span><span class="tag">USP</span><span class="tag">Market research</span></div>
@@ -793,6 +784,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <span class="rt">4 min read</span>
       </div>
       <div class="methods"><span class="label">Methods</span><span class="m">Market research</span><span class="m">Competitive analysis</span><span class="m">Journey mapping</span><span class="m">Positioning map</span><span class="m">Brand building</span></div>
+      <div class="roleline"><span class="label">My role</span><b>App design and brand building</b></div>
       <nav class="rail" aria-label="Design process"><button type="button" data-go="zatch-st1"><span>01</span>Research</button><button type="button" data-go="zatch-st2"><span>02</span>Define</button><button type="button" data-go="zatch-st3"><span>03</span>Ideate</button><button type="button" data-go="zatch-st4"><span>04</span>Design</button><button type="button" data-go="zatch-st5" disabled><span>05</span>Test</button><button type="button" data-go="zatch-st6"><span>06</span>Deliver</button></nav>
       <div class="body">
         <p class="label">The problem</p>
@@ -964,7 +956,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         </div>
       </div>
     </article>
-    <a class="nextcase" href="#tgcsb"><span class="label">Next case study</span><b>Telangana Cyber Security Bureau <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#securacy"><span class="label">Next case study</span><b>Securacy <span aria-hidden="true">→</span></b></a>
   </section>
 
   <section class="view" id="tgcsb" data-view="tgcsb" hidden>
@@ -972,7 +964,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
     <article class="case tgcsb" aria-labelledby="tg-h">
       <div class="cover">
         <div class="intro">
-          <p class="label">Case study 03 · Government websites</p>
+          <p class="label">Case study 01 · Government websites</p>
           <h3 id="tg-h">Telangana Cyber Security Bureau</h3>
           <p class="sub">A citizen website for the state's cybercrime police, plus two event sites for its national hackathon and annual conclave.</p>
           <div class="tags"><span class="tag">Digital strategy</span><span class="tag">Information architecture</span><span class="tag">Content</span><span class="tag">Event microsites</span></div>
@@ -991,6 +983,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <span class="rt">3 min read</span>
       </div>
       <div class="methods"><span class="label">Methods</span><span class="m">Benchmarking</span><span class="m">Competitive analysis</span><span class="m">Audience mapping</span><span class="m">Sitemap / IA</span><span class="m">Low-fi prototype</span></div>
+      <div class="roleline"><span class="label">My role</span><b>Strategist, Research &amp; Insights at Revolution X Studio · 2025–26</b></div>
       <nav class="rail" aria-label="Design process"><button type="button" data-go="tgcsb-st1"><span>01</span>Research</button><button type="button" data-go="tgcsb-st2"><span>02</span>Define</button><button type="button" data-go="tgcsb-st3"><span>03</span>Ideate</button><button type="button" data-go="tgcsb-st4"><span>04</span>Design</button><button type="button" data-go="tgcsb-st5" disabled><span>05</span>Test</button><button type="button" data-go="tgcsb-st6"><span>06</span>Deliver</button></nav>
       <div class="body">
         <p class="label">The brief</p>
@@ -1139,7 +1132,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         </div>
       </div>
     </article>
-    <a class="nextcase" href="#green-campus"><span class="label">Next case study</span><b>Green Campus Co-op <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#hopin"><span class="label">Next case study</span><b>HopIn <span aria-hidden="true">→</span></b></a>
   </section>
 
   <section class="view" id="green-campus" data-view="green-campus" hidden>
@@ -1147,7 +1140,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
     <article class="case green" aria-labelledby="gcc-h">
       <div class="cover">
         <div class="intro">
-          <p class="label">Case study 04 · Website revamp</p>
+          <p class="label">Case study 06 · Website revamp</p>
           <h3 id="gcc-h">Green Campus Co-op</h3>
           <p class="sub">A content and UX revamp for a sustainability co-op started by students and faculty at York University.</p>
           <div class="tags"><span class="tag">UX strategy</span><span class="tag">Content strategy</span><span class="tag">Figma</span><span class="tag">Miro</span><span class="tag">Maze</span></div>
@@ -1167,6 +1160,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <span class="rt">1 min read</span>
       </div>
       <div class="methods"><span class="label">Methods</span><span class="m">Audience research</span><span class="m">Comparative analysis</span><span class="m">Content audit</span><span class="m">Prototyping</span></div>
+      <div class="roleline"><span class="label">My role</span><b>UX strategist · team of 4</b></div>
       <nav class="rail" aria-label="Design process"><button type="button" data-go="green-campus-st1" disabled><span>01</span>Research</button><button type="button" data-go="green-campus-st2" disabled><span>02</span>Define</button><button type="button" data-go="green-campus-st3" disabled><span>03</span>Ideate</button><button type="button" data-go="green-campus-st4"><span>04</span>Design</button><button type="button" data-go="green-campus-st5" disabled><span>05</span>Test</button><button type="button" data-go="green-campus-st6"><span>06</span>Deliver</button></nav>
       <div class="body">
         <p class="label">The problem</p>
@@ -1201,7 +1195,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <div class="change"><p><span class="mark">An interactive impact page</span> and product pages that make bulk buying simple.</p></div>
       </div>
     </article>
-    <a class="nextcase" href="#securacy"><span class="label">Next case study</span><b>Securacy <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#st-lawrence"><span class="label">Next case study</span><b>St Lawrence Market <span aria-hidden="true">→</span></b></a>
   </section>
 
   <section class="view" id="securacy" data-view="securacy" hidden>
@@ -1228,6 +1222,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <span class="rt">1 min read</span>
       </div>
       <div class="methods"><span class="label">Methods</span><span class="m">Messaging</span><span class="m">Audience segmentation</span><span class="m">Content hierarchy</span></div>
+      <div class="roleline"><span class="label">My role</span><b>Messaging and content structure</b></div>
       <nav class="rail" aria-label="Design process"><button type="button" data-go="securacy-st1" disabled><span>01</span>Research</button><button type="button" data-go="securacy-st2"><span>02</span>Define</button><button type="button" data-go="securacy-st3"><span>03</span>Ideate</button><button type="button" data-go="securacy-st4"><span>04</span>Design</button><button type="button" data-go="securacy-st5" disabled><span>05</span>Test</button><button type="button" data-go="securacy-st6"><span>06</span>Deliver</button></nav>
       <div class="body">
         <p class="label">The brief</p>
@@ -1273,7 +1268,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <a class="btn primary" href="https://securacy-marketing.vercel.app/" target="_blank" rel="noopener">Securacy ↗</a>
       </div>
     </article>
-    <a class="nextcase" href="#st-lawrence"><span class="label">Next case study</span><b>St Lawrence Market <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#green-campus"><span class="label">Next case study</span><b>Green Campus Co-op <span aria-hidden="true">→</span></b></a>
   </section>
 
   <section class="view" id="st-lawrence" data-view="st-lawrence" hidden>
@@ -1281,7 +1276,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
     <article class="case slm" aria-labelledby="slm-h">
       <div class="cover">
         <div class="intro">
-          <p class="label">Case study 06 · Website redesign</p>
+          <p class="label">Case study 07 · Website redesign</p>
           <h3 id="slm-h">St Lawrence Market</h3>
           <p class="sub">Reimagining the website of one of Toronto's best-known food markets, so visitors can plan a trip and find what's on.</p>
           <div class="tags"><span class="tag">UX research</span><span class="tag">Competitive analysis</span><span class="tag">Personas</span><span class="tag">Prototyping</span></div>
@@ -1300,6 +1295,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <span class="rt">1 min read</span>
       </div>
       <div class="methods"><span class="label">Methods</span><span class="m">Site audit</span><span class="m">Competitive analysis</span><span class="m">Persona</span><span class="m">Journey mapping</span></div>
+      <div class="roleline"><span class="label">My role</span><b>Research and design · group of 5 · March 2024</b></div>
       <nav class="rail" aria-label="Design process"><button type="button" data-go="st-lawrence-st1"><span>01</span>Research</button><button type="button" data-go="st-lawrence-st2"><span>02</span>Define</button><button type="button" data-go="st-lawrence-st3" disabled><span>03</span>Ideate</button><button type="button" data-go="st-lawrence-st4" disabled><span>04</span>Design</button><button type="button" data-go="st-lawrence-st5" disabled><span>05</span>Test</button><button type="button" data-go="st-lawrence-st6"><span>06</span>Deliver</button></nav>
       <div class="body">
         <p class="label">The problem</p>
@@ -1332,7 +1328,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <p class="note" style="grid-column:1 / -1">Group project with Sanket, MJ, Gouri and Jill.</p>
       </div>
     </article>
-    <a class="nextcase" href="#hopin"><span class="label">Next case study</span><b>HopIn <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#tgcsb"><span class="label">Next case study</span><b>Telangana Cyber Security Bureau <span aria-hidden="true">→</span></b></a>
   </section>
 
 
@@ -1360,6 +1356,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <span class="rt">2 min read</span>
       </div>
       <div class="methods"><span class="label">Methods</span><span class="m">Desk research</span><span class="m">Strategy alignment</span><span class="m">Concept testing</span></div>
+      <div class="roleline"><span class="label">My role</span><b>User research, content strategy and design process · team of 4 · August 2025</b></div>
       <nav class="rail" aria-label="Design process"><button type="button" data-go="bot-about-to-st1"><span>01</span>Research</button><button type="button" data-go="bot-about-to-st2"><span>02</span>Define</button><button type="button" data-go="bot-about-to-st3"><span>03</span>Ideate</button><button type="button" data-go="bot-about-to-st4"><span>04</span>Design</button><button type="button" data-go="bot-about-to-st5"><span>05</span>Test</button><button type="button" data-go="bot-about-to-st6"><span>06</span>Deliver</button></nav>
       <div class="body">
         <p class="label">The challenge</p>
@@ -1473,7 +1470,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <a class="btn primary" href="https://www.figma.com/make/SKGeyH4E95rOA9UoRb7aYA/Bot-About-TO---City-of-Toronto-AI-Mascot-Prototype--Copy-?code-node-id=0-9&amp;p=f&amp;fullscreen=1" target="_blank" rel="noopener">Open prototype ↗</a>
       </div>
     </article>
-    <a class="nextcase" href="#hopin"><span class="label">Back to the start</span><b>HopIn <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#zatch"><span class="label">Next case study</span><b>Zatch <span aria-hidden="true">→</span></b></a>
   </section>
 
   <section class="view" id="zatch-brand" data-view="zatch-brand" hidden>
@@ -1682,7 +1679,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <div class="hello">
           <div>
             <h3 class="hello-h">Hi, I'm Sushmita.</h3>
-            <p class="hello-sub">Digital strategist · Toronto</p>
+            <p class="hello-sub">UX researcher &amp; content strategist · Toronto</p>
           </div>
           <svg class="sketch" viewBox="0 0 220 150" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 140h200"/><path d="M30 140V62l80-38 80 38v78"/><path d="M22 66l88-44 88 44"/><path d="M50 140V84a14 14 0 0 1 28 0v56M96 140V80a14 14 0 0 1 28 0v60M142 140V84a14 14 0 0 1 28 0v56"/><path d="M98 50h24v14H98z"/><path d="M110 24V10"/><path d="M110 10l12 4-12 4"/><path d="M36 108h8M176 108h8M36 120h8M176 120h8"/></svg>
         </div>
@@ -1725,7 +1722,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
   <section class="contact" id="contact">
     <p class="label">Contact</p>
     <h2 style="margin-top:12px">Let's make something easier to use.</h2>
-    <p style="margin-top:16px;max-width:52ch;color:var(--muted)">I'm open to digital strategy, branding and UX roles. The fastest way to reach me is email.</p>
+    <p style="margin-top:16px;max-width:52ch;color:var(--muted)">I'm open to UX research, content design and service design roles in Toronto. The fastest way to reach me is email.</p>
     <div class="contact-row">
       <span class="email" id="email">saisushmita999@gmail.com</span>
       <button class="btn primary" id="copy" type="button">Copy email</button>
