@@ -529,7 +529,9 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 .toolkit{margin-top:28px}.toolkit>p.label{margin:0 0 10px}
 .tkgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
 .tk{display:flex;flex-direction:column;gap:4px;padding:14px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;color:var(--fg);transition:border-color .15s}
-.tk:hover{border-color:var(--fg)}.tk b{font-size:15px;line-height:1.2}.tk span{font-size:13px;color:var(--muted)}.tk em{font-style:normal;font-size:12.5px;font-weight:600;color:var(--accent);margin-top:auto}
+.tk:hover{border-color:var(--fg)}
+.tkgrid.ai{grid-template-columns:repeat(4,1fr)}.tkgrid.ai .tk:hover{border-color:var(--line)}
+@media (max-width:980px){.tkgrid.ai{grid-template-columns:1fr 1fr}}@media (max-width:520px){.tkgrid.ai{grid-template-columns:1fr}}.tk b{font-size:15px;line-height:1.2}.tk span{font-size:13px;color:var(--muted)}.tk em{font-style:normal;font-size:12.5px;font-weight:600;color:var(--accent);margin-top:auto}
 @media (max-width:980px){.tkgrid{grid-template-columns:repeat(3,1fr)}}@media (max-width:520px){.tkgrid{grid-template-columns:1fr 1fr}}
 .case.sbp .stats,.case.sb .stats{background:#1f3b36;color:#fff}.case.sbp .stat,.case.sb .stat{border-color:rgba(255,255,255,.2)}
 .bp{display:grid;grid-template-columns:150px repeat(5,minmax(170px,1fr));min-width:1000px;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13.5px;line-height:1.4}
@@ -657,6 +659,16 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <a class="tk" href="#hopin"><b>Wireframes</b><span>Low-fi to polished Figma screens</span><em>HopIn →</em></a>
         <a class="tk" href="#tgcsb"><b>Sitemap &amp; IA</b><span>A police site rebuilt around tasks</span><em>TGCSB →</em></a>
         <a class="tk" href="#hopin"><b>Personas</b><span>4 personas from 7 interviews and 25 surveys</span><em>HopIn →</em></a>
+      </div>
+    </div>
+
+    <div class="toolkit">
+      <p class="label">How I use AI · faster work, human judgment</p>
+      <div class="tkgrid ai">
+        <div class="tk"><b>Research synthesis</b><span>ChatGPT and Claude help me sort notes and draft first themes. I check every theme against the raw data.</span></div>
+        <div class="tk"><b>Content drafts</b><span>Quick first drafts and plain-language rewrites, then I edit for accuracy, tone and reading level.</span></div>
+        <div class="tk"><b>Design variations</b><span>Canva and Figma AI for fast layout and visual options before I refine by hand.</span></div>
+        <div class="tk"><b>AI prototyping</b><span>On Bot About TO, we tested our assistant idea with real prompts in Microsoft Copilot.</span></div>
       </div>
     </div>
 
@@ -1883,7 +1895,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 
         <div class="skills">
           <p class="label">Tools I use</p>
-          <div class="tools"><span>Figma</span><span>Miro</span><span>Maze</span><span>Notion</span><span>Google Forms</span><span>Excel (advanced)</span><span>SQL</span><span>Salesforce</span><span>SharePoint</span><span>Confluence</span><span>Adobe tools</span><span>Canva</span><span>Mailchimp</span><span>Google Analytics</span><span>CMS</span></div>
+          <div class="tools"><span>Figma</span><span>Miro</span><span>Maze</span><span>Notion</span><span>Google Forms</span><span>Excel (advanced)</span><span>SQL</span><span>Salesforce</span><span>SharePoint</span><span>Confluence</span><span>Adobe tools</span><span>Canva</span><span>Mailchimp</span><span>Google Analytics</span><span>CMS</span><span>ChatGPT</span><span>Claude</span><span>Microsoft Copilot</span><span>Canva &amp; Figma AI</span></div>
         </div>
         <div class="skills">
           <p class="label">Skills</p>
