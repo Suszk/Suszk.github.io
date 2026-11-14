@@ -555,6 +555,9 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 .hs-btn:hover:not(:disabled){background:var(--fg);color:var(--bg)}
 .hs-btn:disabled{opacity:.3;cursor:default}
 .hs-btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.vfig video{display:block;width:100%;height:auto;border-radius:12px;background:#f3f2ee}
+.live-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:4px 0 8px}
+.live-cta .note{margin:0}
 .casenav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
 .casenav .nextcase{margin-top:0}
 .prevcase{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:22px 26px;border:1.5px solid var(--line);border-radius:16px;text-decoration:none;color:var(--fg)}
@@ -1716,7 +1719,8 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
       <div class="roleline"><span class="label">My role</span><b>End to end: research, UX, visual design and front-end build · 2026</b></div>
       <nav class="rail" aria-label="Design process"><button type="button" data-go="dv-st1"><span>01</span>Research</button><button type="button" data-go="dv-st2"><span>02</span>Define</button><button type="button" data-go="dv-st3"><span>03</span>Ideate</button><button type="button" data-go="dv-st4"><span>04</span>Design</button><button type="button" data-go="dv-st5"><span>05</span>Test</button><button type="button" data-go="dv-st6"><span>06</span>Deliver</button></nav>
       <div class="body">
-        <figure class="fig"><img src="img/denvibes/hero.jpg" alt="Denvibes homepage: large headline Welcome to our den, a lime highlight, and Start a project and See our work buttons" loading="lazy" width="1440" height="900"><figcaption>The homepage: one message, one main action.</figcaption></figure>
+        <figure class="fig vfig"><video src="img/denvibes/clip-home.mp4" poster="img/denvibes/clip-home.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Scrolling through the Denvibes homepage: headline, results, services and selected work"></video><figcaption>Scroll the homepage: one message, proof, services, then work.</figcaption></figure>
+        <div class="live-cta"><a class="btn primary" href="https://suszk.github.io/denvibes/" target="_blank" rel="noopener">Try the live site ↗</a><p class="note">Click around, press ⌘K / Ctrl+K, and rotate the 3D stand on the Events page.</p></div>
 
         <p class="label">The challenge</p>
         <div>
@@ -1797,8 +1801,10 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
             <li><b>Pinned steps</b>Each service's 5-step process locks in place as you scroll.</li>
           </ul>
         </div>
-        <figure class="fig"><img src="img/denvibes/search.jpg" alt="Command search overlay listing pages: Home, About, Services, Work, Insights, FAQ, Contact" loading="lazy" width="1440" height="900"><figcaption>⌘K search: every page and project, one shortcut away.</figcaption></figure>
-        <figure class="fig"><img src="img/denvibes/stand3d.jpg" alt="Live 3D exhibition stand with hotspots for LED wall, reception, meeting pod, plinths and banner" loading="lazy" width="1440" height="900"><figcaption>Show, don't tell: a live 3D stand clients can rotate, explode and light for show night.</figcaption></figure>
+        <figure class="fig vfig"><video src="img/denvibes/clip-search.mp4" poster="img/denvibes/clip-search.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Pressing Command K, typing a project name, then jumping to the Events page"></video><figcaption>⌘K search: type "lucky" to find a project, or "events" to jump to a service.</figcaption></figure>
+        <figure class="fig vfig"><video src="img/denvibes/clip-steps.mp4" poster="img/denvibes/clip-steps.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Scrolling the Events page: each of the 5 process steps locks in place"></video><figcaption>Pinned steps: Brief → Concept &amp; 3D → Approvals → Fabrication → Show, one at a time.</figcaption></figure>
+        <figure class="fig vfig"><video src="img/denvibes/clip-stand.mp4" poster="img/denvibes/clip-stand.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Live 3D exhibition stand: hovering hotspots, exploding the build, then switching to show-night lighting"></video><figcaption>Show, don't tell: clients hover each zone, explode the build and switch to show-night lighting.</figcaption></figure>
+        <div class="live-cta"><a class="btn" href="https://suszk.github.io/denvibes/#/expertise/events" target="_blank" rel="noopener">Rotate the stand yourself ↗</a></div>
 
         <div class="stage" id="dv-st5" data-stage="5"><span class="stage-n">05</span><span class="stage-name">Test</span><span class="stage-q">Does it work for everyone?</span></div>
         <p class="label">Checks &amp; iteration</p>
@@ -1816,6 +1822,10 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <p class="label">Result</p>
         <div class="change"><p><span class="mark">A site that answers "what, proof, how to start" on the first two screens,</span> with every service, project and article one click or one shortcut away.</p></div>
         <figure class="fig"><img src="img/denvibes/insights.jpg" alt="Insights section with article cards such as You have 50 milliseconds" loading="lazy" width="1440" height="900"><figcaption>Insights turn the agency's thinking into content that builds trust.</figcaption></figure>
+      </div>
+      <div class="case-foot">
+        <p>Explore the full site: 6 service pages, 18 projects, 7 articles and two live 3D demos.</p>
+        <a class="btn primary" href="https://suszk.github.io/denvibes/" target="_blank" rel="noopener">Open the live site ↗</a>
       </div>
       <div class="body">
         <p class="label">What I'd do next</p>
@@ -2239,5 +2249,7 @@ document.getElementById('copy').addEventListener('click', function(){
 <script>(function(){var b=document.getElementById('showmore'),x=document.getElementById('more-extra');if(!b||!x)return;var n=b.textContent;b.onclick=function(){var o=x.hidden;x.hidden=!o;b.setAttribute('aria-expanded',String(o));b.textContent=o?'Show fewer projects':n;};})();</script>
 
 
-</body>
+
+<script>(function(){var m=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)');var vs=document.querySelectorAll('.vfig video');if(m&&m.matches){vs.forEach(function(v){v.removeAttribute('autoplay');v.pause();v.setAttribute('controls','')});return}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play&&v.play();p&&p.catch&&p.catch(function(){})}else{v.pause()}})},{threshold:.25});vs.forEach(function(v){io.observe(v)})}})();</script></body>
 </html>
