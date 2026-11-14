@@ -567,6 +567,9 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 .live-cta .note{margin:0}
 .skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--fg);color:#fff;padding:10px 14px;border-radius:8px;font-weight:600;text-decoration:none}
 .skip:focus{top:12px}
+.qcard .pthumb{margin:-28px -28px 4px;border-radius:18px 18px 0 0;overflow:hidden;aspect-ratio:16/9;background:#eee}
+.qcard .pthumb img{width:100%;height:100%;object-fit:cover;display:block}
+[hidden]{display:none!important}
 .casenav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
 .casenav .nextcase{margin-top:0}
 .prevcase{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:22px 26px;border:1.5px solid var(--line);border-radius:16px;text-decoration:none;color:var(--fg)}
@@ -658,13 +661,9 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <div class="wmedia"><img src="img/cover-bot.jpg" alt="Bot About TO chat widget suggesting City data next to a Toronto news article" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">Hackathon · Civic tech · Team of 4</p><h3>An AI messenger that turns council news into stories residents trust</h3><p>Bot About TO: City of Toronto Data &amp; AI Innovation Challenge, 2025.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="wcard" href="#zatch">
-        <div class="wmedia"><img src="img/cover-za.jpg" alt="Three Zatch Instagram posts in lime and black" width="1280" height="800" loading="lazy"></div>
-        <div class="wbody"><p class="label">App design · Brand building</p><h3>What if online shopping let you bargain like a real bazaar?</h3><p>Zatch: a live shopping app for India, from buyer and seller research to features, market and roadmap.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
-      </a>
-      <a class="wcard feat" href="#denvibes">
+      <a class="wcard" href="#denvibes">
         <div class="wmedia"><img src="img/cover-dv.jpg" alt="Denvibes agency website on a laptop and a phone, with the headline Welcome to our den" width="1280" height="800" loading="lazy"></div>
-        <div class="wbody"><p class="label">Agency website · UX/UI · Design to build</p><h3>An agency site founders understand in seconds</h3><p>Denvibes: research, IA and Laws of UX through to a React build with live 3D demos.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
+        <div class="wbody"><p class="label">Agency website · UX/UI · Live 3D</p><h3>An agency site founders understand in seconds</h3><p>Denvibes: research and Laws of UX through to a React build you can try live.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
     </div>
 
@@ -702,11 +701,12 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
       </div>
     </div>
 
-    <h3 class="subhead">More projects &amp; concepts</h3>
-    <div class="more three" style="margin-top:16px">
-      <a class="proj proj-link" href="#securacy"><p class="label">B2B SaaS · Messaging</p><h3>Securacy</h3><p>Explaining AI threat modeling to engineers and executives in one scroll.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
-      <a class="proj proj-link" href="#green-campus"><p class="label">Website revamp · Team of 4</p><h3>Green Campus Co-op</h3><p>Making fair trade easy to understand and buy for a York University co-op.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
-      <a class="proj proj-link" href="#st-lawrence"><p class="label">Website redesign · Group project</p><h3>St Lawrence Market</h3><p>Planning a market visit around a busy parent's weekend.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
+    <h3 class="subhead">Other work</h3>
+    <div class="more" style="margin-top:16px">
+      <a class="proj proj-link qcard" href="#zatch"><div class="pthumb"><img src="img/cover-za.jpg" alt="Zatch app launch posts and screens" loading="lazy" width="640" height="400"></div><p class="label">App design · Brand building</p><h3>Zatch</h3><p>A live shopping app for India that lets you bargain like a real bazaar, from buyer research to brand.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link qcard" href="#securacy"><div class="pthumb"><img src="img/sec-hero.jpg" alt="Securacy website hero" loading="lazy" width="640" height="400"></div><p class="label">B2B SaaS · Messaging</p><h3>Securacy</h3><p>Explaining AI threat modeling to engineers and executives in one scroll.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link qcard" href="#green-campus"><div class="pthumb"><img src="img/gcc-product.jpg" alt="Green Campus Co-op product page" loading="lazy" width="640" height="400"></div><p class="label">Website revamp · Team of 4</p><h3>Green Campus Co-op</h3><p>Making fair trade easy to understand and buy for a York University co-op.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link qcard" href="#st-lawrence"><div class="pthumb"><img src="img/slm-journey.jpg" alt="St Lawrence Market journey map" loading="lazy" width="640" height="400"></div><p class="label">Website redesign · Group project</p><h3>St Lawrence Market</h3><p>Planning a market visit around a busy parent's weekend.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
     </div>
     <div class="more three" id="more-extra" hidden style="margin-top:20px">
       <a class="proj proj-link" href="#service-blueprint"><p class="label">Concept · Service design</p><h3>City permit service blueprint</h3><p>Booking a City facility, mapped from the resident's first search to the day of the event.</p><span class="wgo">Read <span aria-hidden="true">→</span></span></a>
@@ -729,7 +729,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         </div>
       </article>
     </div>
-    <button type="button" class="showmore" id="showmore" aria-expanded="false" aria-controls="more-extra">Show 7 more projects &amp; concepts</button>
+    <button type="button" class="showmore" id="showmore" aria-expanded="false" aria-controls="more-extra">Show 7 smaller pieces &amp; concepts</button>
   </section>
 
 
@@ -1642,7 +1642,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         </div>
       </div>
     </article>
-    <a class="nextcase" href="#zatch"><span class="label">Next case study</span><b>Zatch <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#denvibes"><span class="label">Next case study</span><b>Denvibes <span aria-hidden="true">→</span></b></a>
   </section>
 
   <section class="view" id="zatch-brand" data-view="zatch-brand" hidden>
@@ -1851,7 +1851,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         </div>
       </div>
     </article>
-    <a class="nextcase" href="#securacy"><span class="label">Next case study</span><b>Securacy <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#zatch"><span class="label">Next case study</span><b>Zatch <span aria-hidden="true">→</span></b></a>
   </section>
 
   <section class="view" id="zatch-social" data-view="zatch-social" hidden>
@@ -2234,7 +2234,7 @@ document.getElementById('copy').addEventListener('click', function(){
   window.addEventListener('hashchange',function(){ setTimeout(all,60); }); all();
 
   // Previous / next between case studies, plus left/right arrow keys
-  var order=['tgcsb','hopin','bot-about-to','zatch','denvibes','securacy','green-campus','st-lawrence','service-blueprint','storyboard','audit-311','tgcsb-copy','zatch-brand','zatch-social'];
+  var order=['tgcsb','hopin','bot-about-to','denvibes','zatch','securacy','green-campus','st-lawrence','service-blueprint','storyboard','audit-311','tgcsb-copy','zatch-brand','zatch-social'];
   var names={};
   order.forEach(function(id){ var v=document.getElementById(id); if(!v) return; var h=v.querySelector('h3'); names[id]=h?h.textContent.split(':')[0].trim():id; });
   order.forEach(function(id,i){
