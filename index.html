@@ -54,7 +54,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 h1,h2,h3{font-family:var(--display);line-height:1.05;text-wrap:balance;margin:0}
 p{margin:0}
 .mark{background:linear-gradient(transparent 55%, var(--mark) 55%);color:inherit;padding:0 .1em}
-.label{font-family:var(--body);font-size:12.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.label{font-family:var(--body);font-size:13.5px;font-weight:600;letter-spacing:.01em;text-transform:none;color:var(--muted)}
 
 /* nav */
 header.nav{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
@@ -100,7 +100,7 @@ section.block{padding-block:64px;border-top:1px solid var(--line)}
 .cover h3{font-size:clamp(34px,4.4vw,54px);font-weight:700;letter-spacing:-.02em}
 .cover .sub{font-size:19px;max-width:40ch}
 .tags{display:flex;gap:8px;flex-wrap:wrap}
-.tag{font-family:var(--mono);font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted)}
+.tag{font-family:var(--mono);font-size:13px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted)}
 .stats{display:grid;grid-template-columns:1fr 1fr;background:var(--accent);color:var(--accent-ink)}
 .case.green .stats{background:var(--green)}
 .stat{padding:24px;border-left:1px solid color-mix(in srgb, var(--accent-ink) 25%, transparent);border-bottom:1px solid color-mix(in srgb, var(--accent-ink) 25%, transparent);min-width:0}
@@ -117,7 +117,7 @@ section.block{padding-block:64px;border-top:1px solid var(--line)}
 .body li + li{margin-top:6px}
 .findings{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0;margin:0}
 .findings li{list-style:none;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:15.5px;line-height:1.45}
-.findings li b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:6px}
+.findings li b{display:block;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:none;color:var(--muted);font-weight:500;margin-bottom:6px}
 .change{border-left:4px solid var(--mark);padding-left:16px}
 .case-foot{padding:20px 36px;border-top:1px solid var(--line);display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between}
 .case-foot p{font-size:14.5px;color:var(--muted)}
@@ -138,7 +138,7 @@ section.block{padding-block:64px;border-top:1px solid var(--line)}
 .mini-stats span{font-size:14px;color:var(--muted)}
 table.cmp{border-collapse:collapse;width:100%;font-size:15px;min-width:460px}
 table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left}
-table.cmp th{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+table.cmp th{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:none;color:var(--muted);font-weight:500}
 table.cmp td.y{color:var(--green);font-weight:600} table.cmp td.n{color:var(--muted)}
 .scroll-x{overflow-x:auto}
 .case.slm .stats{background:#B4492F;color:#fff}
@@ -148,9 +148,9 @@ table.cmp td.y{color:var(--green);font-weight:600} table.cmp td.n{color:var(--mu
 .browser{border:1.5px solid var(--fg);border-radius:14px;overflow:hidden;background:var(--surface);min-width:0}
 .browser .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:1px solid var(--line);background:var(--bg)}
 .browser .bar i{width:9px;height:9px;border-radius:50%;background:var(--line);display:block}
-.browser .bar span{margin-left:8px;font-family:var(--mono);font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.browser .bar span{margin-left:8px;font-family:var(--mono);font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .scr{padding:28px 24px;min-height:200px;display:flex;flex-direction:column;justify-content:center;gap:10px}
-.scr .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+.scr .k{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:none;opacity:.75}
 .scr b{font-family:var(--display);font-size:clamp(24px,3.4vw,36px);line-height:1.05;font-weight:700}
 .scr p{font-size:14px;max-width:44ch;opacity:.85}
 .scr .pill{align-self:flex-start;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600}
@@ -177,7 +177,7 @@ table.cmp td.y{color:var(--green);font-weight:600} table.cmp td.n{color:var(--mu
 .proj{background:var(--surface);border:1.5px solid var(--fg);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
 .proj h3{font-size:30px;font-weight:700;letter-spacing:-.015em}
 .swatches{display:grid;grid-template-columns:repeat(6,1fr);border-radius:10px;overflow:hidden;border:1px solid var(--line)}
-.swatches span{height:56px;display:flex;align-items:flex-end;padding:6px;font-family:var(--mono);font-size:10.5px}
+.swatches span{height:56px;display:flex;align-items:flex-end;padding:6px;font-family:var(--mono);font-size:12px}
 .bot{display:flex;gap:14px;align-items:center}
 .bot-face{flex:none;width:64px;height:64px;border-radius:18px;background:var(--accent);position:relative}
 .bot-face::before,.bot-face::after{content:"";position:absolute;top:24px;width:10px;height:14px;border-radius:5px;background:var(--accent-ink)}
@@ -242,7 +242,7 @@ table.matrix th[data-col="tg"],table.matrix td[data-col="tg"]{font-weight:600}
 .tldr > div{padding:22px 26px;border-right:1px solid var(--line);min-width:0}
 .tldr > div:nth-child(3){border-right:0}
 .tldr p{margin-top:6px;font-size:16px;line-height:1.45}
-.rt{position:absolute;right:16px;bottom:-13px;font-family:var(--mono);font-size:12px;background:var(--mark);color:var(--mark-ink);padding:3px 10px;border-radius:999px}
+.rt{position:absolute;right:16px;bottom:-13px;font-family:var(--mono);font-size:13px;background:var(--mark);color:var(--mark-ink);padding:3px 10px;border-radius:999px}
 @media (max-width:860px){.wgrid .wcard.feat{grid-template-columns:1fr}.wcard.feat .wmedia{border-right:0;border-bottom:1.5px solid var(--fg);aspect-ratio:16/9;min-height:0}.tldr{grid-template-columns:1fr}.tldr > div{border-right:0;border-bottom:1px solid var(--line)}}
 
 
@@ -275,7 +275,7 @@ table.matrix th[data-col="tg"],table.matrix td[data-col="tg"]{font-weight:600}
 .mini-h{font-family:var(--display);font-size:18px}
 .journey{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:12px 0 0;counter-reset:j}
 .journey li{list-style:none;counter-increment:j;border:1.5px solid var(--fg);border-radius:999px;padding:6px 12px 6px 8px;font-size:14.5px;display:flex;gap:6px;align-items:center}
-.journey li::before{content:counter(j);font-family:var(--mono);font-size:11px;width:20px;height:20px;border-radius:50%;background:var(--fg);color:var(--bg);display:inline-flex;align-items:center;justify-content:center}
+.journey li::before{content:counter(j);font-family:var(--mono);font-size:13px;width:20px;height:20px;border-radius:50%;background:var(--fg);color:var(--bg);display:inline-flex;align-items:center;justify-content:center}
 .journey li.bad{background:var(--mark);color:var(--mark-ink);border-color:var(--mark)}
 .journey li.bad::before{background:var(--mark-ink);color:var(--mark)}
 .findings.four{grid-template-columns:repeat(4,1fr)}
@@ -285,7 +285,7 @@ table.matrix th[data-col="tg"],table.matrix td[data-col="tg"]{font-weight:600}
 .pmap{position:relative;aspect-ratio:16/9;max-width:100%;border:1.5px solid var(--fg);border-radius:14px;background:
  linear-gradient(var(--line),var(--line)) center/1px 100% no-repeat,
  linear-gradient(var(--line),var(--line)) center/100% 1px no-repeat, var(--bg);overflow:hidden}
-.pmap .ax{position:absolute;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pmap .ax{position:absolute;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:none;color:var(--muted)}
 .pmap .y1{top:10px;left:50%;transform:translateX(-50%)}.pmap .y0{bottom:10px;left:50%;transform:translateX(-50%)}
 .pmap .x0{left:10px;top:50%;transform:translateY(-50%)}.pmap .x1{right:10px;top:50%;transform:translateY(-50%)}
 .pmap .dot{position:absolute;transform:translate(-50%,-50%);background:var(--surface);border:1.5px solid var(--fg);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600;text-align:center;line-height:1.2;white-space:nowrap}
@@ -293,7 +293,7 @@ table.matrix th[data-col="tg"],table.matrix td[data-col="tg"]{font-weight:600}
 .pmap .dot.me{background:#C9F26B;color:#16201B;border-color:#16201B;font-size:16px;padding:8px 16px;box-shadow:0 0 0 6px color-mix(in srgb,#C9F26B 40%,transparent)}
 .usp-line{font-family:var(--display);font-weight:700;font-size:clamp(24px,3vw,32px);line-height:1.1;margin-bottom:8px}
 .usp .findings{margin-top:14px}
-@media (max-width:520px){.pmap .d-az{left:32%!important;top:84%!important}.pmap .d-wn{left:70%!important;top:60%!important}.pmap .x0{top:auto;bottom:30px;transform:none}.pmap .x1{top:auto;bottom:30px;transform:none}.logo{font-size:16px;white-space:nowrap}.nav ul{gap:10px!important;flex-wrap:nowrap}.nav ul a{font-size:13.5px}.nav .wrap{gap:10px}.pmap{aspect-ratio:4/5}.pmap .dot{font-size:11.5px;padding:4px 8px}.pmap .dot.me{font-size:14px}}
+@media (max-width:520px){.pmap .d-az{left:32%!important;top:84%!important}.pmap .d-wn{left:70%!important;top:60%!important}.pmap .x0{top:auto;bottom:30px;transform:none}.pmap .x1{top:auto;bottom:30px;transform:none}.logo{font-size:16px;white-space:nowrap}.nav ul{gap:10px!important;flex-wrap:nowrap}.nav ul a{font-size:13.5px}.nav .wrap{gap:10px}.pmap{aspect-ratio:4/5}.pmap .dot{font-size:13px;padding:4px 8px}.pmap .dot.me{font-size:14px}}
 
 
 .proj-link{text-decoration:none;color:var(--fg);transition:transform .15s ease, box-shadow .15s ease}
@@ -316,7 +316,7 @@ table.borrow td:first-child{color:var(--muted)}
 .dec img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;background:#fff}
 .dec figcaption{font-size:15px;color:var(--muted);line-height:1.45}
 .dec figcaption b{display:block;font-family:var(--display);font-size:19px;color:var(--fg);margin-bottom:2px}
-.dec .dn{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.dec .dn{font-family:var(--mono);font-size:13px;color:var(--muted)}
 .dec:nth-child(1),.dec:nth-child(4),.dec:nth-child(5){grid-column:1 / -1}
 @media (max-width:860px){.decs{grid-template-columns:1fr}}
 
@@ -414,7 +414,7 @@ section.block{padding-block:96px}
 /* design process */
 .rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 60px);z-index:4;display:flex;gap:6px;overflow-x:auto;padding:12px clamp(16px,4vw,44px);background:var(--surface);border-bottom:1.5px solid var(--fg)}
 .rail button{flex:none;display:flex;align-items:center;gap:8px;font:600 14px var(--body);color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:999px;padding:7px 14px 7px 8px;cursor:pointer}
-.rail button span{font-family:var(--mono);font-size:11px;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--line);color:var(--fg)}
+.rail button span{font-family:var(--mono);font-size:13px;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--line);color:var(--fg)}
 .rail button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 .rail button.on span{background:var(--mark);color:var(--mark-ink)}
 .rail button:disabled{opacity:.35;cursor:default}
@@ -512,7 +512,7 @@ section.block{padding-block:96px}
 .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .post{background:var(--surface);border:1.5px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:8px}
 .post b{font-family:var(--display);font-size:18px;line-height:1.25}.post p{font-size:14.5px;color:var(--muted)}
-.post-k{align-self:flex-start;font-size:12px;font-weight:600;background:#C9F26B;color:#111;border-radius:999px;padding:3px 10px}
+.post-k{align-self:flex-start;font-size:13px;font-weight:600;background:#C9F26B;color:#111;border-radius:999px;padding:3px 10px}
 table.cal td{font-size:14px;vertical-align:top}
 blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-height:1.6}
 .quote-old{background:var(--bg);border:1.5px dashed var(--line);color:var(--muted)}
@@ -537,13 +537,13 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 .tk{display:flex;flex-direction:column;gap:4px;padding:14px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;color:var(--fg);transition:border-color .15s}
 .tk:hover{border-color:var(--fg)}
 .tkgrid.ai{grid-template-columns:repeat(4,1fr)}.tkgrid.ai .tk:hover{border-color:var(--line)}
-@media (max-width:980px){.tkgrid.ai{grid-template-columns:1fr 1fr}}@media (max-width:520px){.tkgrid.ai{grid-template-columns:1fr}}.tk b{font-size:15px;line-height:1.2}.tk span{font-size:13px;color:var(--muted)}.tk em{font-style:normal;font-size:12.5px;font-weight:600;color:var(--accent);margin-top:auto}
+@media (max-width:980px){.tkgrid.ai{grid-template-columns:1fr 1fr}}@media (max-width:520px){.tkgrid.ai{grid-template-columns:1fr}}.tk b{font-size:15px;line-height:1.2}.tk span{font-size:13px;color:var(--muted)}.tk em{font-style:normal;font-size:13px;font-weight:600;color:var(--accent);margin-top:auto}
 @media (max-width:980px){.tkgrid{grid-template-columns:repeat(3,1fr)}}@media (max-width:520px){.tkgrid{grid-template-columns:1fr 1fr}}
 .case.sbp .stats,.case.sb .stats{background:#1f3b36;color:#fff}.case.sbp .stat,.case.sb .stat{border-color:rgba(255,255,255,.2)}
 .bp{display:grid;grid-template-columns:150px repeat(5,minmax(170px,1fr));min-width:1000px;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13.5px;line-height:1.4}
 .bp>div{padding:10px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
-.bp>.h{font-weight:700;background:var(--surface)}.bp>.rl{font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:var(--surface)}
-.bp>.ln{grid-column:1/-1;padding:4px 12px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px) bottom/100% 1px no-repeat,var(--bg)}
+.bp>.h{font-weight:700;background:var(--surface)}.bp>.rl{font-weight:700;font-size:13px;text-transform:none;letter-spacing:.06em;color:var(--muted);background:var(--surface)}
+.bp>.ln{grid-column:1/-1;padding:4px 12px;font-size:13px;letter-spacing:.08em;text-transform:none;color:var(--muted);background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px) bottom/100% 1px no-repeat,var(--bg)}
 .bp>.pain{background:#fdecea;color:#7a1f16}.bp>.opp{background:#e8f5ee;color:#14532d}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bp>.pain{background:#3a1d1a;color:#f6c9c3}:root:not([data-theme="light"]) .bp>.opp{background:#16301f;color:#bfe8cc}}
 :root[data-theme="dark"] .bp>.pain{background:#3a1d1a;color:#f6c9c3}:root[data-theme="dark"] .bp>.opp{background:#16301f;color:#bfe8cc}
@@ -551,7 +551,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 .sboard li{border:1.5px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg)}
 .sboard figure{margin:0;aspect-ratio:4/3;display:grid;place-items:center;background:var(--surface);border-bottom:1.5px solid var(--line)}
 .sboard svg{width:58%;height:auto;stroke:var(--fg);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.sboard svg .ac{stroke:var(--accent)}.sboard .cap{padding:12px 14px}.sboard .cap b{display:block;font-size:15px}.sboard .cap span{font-size:14px;color:var(--muted)}.sboard .n{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.06em}
+.sboard svg .ac{stroke:var(--accent)}.sboard .cap{padding:12px 14px}.sboard .cap b{display:block;font-size:15px}.sboard .cap span{font-size:14px;color:var(--muted)}.sboard .n{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.06em}
 @media (max-width:860px){.sboard{grid-template-columns:1fr 1fr}}@media (max-width:520px){.sboard{grid-template-columns:1fr}}
 
 .hs-wrap{position:relative}
@@ -593,7 +593,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 .sk-grid dt{font-weight:700;font-size:16px}.sk-grid dd{margin:0;font-size:14.5px;color:var(--muted);line-height:1.45}
 .sk-grid a{margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:600;color:var(--accent);text-decoration:none}
 .tool-lines{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px;font-size:15px}
-.tool-lines b{display:inline-block;min-width:64px;font-weight:600;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.tool-lines b{display:inline-block;min-width:64px;font-weight:600;color:var(--muted);font-size:13px;text-transform:none;letter-spacing:.06em}
 @media (max-width:520px){.sk-grid{grid-template-columns:1fr}}
 .rolegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .rolecard{display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:18px;background:var(--surface);border:1.5px solid var(--line);text-decoration:none;color:var(--fg);transition:transform .15s ease,border-color .15s ease}
@@ -668,7 +668,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
     </div>
 
   <div class="process inwork" aria-labelledby="process-h">
-    <p class="label" id="process-h">How I work · every case study follows these steps</p>
+    <p class="label" id="process-h">How I work</p>
     <ol class="steps">
       <li><span class="label">01</span><b>Research</b><span>Interviews, surveys, competitors</span></li>
       <li><span class="label">02</span><b>Define</b><span>Personas, journeys, the real problem</span></li>
@@ -680,7 +680,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
   </div>
 
     <div class="toolkit">
-      <p class="label">Service design toolkit · where to see each deliverable</p>
+      <p class="label">Service design toolkit</p>
       <div class="tkgrid">
         <a class="tk" href="#service-blueprint"><b>Service blueprint</b><span>Frontstage, backstage and support for a City permit</span><em>Concept →</em></a>
         <a class="tk" href="#hopin"><b>Journey maps</b><span>HopIn and St Lawrence Market</span><em>HopIn →</em></a>
@@ -692,7 +692,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
     </div>
 
     <div class="toolkit">
-      <p class="label">How I use AI · faster work, human judgment</p>
+      <p class="label">How I use AI</p>
       <div class="tkgrid ai">
         <div class="tk"><b>Research synthesis</b><span>ChatGPT and Claude help me sort notes and draft first themes. I check every theme against the raw data.</span></div>
         <div class="tk"><b>Content drafts</b><span>Quick first drafts and plain-language rewrites, then I edit for accuracy, tone and reading level.</span></div>
@@ -718,7 +718,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
       <article class="proj" aria-labelledby="tif-h">
         <p class="label">Brand study</p>
         <h3 id="tif-h">Tiffany &amp; Co. brand guidelines</h3>
-        <p>A breakdown of how a luxury brand stays consistent: a full tint scale built from its signature blue, supporting neutrals and golds, and a type system that pairs a classic serif with Avenir Next for a modern feel.</p>
+        <p>How a luxury brand stays consistent. A tint scale built from its signature blue, plus neutrals, golds, and a classic serif paired with Avenir Next.</p>
         <div class="swatches" aria-label="Colour palette from the brand study">
           <span style="background:#E7F8F8;color:#055D5B">E7F8F8</span>
           <span style="background:#9DE3E1;color:#055D5B">9DE3E1</span>
@@ -739,7 +739,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
     <div class="galgrp"><h3>Zatch Instagram</h3><p>Posts for <a href="https://www.instagram.com/zatch.shop/" target="_blank" rel="noopener">@zatch.shop</a>, the live-bargain shopping app: a "Zatch Hours" launch teaser, bargaining one-liners and festive posts, all in one lime-and-black system.</p><div class="galrow"><img src="img/canva/zatch-hours-soon.jpg" width="310" height="414" alt="Zatch Hours coming soon teaser post" loading="lazy"><img src="img/canva/zatch-hours.jpg" width="310" height="414" alt="Zatch Hours explainer post" loading="lazy"><img src="img/canva/zatch-roadster.jpg" width="309" height="414" alt="The roadster might not land, but your price will post" loading="lazy"><img src="img/canva/zatch-calc.jpg" width="310" height="414" alt="Based on our calculations, you need Zatch post" loading="lazy"><img src="img/canva/zatch-muse.jpg" width="309" height="414" alt="Muse said let me zatch that post" loading="lazy"><img src="img/canva/zatch-sensitive.jpg" width="309" height="414" alt="Sensitive content, deals that might be dangerously good post" loading="lazy"><img src="img/canva/zatch-dussehra.jpg" width="309" height="414" alt="Happy Dussehra festive post" loading="lazy"></div></div>
     <div class="galgrp"><h3>SHIELD 2026 launch campaign</h3><p>Instagram and LinkedIn posts announcing CipherSprint, the Telangana Police national cyber-innovation challenge. One visual system for the grant call, the Technology Experience Zone and the student track.</p><div class="galrow"><img src="img/canva/shield-1.jpg" width="400" height="500" alt="SHIELD 2026 CipherSprint launch post" loading="lazy"><img src="img/canva/shield-3.jpg" width="400" height="500" alt="Student Innovation Track announcement post" loading="lazy"><img src="img/canva/shield-2.jpg" width="400" height="500" alt="Technology Experience Zone post" loading="lazy"></div></div>
     <div id="gal-extra" hidden>
-    <div class="galgrp"><h3>Event collateral &amp; reports</h3><p>The SHIELD 2026 two-pager for partners and delegates, and the SHIELD 2025 event report that turned a two-day conclave into a readable record.</p><div class="galrow"><img src="img/canva/twopager.jpg" width="376" height="532" alt="SHIELD 2026 two-pager" loading="lazy"><img src="img/canva/report-1.jpg" width="376" height="532" alt="SHIELD 2025 event report cover" loading="lazy"><img src="img/canva/report-2.jpg" width="376" height="532" alt="Event report key discussions page" loading="lazy"></div></div>
+    <div class="galgrp"><h3>Event collateral &amp; reports</h3><p>A two-pager for SHIELD 2026 partners and delegates, and a SHIELD 2025 report that makes a two-day conclave easy to read.</p><div class="galrow"><img src="img/canva/twopager.jpg" width="376" height="532" alt="SHIELD 2026 two-pager" loading="lazy"><img src="img/canva/report-1.jpg" width="376" height="532" alt="SHIELD 2025 event report cover" loading="lazy"><img src="img/canva/report-2.jpg" width="376" height="532" alt="Event report key discussions page" loading="lazy"></div></div>
     <div class="galgrp"><h3>Brand marks &amp; data storytelling</h3><p>Logo explorations for Cipher Sprint, and data slides from the HopIn pitch that make the research numbers easy to read.</p><div class="galrow"><img src="img/canva/cipher-1.jpg" width="447" height="447" alt="Cipher Sprint logo on dark" loading="lazy" class=sq><img src="img/canva/cipher-2.jpg" width="447" height="447" alt="Cipher Sprint shield wordmark" loading="lazy" class=sq><img src="img/canva/hopin-data-1.jpg" width="596" height="335" alt="HopIn commute time chart slide" loading="lazy" class=wide><img src="img/canva/hopin-data-2.jpg" width="596" height="335" alt="HopIn environmental benefits slide" loading="lazy" class=wide></div></div>
     </div>
     <button type="button" class="showmore" id="galmore" aria-expanded="false" aria-controls="gal-extra">Show event collateral &amp; brand marks</button>
@@ -747,7 +747,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 
   <section class="block roles-sec" aria-labelledby="roles-h">
     <div class="sec-head"><h2 id="roles-h">Roles I can step into</h2><p class="label">Adaptive, multifunctional, always learning</p></div>
-    <p class="roles-lead">I've moved from fraud analytics at Amazon to public services at the City of Toronto to UX and brand work, and I pick up new tools fast. Here's where my work fits.</p>
+    <p class="roles-lead">I've worked in fraud analytics at Amazon, client services at the City of Toronto, and UX and brand work. I learn new tools fast. Here's where my work fits.</p>
     <div class="rolegrid"><a class="rolecard" href="#hopin"><b>UX Research</b><span>Interviews, surveys, usability tests, Maze studies</span><em>See: HopIn →</em></a><a class="rolecard" href="#tgcsb-copy"><b>Content Design &amp; UX Writing</b><span>Plain language, microcopy, messaging</span><em>See: TGCSB rewrite →</em></a><a class="rolecard" href="#service-blueprint"><b>Service Design</b><span>Blueprints, journeys, storyboards, sitemaps, public services</span><em>See: Service blueprint →</em></a><a class="rolecard" href="#zatch"><b>Product Design</b><span>Wireframes to polished Figma prototypes</span><em>See: Zatch →</em></a><a class="rolecard" href="#zatch-social"><b>Content &amp; Social Strategy</b><span>Calendars, posts, carousels and engagement tracking for SHIELD, TGCSB, Zatch and others</span><em>See: Zatch launch plan →</em></a><a class="rolecard" href="#zatch-brand"><b>Digital Marketing &amp; Brand</b><span>Brand guidelines, ads, posters, event collateral, pitch decks</span><em>See: Zatch brand →</em></a><a class="rolecard" href="#resume"><b>Research &amp; Data Analysis</b><span>SQL, Excel, dashboards, fraud analytics</span><em>See: Experience →</em></a><a class="rolecard" href="#bot-about-to"><b>Client &amp; Stakeholder Coordination</b><span>Coordinate client projects; work with councillors and senior officials</span><em>See: Bot About TO →</em></a></div>
   </section>
 
@@ -1075,7 +1075,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <p class="label">The pitch</p>
         <div><p>The research became a 16-slide investor deck.</p></div>
         <p class="label">Social media</p>
-        <div><p>I run Zatch's Instagram, <a href="https://www.instagram.com/zatch.shop/" target="_blank" rel="noopener">@zatch.shop</a>. The voice is playful and a little cheeky, built around the brand's lime green: launch teasers for Zatch Hours, bargaining jokes and festive posts.</p></div>
+        <div><p>I run Zatch's Instagram, <a href="https://www.instagram.com/zatch.shop/" target="_blank" rel="noopener">@zatch.shop</a>. The voice is playful and a little cheeky, built around the brand's lime green. Posts include Zatch Hours teasers, bargaining jokes and festive greetings.</p></div>
         <div class="galrow"><img src="img/canva/zatch-hours-soon.jpg" width="310" height="414" alt="Zatch Hours coming soon teaser post" loading="lazy"><img src="img/canva/zatch-hours.jpg" width="310" height="414" alt="Zatch Hours explainer post" loading="lazy"><img src="img/canva/zatch-roadster.jpg" width="309" height="414" alt="The roadster might not land, but your price will post" loading="lazy"><img src="img/canva/zatch-calc.jpg" width="310" height="414" alt="Based on our calculations, you need Zatch post" loading="lazy"><img src="img/canva/zatch-muse.jpg" width="309" height="414" alt="Muse said let me zatch that post" loading="lazy"><img src="img/canva/zatch-sensitive.jpg" width="309" height="414" alt="Sensitive content, deals that might be dangerously good post" loading="lazy"><img src="img/canva/zatch-dussehra.jpg" width="309" height="414" alt="Happy Dussehra festive post" loading="lazy"></div>
       </div>
       <div class="deck">
@@ -1711,7 +1711,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <div class="intro">
           <p class="label">Case study 08 · Agency website</p>
           <h3 id="dv-h">Denvibes</h3>
-          <p class="sub">A new website for a UAE creative agency with six very different services, designed so a busy founder understands what Denvibes does, and trusts it, within seconds.</p>
+          <p class="sub">A new website for a UAE creative agency with six very different services. It helps a busy founder understand and trust Denvibes in seconds.</p>
           <div class="tags"><span class="tag">UX/UI design</span><span class="tag">Information architecture</span><span class="tag">Interaction design</span><span class="tag">React · Three.js</span></div>
         </div>
         <div class="stats">
@@ -1761,7 +1761,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 
         <div class="stage" id="dv-st2" data-stage="2"><span class="stage-n">02</span><span class="stage-name">Define</span><span class="stage-q">What's the real problem?</span></div>
         <p class="label">Problem statement</p>
-        <div class="change"><p><span class="mark">A busy founder needs to understand what Denvibes does, and see proof it works, within a few seconds,</span> because an agency with six services can easily look unfocused, and they will leave before finding the service they came for.</p></div>
+        <div class="change"><p><span class="mark">A busy founder needs to see what Denvibes does, and proof it works, in a few seconds.</span> With six services, the agency can look unfocused, and visitors leave before they find what they came for.</p></div>
         <p class="label">Design principles</p>
         <div>
           <ul class="findings four">
@@ -1833,7 +1833,7 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
 
         <div class="stage" id="dv-st6" data-stage="6"><span class="stage-n">06</span><span class="stage-name">Deliver</span><span class="stage-q">What changed?</span></div>
         <p class="label">Result</p>
-        <div class="change"><p><span class="mark">A site that answers "what, proof, how to start" on the first two screens,</span> with every service, project and article one click or one shortcut away.</p></div>
+        <div class="change"><p><span class="mark">The first two screens answer "what, proof, how to start".</span> Every service, project and article is one click or one shortcut away.</p></div>
         <figure class="fig"><img src="img/denvibes/insights.jpg" alt="Insights section with article cards such as You have 50 milliseconds" loading="lazy" width="1440" height="900"><figcaption>Insights turn the agency's thinking into content that builds trust.</figcaption></figure>
       </div>
       <div class="case-foot">
@@ -2059,14 +2059,14 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <div class="hello">
           <div>
             <h3 class="hello-h">Hi, I'm Sushmita.</h3>
-            <p class="hello-sub">UX researcher &amp; content strategist · Toronto</p>
+            <p class="hello-sub">UX strategy consultant · Toronto</p>
           </div>
           <svg class="sketch" viewBox="0 0 220 150" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 140h200"/><path d="M30 140V62l80-38 80 38v78"/><path d="M22 66l88-44 88 44"/><path d="M50 140V84a14 14 0 0 1 28 0v56M96 140V80a14 14 0 0 1 28 0v60M142 140V84a14 14 0 0 1 28 0v56"/><path d="M98 50h24v14H98z"/><path d="M110 24V10"/><path d="M110 10l12 4-12 4"/><path d="M36 108h8M176 108h8M36 120h8M176 120h8"/></svg>
         </div>
         <div class="hello-text">
-          <p>I studied business in India, started my career at Amazon, then moved to Canada to study analytics and interactive media. Since then I've worked in very different places: client services at the City of Toronto, and now strategy consulting at Revolution X Studio, where my work runs from police websites to startup pitches.</p>
+          <p>I studied business in India and started my career at Amazon. Then I moved to Canada to study analytics and interactive media. Since then, I've worked in client services at the City of Toronto, and now in strategy consulting at Revolution X Studio. My projects range from police websites to startup pitches.</p>
           <p>What ties it together is people. I like talking to users, finding the moment they get stuck, and fixing it with clearer words, simpler screens and honest data.</p>
-          <p>Outside work I teach yoga, and I'm usually sketching buildings: old facades, bridges, anything with good lines. Both teach me to notice structure, which turns out to be most of design.</p>
+          <p>Outside work I teach yoga, and I'm usually sketching buildings: old facades, bridges, anything with good lines. Both teach me to notice structure. That turns out to be most of design.</p>
         </div>
 
         <div class="skillset">
@@ -2091,17 +2091,17 @@ blockquote{margin:0;padding:20px 22px;border-radius:16px;font-size:16.5px;line-h
         <div class="res-head"><p class="label" id="resume">Experience</p><button type="button" class="btn primary dl-cv">Download resume (PDF)</button></div>
         <p class="dl-msg" aria-live="polite"></p>
         <ol class="timeline">
-          <li><time>2024 – Present</time><div><h4>Strategy Consultant</h4><p class="org">Revolution X Studio</p><p>Research and content strategy for the TGCSB citizen website and two national event sites: benchmarked 5 cybercrime agencies, planned the sitemap and rewrote copy in plain language. Brand, website and social media work for clients including Zatch, plus reports and presentations for senior officials.</p></div></li>
+          <li><time>2024 – Present</time><div><h4>Strategy Consultant</h4><p class="org">Revolution X Studio</p><p>Research and content strategy for the TGCSB citizen website and two national event sites. Benchmarked 5 cybercrime agencies, planned the sitemap and rewrote copy in plain language. Brand, website and social media work for clients including Zatch, plus reports and presentations for senior officials.</p></div></li>
           <li><time>2023 – Present</time><div><h4>Client Services Representative</h4><p class="org">City of Toronto · Permits &amp; Bookings</p><p>First point of contact for residents and councillors' offices. Investigate client needs, review applications for compliance, issue permits and bookings, and report on facility use.</p></div></li>
           <li><time>2022 – 2023</time><div><h4>Transaction Risk Investigator</h4><p class="org">Amazon</p><p>Investigated fraud cases and wrote SOPs used by global teams. Cut turnaround time by 20%.</p></div></li>
-          <li><time>2021 – 2022</time><div><h4>Transportation Specialist</h4><p class="org">Amazon</p><p>UK freight scheduling, automated planning and KPI reports.</p></div></li>
+          <li><time>2021 – 2022</time><div><h4>Transportation Specialist</h4><p class="org">Amazon</p><p>Planned UK freight routes and built weekly KPI reports.</p></div></li>
         </ol>
 
         <p class="label" style="margin-top:36px">Education</p>
         <ol class="timeline">
-          <li><time>2024</time><div><h4>PG Certificate, Interactive Media Management</h4><p class="org">Centennial College</p><p>UX workshops, design challenges and the HopIn case study.</p></div></li>
-          <li><time>2023</time><div><h4>PG Certificate, Business Analytics</h4><p class="org">Conestoga College</p><p>Descriptive and diagnostic analytics: turning data into insights for business decisions.</p></div></li>
-          <li><time>2018 – 2021</time><div><h4>Bachelor's in Business, Marketing &amp; HR</h4><p class="org">ICFAI Business School</p><p>Marketing, project management, data analysis and design thinking.</p></div></li>
+          <li><time>2024</time><div><h4>PG Certificate, Interactive Media Management</h4><p class="org">Centennial College</p><p>UX workshops, design sprints and the HopIn project.</p></div></li>
+          <li><time>2023</time><div><h4>PG Certificate, Business Analytics</h4><p class="org">Conestoga College</p><p>Using data to answer business questions.</p></div></li>
+          <li><time>2018 – 2021</time><div><h4>Bachelor's in Business, Marketing &amp; HR</h4><p class="org">ICFAI Business School</p><p>Marketing, projects, data and design thinking.</p></div></li>
         </ol>
       </div>
     </div>
