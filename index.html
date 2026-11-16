@@ -68,7 +68,7 @@ header.nav{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;backgroun
 /* hero */
 .hero{padding-block:64px 48px;display:grid;grid-template-columns:1.6fr 1fr;gap:48px;align-items:end}
 .hero h1{font-size:clamp(38px, 5.4vw, 64px);font-weight:700;letter-spacing:-.025em}
-.hero h1 span{color:var(--accent)}
+.hero h1 .key{color:var(--accent)}
 .hero .lede{font-size:clamp(18px,2vw,21px);max-width:34ch;margin-top:22px;color:var(--fg)}
 .hero aside{display:flex;flex-direction:column;gap:18px;min-width:0}
 .facts{border-top:1px solid var(--line)}
@@ -610,13 +610,12 @@ blockquote{margin:0;padding:20px 22px;border-radius:10px;font-size:16.5px;line-h
   --display:"Instrument Sans","Segoe UI",Roboto,Arial,sans-serif}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0F0F0F;--surface:#0F0F0F;--fg:#EDEDED;--muted:#9A9A9A;--line:#262626;--accent:#EDEDED;--accent-ink:#0F0F0F;--mark:#1C1C1C;--mark-ink:#EDEDED;--green:#EDEDED}}
 :root[data-theme="dark"]{--bg:#0F0F0F;--surface:#0F0F0F;--fg:#EDEDED;--muted:#9A9A9A;--line:#262626;--accent:#EDEDED;--accent-ink:#0F0F0F;--mark:#1C1C1C;--mark-ink:#EDEDED;--green:#EDEDED}
-*{box-shadow:none!important;text-shadow:none!important}
 body{letter-spacing:-.003em}
 h1,h2,h3{font-weight:600!important;letter-spacing:-.025em;line-height:1.12}
 h1{font-weight:500!important;letter-spacing:-.035em}
 a{text-underline-offset:3px;text-decoration-thickness:1px}
 .mark,.hl{background:none!important;padding:0}
-.hero h1 span{color:var(--muted)}
+.hero h1 .key{color:var(--muted)}
 section{scroll-margin-top:80px}
 /* cards: hairline, no lift */
 .wcard,.proj,.case,.rolecard,.tk,.post,.take,.nextcase,.prevcase,.quote-new{border-color:var(--line)!important;background:var(--surface)!important}
@@ -650,9 +649,9 @@ header.nav{background:color-mix(in srgb,var(--bg) 92%,transparent)!important;bac
 .hero{position:relative;isolation:isolate}
 .hero-field{position:absolute;top:-40px;left:50%;width:100vw;height:calc(100% + 80px);transform:translateX(-50%);z-index:-1;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse at 50% 45%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 45%,#000 30%,transparent 75%)}
 html,body{overflow-x:clip}
-.hero h1 span{background:linear-gradient(var(--fg),var(--fg)) 0 100%/0 2px no-repeat;transition:background-size .9s cubic-bezier(.2,.7,.2,1) .4s,color .3s}
-.hero.ready h1 span{background-size:100% 2px}
-.hero h1:hover span{color:var(--fg)}
+.hero h1 .key{background:linear-gradient(var(--fg),var(--fg)) 0 100%/0 2px no-repeat;transition:background-size .9s cubic-bezier(.2,.7,.2,1) .4s,color .3s}
+.hero.ready h1 .key{background-size:100% 2px}
+.hero h1:hover .key{color:var(--fg)}
 .wcard,.qcard{position:relative}
 .wmedia img,.pthumb img{transition:transform .5s cubic-bezier(.2,.7,.2,1);will-change:transform}
 .wcard::after,.qcard::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
@@ -682,7 +681,7 @@ html.rv-on .rv.in{opacity:1;transform:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--pop:#8E9CFF;--pop-ink:#0F0F0F}}
 :root[data-theme="dark"]{--pop:#8E9CFF;--pop-ink:#0F0F0F}
 ::selection{background:var(--pop);color:var(--pop-ink)}
-.hero h1 span{color:var(--pop)!important;background-image:linear-gradient(var(--pop),var(--pop))}
+.hero h1 .key{color:var(--pop)!important;background-image:linear-gradient(var(--pop),var(--pop))}
 .avail i{background:var(--pop)!important}
 .primary,.btn.primary{background:var(--pop)!important;border-color:var(--pop)!important;color:var(--pop-ink)!important}
 .prog,.cur{background:var(--pop)}
@@ -694,6 +693,112 @@ html.rv-on .rv.in{opacity:1;transform:none}
 .rail .on,.chip.on{background:var(--pop)!important;border-color:var(--pop)!important;color:var(--pop-ink)!important}
 .stat strong{color:var(--pop)!important}
 a:focus-visible,button:focus-visible{outline-color:var(--pop)}
+
+/* ===== UX styles v2: bento, marquee, stickers, glass nav ===== */
+:root{--lime:#D4FF3F;--lime-ink:#111;--soft:#F4F4F0;--bg:#FBFBF8;--surface:#FFFFFF;--line:#E9E9E4;--r:24px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--soft:#1A1A1A;--bg:#0E0E0E;--surface:#151515;--line:#262626}}
+:root[data-theme="dark"]{--soft:#1A1A1A;--bg:#0E0E0E;--surface:#151515;--line:#262626}
+body{background:var(--bg)}
+/* glass pill nav */
+header.nav{background:transparent!important;border:0!important;backdrop-filter:none!important;padding-top:12px}
+header.nav .wrap{background:color-mix(in srgb,var(--surface) 72%,transparent);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);
+  border:1px solid var(--line);border-radius:999px;padding:8px 8px 8px 22px;box-shadow:0 8px 30px -12px rgba(0,0,0,.12)}
+.nav ul{gap:4px!important}
+.nav ul a{display:block;padding:8px 14px;border-radius:999px;transition:background .2s,color .2s}
+.nav ul a:hover{background:var(--soft);color:var(--fg)!important}
+.nav ul li:last-child a{background:var(--fg);color:var(--bg)!important}
+.nav ul li:last-child a:hover{background:var(--pop);color:var(--pop-ink)!important}
+.logo::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--pop);margin-right:9px;vertical-align:1px}
+/* hero */
+.hero{grid-template-columns:1.25fr 1fr!important;align-items:center!important;gap:clamp(28px,4vw,56px)!important;padding-block:56px 40px!important}
+.hero h1{font-size:clamp(40px,5.2vw,70px)!important;margin-top:18px;line-height:1.04}
+.hero .lede{margin-top:22px;font-size:clamp(18px,1.6vw,20px);color:var(--muted);max-width:40ch}
+.hero .cta{margin-top:30px;display:flex;gap:10px;flex-wrap:wrap}
+.hello{display:inline-flex;align-items:center;gap:8px;padding:7px 14px 7px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--fg)!important}
+.wave{display:inline-block;transform-origin:70% 70%;animation:wave 2.4s ease-in-out 1s 2}
+@keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(16deg)}20%,40%{transform:rotate(-8deg)}}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(.4em);animation:wup .7s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes wup{to{opacity:1;transform:none}}
+.btn{border-radius:999px!important;padding:13px 20px}
+.btn.primary{box-shadow:0 10px 24px -10px var(--pop)}
+/* bento */
+.hero aside.bento{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;align-content:center}
+.bt-tile{border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:6px;min-height:150px;text-decoration:none;color:var(--fg);position:relative;overflow:hidden;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.bt-tile:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 18px 40px -18px rgba(0,0,0,.25)}
+.t-k{font-size:13px;font-weight:600;opacity:.75;display:flex;align-items:center;gap:8px}
+.t-s{font-size:14px;opacity:.8;margin-top:auto}
+.bt-tile b{font-size:18px;line-height:1.25;font-weight:600}
+.t-big{font-size:72px!important;line-height:.9!important;letter-spacing:-.04em;font-weight:600}
+.t-blue{background:var(--pop);color:var(--pop-ink)}
+.t-lime{background:var(--lime);color:var(--lime-ink)}
+.t-dark{background:#111;color:#fff}
+:root[data-theme="dark"] .t-dark{background:#232323}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .t-dark{background:#232323}}
+.t-soft{background:var(--soft)}
+.t-wide{grid-column:1/-1;min-height:0}
+.t-clock{font-size:34px!important;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.t-list{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-weight:600}
+.t-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.t-chips span{padding:7px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px;font-weight:600;transition:background .2s,color .2s,transform .2s}
+.t-chips span:hover{background:var(--fg);color:var(--bg);transform:translateY(-2px)}
+.pulse{width:8px;height:8px;border-radius:50%;background:#111;position:relative}
+.pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #111;animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{from{transform:scale(.5);opacity:1}to{transform:scale(1.6);opacity:0}}
+/* marquee */
+.marquee{overflow:hidden;border-block:1px solid var(--line);margin:24px calc(-1 * max(16px,(100vw - 1080px)/2));padding:18px 0;background:var(--surface)}
+.mq-track{display:flex;gap:28px;width:max-content;animation:mq 38s linear infinite;align-items:center}
+.marquee:hover .mq-track{animation-play-state:paused}
+.mq-track span{font-size:clamp(26px,3.6vw,44px);font-weight:600;letter-spacing:-.03em;white-space:nowrap}
+.mq-track span.o{color:transparent;-webkit-text-stroke:1.2px var(--fg)}
+.mq-track i{font-style:normal;color:var(--pop);font-size:24px}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* numbered section heads on home */
+.view[data-view="home"]{counter-reset:sec}
+.view[data-view="home"] .sec-head h2::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);display:inline-block;vertical-align:.55em;margin-right:14px;
+  font-size:14px;font-weight:600;letter-spacing:0;padding:4px 10px;border-radius:999px;background:var(--lime);color:var(--lime-ink)}
+.sec-head h2{font-size:clamp(36px,5vw,60px)!important;letter-spacing:-.035em}
+/* cards: soft, rounded, lifting */
+.wcard,.qcard,.proj{border-radius:var(--r)!important;border:1px solid var(--line)!important;transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,border-color .3s!important}
+.wcard:hover,.qcard:hover,.proj-link:hover{transform:translateY(-6px)!important;box-shadow:0 30px 60px -30px rgba(17,17,17,.35)!important;border-color:var(--line)!important}
+.wcard:hover h3,.qcard:hover h3{color:var(--fg)!important}
+.wbody h3{transition:transform .35s}
+.wcard:hover .wbody h3{transform:translateX(6px)}
+.sticker{position:absolute;top:18px;right:18px;z-index:3;font-size:13px;font-weight:700;padding:7px 13px;border-radius:999px;transform:rotate(4deg);
+  box-shadow:0 6px 16px -6px rgba(0,0,0,.3);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.s-lime{background:var(--lime);color:var(--lime-ink)}
+.s-blue{background:var(--pop);color:var(--pop-ink)}
+.wcard:hover .sticker{transform:rotate(-6deg) scale(1.1)}
+.wcard.feat.alt .sticker{transform:rotate(-4deg)}
+/* process + toolkit tiles */
+.steps{border-radius:var(--r)!important;border:0!important;gap:10px;background:transparent!important;overflow:visible!important}
+.steps li{background:var(--soft);border-radius:18px;border:0!important;transition:background .25s,color .25s,transform .25s}
+.steps li:hover{background:var(--pop);color:var(--pop-ink);transform:translateY(-4px)}
+.steps li:hover *{color:inherit!important}
+.tk{border-radius:18px!important;background:var(--soft)!important;border-color:transparent!important;transition:background .25s,transform .25s!important}
+a.tk:hover{background:var(--lime)!important;color:var(--lime-ink)!important;transform:translateY(-3px)}
+a.tk:hover *{color:inherit!important}
+.rolecard{border-radius:var(--r)!important;background:var(--soft)!important;border-color:transparent!important}
+.rolecard:hover{background:var(--fg)!important;color:var(--bg)!important;border-color:var(--fg)!important}
+.rolecard:hover *{color:inherit!important}
+.showmore{border-radius:999px!important}
+/* highlighter returns, drawn on scroll */
+.mark{background:linear-gradient(var(--lime),var(--lime)) 0 88%/0 38% no-repeat!important;padding:0 .08em!important;transition:background-size .9s cubic-bezier(.2,.7,.2,1)}
+.mark.on{background-size:100% 38%!important}
+:root[data-theme="dark"] .mark{color:inherit}
+/* contact: inverted block */
+.contact{background:#111;color:#fff;border:0!important;border-radius:32px;padding:clamp(36px,6vw,72px)!important;margin-block:40px 56px;position:relative;overflow:hidden}
+.contact .label{color:#aaa!important}
+.contact h2{color:#fff;font-size:clamp(40px,7vw,88px)!important;font-weight:600!important;max-width:14ch}
+.contact h2 em{font-style:normal;color:var(--lime);position:relative}
+.contact p{color:#bbb!important}
+.contact .email{background:transparent!important;color:#fff;border:1px solid #333!important;border-radius:999px!important}
+.contact .btn:not(.primary){color:#fff;border-color:#444}
+.contact .btn:not(.primary):hover{border-color:#fff}
+.contact::after{content:"";position:absolute;width:420px;height:420px;right:-120px;top:-140px;border-radius:50%;background:radial-gradient(circle,var(--pop),transparent 65%);opacity:.55;pointer-events:none}
+@media (max-width:860px){.hero{grid-template-columns:1fr!important}.t-big{font-size:56px!important}}
+@media (max-width:520px){.nav ul li:nth-child(3){display:none}header.nav .wrap{padding:6px 6px 6px 14px;gap:8px}.nav ul a{padding:7px 9px;font-size:14px}.logo{font-size:17px!important}.bt-tile{min-height:128px;padding:16px}.t-clock{font-size:26px!important}}
+@media (prefers-reduced-motion:reduce){.mq-track{animation:none}.hero h1 .w{opacity:1;transform:none;animation:none}.mark{background-size:100% 38%!important}}
 </style>
 
 <a class="skip" href="#work">Skip to work</a>
@@ -712,25 +817,29 @@ a:focus-visible,button:focus-visible{outline-color:var(--pop)}
 <main class="wrap" id="home-top">
   <div class="view" data-view="home">
   <section class="hero">
-    <div>
-      <p class="label">UX Strategy Consultant · Research, design &amp; AI · Toronto</p>
-      <h1 style="margin-top:14px">Hi, I'm Sushmita. I&nbsp;design experiences people <span>actually use.</span></h1>
+    <div class="hero-main">
+      <p class="label hello"><span class="wave" aria-hidden="true">👋</span> UX Strategy Consultant · Toronto</p>
+      <h1>Hi, I'm Sushmita. I&nbsp;design experiences people <span class="key">actually use.</span></h1>
       <p class="lede">UX strategy, research and AI prototyping. Strategy consultant at Revolution X Studio.</p>
-      <p class="avail"><i aria-hidden="true"></i>Open to UX strategy and consulting roles in Toronto and Dubai</p>
-    </div>
-    <aside>
-      <dl class="facts" style="margin:0">
-        <div><dt>Focus</dt><dd>UX strategy, research, service design, AI prototyping</dd></div>
-        <div><dt>Training</dt><dd>Interactive Media Mgmt, Centennial · Business Analytics, Conestoga</dd></div>
-        <div><dt>Experience</dt><dd>Revolution X Studio, City of Toronto, Amazon</dd></div>
-      </dl>
       <div class="cta">
-        <a class="btn primary" href="#work">See my work</a>
+        <a class="btn primary" href="#work">See my work <span aria-hidden="true">→</span></a>
         <a class="btn" href="https://www.linkedin.com/in/saisushmitakarri/" target="_blank" rel="noopener">LinkedIn</a>
         <button type="button" class="btn dl-cv">Resume (PDF)</button>
       </div>
+    </div>
+    <aside class="bento" aria-label="At a glance">
+      <a class="bt-tile t-blue" href="#work"><span class="t-k">Case studies</span><b class="t-big">8</b><span class="t-s">From research to a working build <span aria-hidden="true">↗</span></span></a>
+      <div class="bt-tile t-lime"><span class="t-k"><i class="pulse" aria-hidden="true"></i>Available</span><b>Open to UX strategy &amp; consulting roles</b><span class="t-s">Toronto · Dubai</span></div>
+      <div class="bt-tile t-dark"><span class="t-k">Local time</span><b class="t-clock" id="clock">Toronto</b><span class="t-s">Toronto, Canada</span></div>
+      <div class="bt-tile t-soft"><span class="t-k">Experience</span><ul class="t-list"><li>Revolution X Studio</li><li>City of Toronto</li><li>Amazon</li></ul></div>
+      <div class="bt-tile t-soft t-wide"><span class="t-k">Focus</span><div class="t-chips"><span>UX strategy</span><span>Research</span><span>Service design</span><span>AI prototyping</span></div></div>
     </aside>
   </section>
+
+  <div class="marquee" aria-hidden="true"><div class="mq-track">
+    <span>UX strategy</span><i>✦</i><span class="o">User research</span><i>✦</i><span>Service design</span><i>✦</i><span class="o">AI prototyping</span><i>✦</i><span>Information architecture</span><i>✦</i><span class="o">Usability testing</span><i>✦</i><span>Content design</span><i>✦</i>
+    <span>UX strategy</span><i>✦</i><span class="o">User research</span><i>✦</i><span>Service design</span><i>✦</i><span class="o">AI prototyping</span><i>✦</i><span>Information architecture</span><i>✦</i><span class="o">Usability testing</span><i>✦</i><span>Content design</span><i>✦</i>
+  </div></div>
 
 
   <section class="block" id="work">
@@ -740,19 +849,19 @@ a:focus-visible,button:focus-visible{outline-color:var(--pop)}
     </div>
 
     <div class="wgrid">
-      <a class="wcard feat" href="#tgcsb">
+      <a class="wcard feat" href="#tgcsb"><span class="sticker s-lime">Government</span>
         <div class="wmedia"><img src="img/cover-tg.jpg" alt="TGCSB citizen website in a browser, with the 1930 helpline and reading-ease highlights" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">Government websites · Strategy</p><h3>Cyber help, one click away</h3><p>Telangana Cyber Security Bureau: a citizen site, a national hackathon and a conclave, checked against 5 cybercrime agencies.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="wcard feat alt" href="#hopin">
+      <a class="wcard feat alt" href="#hopin"><span class="sticker s-blue">7 usability tests</span>
         <div class="wmedia"><img src="img/cover-hop.jpg" alt="Redesigned HopIn home screen on a phone, with research highlights" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">Mobile app · Senior project · Research to prototype</p><h3>Carpooling, redesigned around trust</h3><p>HopIn, a neighbourhood carpooling app: 7 interviews, 25 surveys, 7 usability tests.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="wcard" href="#bot-about-to">
+      <a class="wcard" href="#bot-about-to"><span class="sticker s-lime">Hackathon</span>
         <div class="wmedia"><img src="img/cover-bot.jpg" alt="Bot About TO chat widget suggesting City data next to a Toronto news article" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">Hackathon · Civic tech · Team of 4</p><h3>An AI guide to City council news</h3><p>Bot About TO: City of Toronto Data &amp; AI Innovation Challenge, 2025.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="wcard" href="#denvibes">
+      <a class="wcard" href="#denvibes"><span class="sticker s-blue">Live 3D</span>
         <div class="wmedia"><img src="img/cover-dv.jpg" alt="Denvibes agency website on a laptop and a phone, with the headline Welcome to our den" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">Agency website · UX/UI · Live 3D</p><h3>An agency site, clear in seconds</h3><p>Denvibes: research and Laws of UX through to a React build you can try live.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
@@ -2200,7 +2309,7 @@ a:focus-visible,button:focus-visible{outline-color:var(--pop)}
 
   <section class="contact" id="contact">
     <p class="label">Contact</p>
-    <h2 style="margin-top:12px">Let's make something easier to use.</h2>
+    <h2 style="margin-top:12px">Let's make something <em>easier</em> to use.</h2>
     <p style="margin-top:16px;max-width:52ch;color:var(--muted)">I'm open to UX, content, service design, digital marketing and product roles in Toronto and Dubai, and happy to learn what a role needs. The fastest way to reach me is email.</p>
     <div class="contact-row">
       <span class="email" id="email">saisushmita999@gmail.com</span>
@@ -2373,6 +2482,7 @@ if('IntersectionObserver' in window){
   var sel='.sec-head,.wcard,.qcard,.proj,.fig,.vfig,.steps,.tk,.post,.rolecard,.nextcase,.block>h2,.block>.label';
   function arm(){document.querySelectorAll(sel).forEach(function(el,i){if(el.classList.contains('rv'))return;var r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0&&r.height)return;el.classList.add('rv');el.style.transitionDelay=(i%3)*60+'ms';io.observe(el)})}
   arm();addEventListener('hashchange',function(){setTimeout(arm,60)});
+  var st;addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){if(el.getBoundingClientRect().top<innerHeight)el.classList.add('in')})},150)},{passive:true});
   setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight)el.classList.add('in')})},2500);
 }
 if(!fine)return;
@@ -2412,6 +2522,20 @@ if(hero){var cv=document.createElement('canvas');cv.className='hero-field';cv.se
       var px=x+(d?dx/d:0)*k*10,py=y+(d?dy/d:0)*k*10;ctx.fillStyle=k>.05?popc:col;ctx.globalAlpha=.10+k*.7;ctx.beginPath();ctx.arc(px,py,.9+k*1.8,0,6.283);ctx.fill()}
     ctx.globalAlpha=1})();
 }
+})();
+</script>
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* live Toronto clock */
+var c=document.getElementById('clock');function tick(){try{c.textContent=new Date().toLocaleTimeString('en-CA',{timeZone:'America/Toronto',hour:'numeric',minute:'2-digit'})}catch(e){c.textContent='Toronto'}}
+if(c){tick();setInterval(tick,15000)}
+/* headline word reveal */
+var h=document.querySelector('.hero h1');
+if(h&&!reduce){var n=0;(function wrap(el){[].slice.call(el.childNodes).forEach(function(t){if(t.nodeType===3){var f=document.createDocumentFragment();t.textContent.split(/( +)/).forEach(function(w){if(!w)return;if(/^ +$/.test(w)){f.appendChild(document.createTextNode(w));return}var sp=document.createElement('span');sp.className='w';sp.style.animationDelay=(n++*55)+'ms';sp.textContent=w;f.appendChild(sp)});t.replaceWith(f)}else if(t.nodeType===1&&!t.classList.contains('w')){t.classList.add('w');t.style.animationDelay=(n++*55)+'ms'}})})(h)}
+/* highlighter on scroll */
+var ms=document.querySelectorAll('.mark');
+if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.6});ms.forEach(function(m){io.observe(m)})}else ms.forEach(function(m){m.classList.add('on')});
 })();
 </script>
 
