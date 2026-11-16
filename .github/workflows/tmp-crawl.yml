@@ -1,0 +1,55 @@
+name: tmp-crawl
+on:
+  push:
+    branches: [tmp-crawl]
+permissions:
+  contents: write
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: tmp-crawl }
+      - name: Crawl
+        run: |
+          set +e
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
+          mkdir -p _tmp/html _tmp/img
+          fetch() { curl -sSL -m 30 -A "$UA" "$1"; }
+          # page list from sitemaps + seeds
+          : > _tmp/pages.txt
+          for sm in https://denvibes.com/wp-sitemap.xml https://denvibes.com/sitemap_index.xml https://denvibes.com/sitemap.xml; do
+            fetch "$sm" > _tmp/sm.xml
+            grep -oE '<loc>[^<]+' _tmp/sm.xml | sed 's/<loc>//' > _tmp/locs.txt
+            while read l; do case "$l" in *.xml) fetch "$l" | grep -oE '<loc>[^<]+' | sed 's/<loc>//' >> _tmp/pages.txt;; *) echo "$l" >> _tmp/pages.txt;; esac; done < _tmp/locs.txt
+          done
+          for s in https://denvibes.com/ https://denvibes.com/projects/ https://denvibes.com/spectrum-cars/ https://denvibes.com/portfolio/; do echo $s >> _tmp/pages.txt; done
+          fetch https://denvibes.com/projects/ | grep -oE 'href="https://denvibes.com/[^"#?]+' | sed 's/href="//' >> _tmp/pages.txt
+          # other candidate sites
+          for s in https://naffcopower.com https://www.naffcopower.com https://naffcoelectric.com https://www.naffcoelectric.com https://spectrumgroup.ae https://www.spectrumgroup.ae https://spectrumcars.ae https://www.spectrumcardesign.com https://trigaglobal.com https://www.trigaglobal.com https://shieldme.com https://www.shieldme.com https://shieldglobal.com https://www.shieldglobal.com https://tufguard.com https://www.edmond.energy https://babybottleholder.com; do echo $s >> _tmp/pages.txt; done
+          awk '!s[$0]++' _tmp/pages.txt | grep -viE 'wp-json|/feed|/tag/|/author/|/category/|xmlrpc' | head -150 > _tmp/pages2.txt
+          n=0
+          : > _tmp/manifest.tsv
+          while read p; do
+            n=$((n+1)); f="_tmp/html/p$n.html"
+            fetch "$p" > "$f" || continue
+            [ -s "$f" ] || continue
+            title=$(grep -oE '<title>[^<]*' "$f" | head -1 | sed 's/<title>//')
+            echo -e "PAGE\tp$n\t$p\t$title" >> _tmp/manifest.tsv
+            sed 's/\\\//\//g; s/&quot;/"/g' "$f" | grep -oE 'https?://[^"'"'"' )<>,]+\.(jpe?g|png|webp)' | sed -E 's/-[0-9]+x[0-9]+(\.[a-z]+)$/\1/' | awk '!s[$0]++' | grep -viE 'icon|favicon|logo|sprite|flag|payment|avatar|gravatar|emoji' | while read u; do echo -e "IMG\tp$n\t$u" >> _tmp/manifest.tsv; done
+          done < _tmp/pages2.txt
+          # download unique images
+          grep '^IMG' _tmp/manifest.tsv | cut -f3 | awk '!s[$0]++' | head -400 > _tmp/imgs.txt
+          i=0
+          while read u; do
+            i=$((i+1)); ext="${u##*.}"; out="_tmp/img/i$(printf %03d $i).$ext"
+            curl -sSfL -m 40 -A "$UA" -o "$out" "$u" || { rm -f "$out"; continue; }
+            sz=$(stat -c%s "$out"); if [ "$sz" -lt 40000 ]; then rm -f "$out"; else echo -e "$(basename $out)\t$u" >> _tmp/dl.tsv; fi
+          done < _tmp/imgs.txt
+          du -sh _tmp; wc -l _tmp/pages2.txt _tmp/dl.tsv
+      - name: Commit
+        run: |
+          git config user.name github-actions; git config user.email github-actions@users.noreply.github.com
+          rm -rf _tmp/html
+          git add _tmp; git commit -qm "tmp: crawl" || true
+          git push origin HEAD:tmp-crawl
