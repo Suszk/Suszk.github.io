@@ -901,6 +901,32 @@ a.tk:hover *{color:inherit!important}
 .livelinks a:hover{color:var(--pop);text-decoration-color:var(--pop)}
 .btn.primary{box-shadow:none}
 .hero{padding-block:48px 32px!important}
+
+/* ===== A/B test block ===== */
+.abt{margin:28px 0 8px;padding:clamp(20px,3vw,32px);border-radius:var(--r);background:var(--soft)}
+.abt-h{font-size:clamp(22px,2.4vw,28px);margin:6px 0 8px}
+.abt-sub{color:var(--muted);max-width:62ch;margin:0}
+.abt-tabs{display:inline-flex;flex-wrap:wrap;gap:4px;padding:4px;margin:18px 0 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+.abt-tabs button{font:600 14px var(--body);padding:8px 16px;border-radius:999px;border:0;background:none;color:var(--fg);cursor:pointer}
+.abt-tabs button[aria-selected="true"]{background:var(--fg);color:var(--bg)}
+.abt-stage{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:center}
+.abt-mock{border-radius:16px;overflow:hidden;background:#fff;color:#111;border:1px solid #e3e0d8;animation:abin .35s ease}
+@keyframes abin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.mk-nav{display:flex;align-items:center;gap:12px;padding:10px 16px;font-size:12px;border-bottom:1px solid #e3e0d8;background:#0E2A5C;color:#fff}
+.mk-nav b{letter-spacing:.06em}.mk-nav span{flex:1;opacity:.75}.mk-nav i{font-style:normal;background:#E53935;color:#fff;padding:4px 10px;border-radius:999px;font-weight:700}
+.mk-hero{padding:20px}
+.mk-hero small{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.06em}
+.mk-copy{margin:10px 0 14px;font-size:14px;line-height:1.55;color:#222}
+.mk-copy b{background:#FFF3B0}
+.mk-cta{display:flex;gap:8px}.mk-cta span{font-size:12px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid #ccc}.mk-cta .pri{background:#0E2A5C;color:#fff;border-color:#0E2A5C}
+.abt-why{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.abt-why li{background:var(--surface);border-radius:14px;padding:12px 14px;font-size:15px}
+.abt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.abt-grid div{background:var(--surface);border-radius:14px;padding:14px}
+.abt-grid span{display:block;font-size:13px;font-weight:700;color:var(--pop);margin-bottom:4px}
+.abt-grid p{margin:0;font-size:14.5px;line-height:1.45}
+.abt-note{margin:14px 0 0;font-size:14px;color:var(--muted)}
+@media (max-width:760px){.abt-stage,.abt-grid{grid-template-columns:1fr}}
 </style>
 
 <a class="skip" href="#work">Skip to work</a>
@@ -1383,7 +1409,7 @@ a.tk:hover *{color:inherit!important}
       </div>
       <div class="methods"><span class="label">Methods</span><span class="m">Benchmarking</span><span class="m">Competitive analysis</span><span class="m">Audience mapping</span><span class="m">Sitemap / IA</span><span class="m">Low-fi prototype</span></div>
       <div class="roleline"><span class="label">My role</span><b>Strategy Consultant at Revolution X Studio · led the team, research and content strategy</b></div>
-      <nav class="rail" aria-label="Design process"><button type="button" data-go="tgcsb-st1"><span>01</span>Research</button><button type="button" data-go="tgcsb-st2"><span>02</span>Define</button><button type="button" data-go="tgcsb-st3"><span>03</span>Ideate</button><button type="button" data-go="tgcsb-st4"><span>04</span>Design</button><button type="button" data-go="tgcsb-st5" disabled><span>05</span>Test</button><button type="button" data-go="tgcsb-st6"><span>06</span>Deliver</button></nav>
+      <nav class="rail" aria-label="Design process"><button type="button" data-go="tgcsb-st1"><span>01</span>Research</button><button type="button" data-go="tgcsb-st2"><span>02</span>Define</button><button type="button" data-go="tgcsb-st3"><span>03</span>Ideate</button><button type="button" data-go="tgcsb-st4"><span>04</span>Design</button><button type="button" data-go="tgcsb-st5"><span>05</span>Test</button><button type="button" data-go="tgcsb-st6"><span>06</span>Deliver</button></nav>
       <div class="body">
         <p class="label">The brief</p>
         <div><p>One police brand, three very different audiences, three websites.</p><p class="note">My role: Strategy Consultant at Revolution X Studio, leading a team of up to 6 designers, developers and content creators, and the research and content strategy.</p></div>
@@ -1517,6 +1543,37 @@ a.tk:hover *{color:inherit!important}
             <div class="scr cc"><span class="k">National hackathon</span><b>Cipher<em>Cop</em> 2025</b><p>Code. Protect. Transform. Reimagining policing through AI and cybersecurity.</p></div></div>
           <div class="browser"><div class="bar"><i></i><i></i><i></i><span>shieldconference.com</span></div>
             <div class="scr sh"><span class="k">Annual conclave</span><b>SHIELD 2026</b><p>Presenting CipherSprint, a national cyber innovation challenge.</p><span class="pill">Agenda</span></div></div>
+        </div>
+        <div class="stage" id="tgcsb-st5" data-stage="5"><span class="stage-n">05</span><span class="stage-name">Test</span><span class="stage-q">Does plain language help victims act?</span></div>
+        <div class="abt" id="tg-ab">
+          <p class="label">A/B test · planned for the citizen site</p>
+          <h3 class="abt-h">Does the plain-language intro get more victims to call 1930 or report?</h3>
+          <p class="abt-sub">The rewrite raised reading ease from 16 to 64. Reading ease is a proxy; the real question is whether people act faster. Visitors see one version at random.</p>
+          <div class="abt-tabs" role="tablist" aria-label="Choose a variant">
+            <button type="button" role="tab" aria-selected="true" data-v="a">A · Original intro</button>
+            <button type="button" role="tab" aria-selected="false" data-v="b">B · Plain-language intro</button>
+          </div>
+          <div class="abt-stage">
+            <div class="abt-mock tgm" data-panel="a">
+              <div class="mk-nav"><b>TGCSB</b><span>Home · Report · Alerts</span><i>Dial 1930</i></div>
+              <div class="mk-hero"><small>About the bureau · Reading ease 16</small><p class="mk-copy">"The Telangana Cyber Security Bureau (TGCSB) stands as the state's dedicated leader in combating and preventing cybercrime. Our mission is to create a secure digital environment through transparent, unbiased, and efficient practices supported by cutting-edge technology and advanced forensic expertise…"</p><div class="mk-cta"><span class="pri">Report</span><span>Track a complaint</span></div></div>
+            </div>
+            <div class="abt-mock tgm" data-panel="b" hidden>
+              <div class="mk-nav"><b>TGCSB</b><span>Home · Report · Alerts</span><i>Dial 1930</i></div>
+              <div class="mk-hero"><small>About the bureau · Reading ease 64</small><p class="mk-copy">"The Telangana Cyber Security Bureau (TGCSB) is the state police unit that stops cybercrime and helps victims. <b>If you lose money to a scam, call 1930 right away.</b> The faster you call, the better the chance we can freeze the money…"</p><div class="mk-cta"><span class="pri">Report</span><span>Track a complaint</span></div></div>
+            </div>
+            <ul class="abt-why" data-panel-why="a"><li><b>Control:</b> the bureau's original introduction, 22 words per sentence.</li><li><b>Risk:</b> a stressed victim stops reading before finding what to do.</li></ul>
+            <ul class="abt-why" data-panel-why="b" hidden><li><b>Change:</b> action in the second sentence, 12 words per sentence, plain words.</li><li><b>Bet:</b> victims understand what to do in one read and act sooner.</li></ul>
+          </div>
+          <div class="abt-grid">
+            <div><span>Hypothesis</span><p>If the intro tells victims to call 1930 in plain words, more of them will call or start a report, because they know what to do in one read.</p></div>
+            <div><span>Primary metric</span><p>Share of homepage visitors who tap <b>Dial 1930</b> or <b>Report</b>.</p></div>
+            <div><span>Guardrails</span><p>Bounce rate and visits to scam alerts must not drop. Track-a-complaint use is watched separately.</p></div>
+            <div><span>Sample &amp; split</span><p>50/50 random split. About <b>3,200 visitors per variant</b> to detect a lift from 8% to 10% (95% confidence, 80% power).</p></div>
+            <div><span>Duration</span><p>At least two full weeks, avoiding major scam-alert spikes that would skew traffic.</p></div>
+            <div><span>Decision</span><p>Keep B if it wins with no guardrail drop. Then apply the same plain-language rules to the alerts and report pages.</p></div>
+          </div>
+          <p class="abt-note">Status: designed, not yet run. Results will be added here once the test reaches its sample.</p>
         </div>
         <div class="stage" id="tgcsb-st6" data-stage="6"><span class="stage-n">06</span><span class="stage-name">Deliver</span><span class="stage-q">What changed?</span></div>
         <p class="label">Result</p>
@@ -2591,6 +2648,13 @@ if(h&&!reduce){var n=0;(function wrap(el){[].slice.call(el.childNodes).forEach(f
 var ms=document.querySelectorAll('.mark');
 if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('mark-in');io.unobserve(e.target)}})},{threshold:.6});ms.forEach(function(m){io.observe(m)})}else ms.forEach(function(m){m.classList.add('mark-in')});
 })();
+</script>
+<script>
+(function(){document.querySelectorAll('.abt').forEach(function(w){
+w.querySelectorAll('.abt-tabs button').forEach(function(b){b.addEventListener('click',function(){var v=b.dataset.v;
+ w.querySelectorAll('.abt-tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});
+ w.querySelectorAll('[data-panel]').forEach(function(p){p.hidden=p.dataset.panel!==v});
+ w.querySelectorAll('[data-panel-why]').forEach(function(p){p.hidden=p.dataset.panelWhy!==v})})})});})();
 </script>
 
 </body>
