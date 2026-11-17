@@ -912,6 +912,22 @@ a.tk:hover *{color:inherit!important}
 .abt-grid p{margin:0;font-size:14.5px;line-height:1.45}
 .abt-note{margin:14px 0 0;font-size:14px;color:var(--muted)}
 @media (max-width:760px){.abt-stage,.abt-grid{grid-template-columns:1fr}}
+
+/* ===== Declutter ===== */
+.hero-field{display:none!important}
+.view[data-view="home"] .sec-head h2::before{content:none!important;display:none!important}
+.t-wide .t-list{flex-direction:row;flex-wrap:wrap;gap:6px 18px}
+.bt-tile{min-height:132px}
+.bt-tile.t-wide{min-height:0}
+.bt-tile:hover{transform:none;box-shadow:none}
+.wcard:hover,.qcard:hover,.proj-link:hover{transform:translateY(-3px)!important;box-shadow:0 18px 40px -28px rgba(17,17,17,.3)!important}
+.wcard::after,.qcard::after{display:none}
+.livelinks{margin:0 0 22px;font-size:15px;color:var(--muted);line-height:1.9}
+.livelinks span{font-weight:600;color:var(--fg);margin-right:4px}
+.livelinks a{color:var(--fg);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;white-space:nowrap}
+.livelinks a:hover{color:var(--pop);text-decoration-color:var(--pop)}
+.btn.primary{box-shadow:none}
+.hero{padding-block:48px 32px!important}
 </style>
 
 <a class="skip" href="#work">Skip to work</a>
@@ -943,15 +959,10 @@ a.tk:hover *{color:inherit!important}
     <aside class="bento" aria-label="At a glance">
       <a class="bt-tile t-blue" href="#work"><span class="t-k">Case studies</span><b class="t-big">8</b><span class="t-s">6 live links <span aria-hidden="true">↗</span></span></a>
       <div class="bt-tile t-lime"><span class="t-k"><i class="pulse" aria-hidden="true"></i>Available</span><b>Open to UX research, design &amp; AI product roles</b><span class="t-s">Toronto · Dubai</span></div>
-      <div class="bt-tile t-dark"><span class="t-k">Local time</span><b class="t-clock" id="clock">Toronto</b><span class="t-s">Toronto, Canada</span></div>
-      <div class="bt-tile t-soft"><span class="t-k">Experience</span><ul class="t-list"><li>Revolution X Studio</li><li>City of Toronto</li><li>Amazon</li></ul></div>
+      <div class="bt-tile t-soft t-wide"><span class="t-k">Experience</span><ul class="t-list"><li>Revolution X Studio</li><li>City of Toronto</li><li>Amazon</li></ul></div>
     </aside>
   </section>
 
-  <div class="marquee" aria-hidden="true"><div class="mq-track">
-    <span>UX strategy</span><i>✦</i><span class="o">User research</span><i>✦</i><span>Service design</span><i>✦</i><span class="o">AI prototyping</span><i>✦</i><span>Information architecture</span><i>✦</i><span class="o">Usability testing</span><i>✦</i><span>Content design</span><i>✦</i>
-    <span>UX strategy</span><i>✦</i><span class="o">User research</span><i>✦</i><span>Service design</span><i>✦</i><span class="o">AI prototyping</span><i>✦</i><span>Information architecture</span><i>✦</i><span class="o">Usability testing</span><i>✦</i><span>Content design</span><i>✦</i>
-  </div></div>
 
 
   <section class="block" id="work">
@@ -960,28 +971,21 @@ a.tk:hover *{color:inherit!important}
       <p class="label">Click a project to open the full case study</p>
     </div>
 
-    <div class="livebuilds"><p class="label">Try the work live</p><ul>
-      <li><a href="https://suszk.github.io/denvibes/" target="_blank" rel="noopener"><b>Denvibes</b><span>Live site · React, Three.js</span><i aria-hidden="true">↗</i></a></li>
-      <li><a href="https://www.figma.com/make/SKGeyH4E95rOA9UoRb7aYA/Bot-About-TO---City-of-Toronto-AI-Mascot-Prototype--Copy-?code-node-id=0-9&amp;p=f&amp;fullscreen=1" target="_blank" rel="noopener"><b>Bot About TO</b><span>AI prototype · Figma Make</span><i aria-hidden="true">↗</i></a></li>
-      <li><a href="https://tgcsb-website.vercel.app/" target="_blank" rel="noopener"><b>TGCSB</b><span>Working site prototype</span><i aria-hidden="true">↗</i></a></li>
-      <li><a href="https://securacy-marketing.vercel.app/" target="_blank" rel="noopener"><b>Securacy</b><span>B2B SaaS site</span><i aria-hidden="true">↗</i></a></li>
-      <li><a href="https://www.figma.com/proto/1M6Iypx0cT21cUwV8s8GJH/?node-id=575-383&amp;page-id=575%3A2&amp;starting-point-node-id=575%3A383&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener"><b>HopIn</b><span>Clickable app prototype</span><i aria-hidden="true">↗</i></a></li>
-      <li><a href="https://www.instagram.com/zatch.shop/" target="_blank" rel="noopener"><b>Zatch</b><span>Brand on Instagram</span><i aria-hidden="true">↗</i></a></li>
-    </ul></div>
+    <p class="livelinks"><span>Try it live:</span> <a href="https://suszk.github.io/denvibes/" target="_blank" rel="noopener">Denvibes ↗</a> · <a href="https://www.figma.com/make/SKGeyH4E95rOA9UoRb7aYA/Bot-About-TO---City-of-Toronto-AI-Mascot-Prototype--Copy-?code-node-id=0-9&amp;p=f&amp;fullscreen=1" target="_blank" rel="noopener">Bot About TO ↗</a> · <a href="https://tgcsb-website.vercel.app/" target="_blank" rel="noopener">TGCSB ↗</a> · <a href="https://securacy-marketing.vercel.app/" target="_blank" rel="noopener">Securacy ↗</a> · <a href="https://www.figma.com/proto/1M6Iypx0cT21cUwV8s8GJH/?node-id=575-383&amp;page-id=575%3A2&amp;starting-point-node-id=575%3A383&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener">HopIn ↗</a> · <a href="https://www.instagram.com/zatch.shop/" target="_blank" rel="noopener">Zatch ↗</a></p>
     <div class="wgrid">
-      <a class="wcard feat" href="#bot-about-to"><span class="sticker s-lime">AI prototype</span>
+      <a class="wcard feat" href="#bot-about-to">
         <div class="wmedia"><img src="img/cover-bot.jpg" alt="Bot About TO chat widget suggesting City data next to a Toronto news article" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">AI product · Agent concept · Team of 4</p><h3>An AI agent people can trust</h3><p>Bot About TO: an AI messenger that turns council activity and open data into timely stories, designed around the trust, privacy and control concerns our research surfaced. Prototyped in Figma Make.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="wcard feat alt" href="#zatch"><span class="sticker s-blue">E-commerce</span>
+      <a class="wcard feat alt" href="#zatch">
         <div class="wmedia"><img src="img/cover-za.jpg" alt="Zatch app launch posts and screens" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">E-commerce · Live shopping app · Product strategy</p><h3>Live shopping, built on trust</h3><p>Zatch: buyers watch, bargain and buy in real time. Replaces an 8-step reel-to-purchase journey where buyers drop off over trust.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="wcard" href="#denvibes"><span class="sticker s-blue">Live build</span>
+      <a class="wcard" href="#denvibes">
         <div class="wmedia"><img src="img/cover-dv.jpg" alt="Denvibes agency website on a laptop and a phone, with the headline Welcome to our den" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">Agency website · UX/UI · Live 3D</p><h3>An agency site, clear in seconds</h3><p>Denvibes: research and Laws of UX through to a React build you can try live.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="wcard" href="#tgcsb"><span class="sticker s-lime">Government</span>
+      <a class="wcard" href="#tgcsb">
         <div class="wmedia"><img src="img/cover-tg.jpg" alt="TGCSB citizen website in a browser, with the 1930 helpline and reading-ease highlights" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">Government websites · Strategy</p><h3>Cyber help, one click away</h3><p>Telangana Cyber Security Bureau: a citizen site, a national hackathon and a conclave, checked against 5 cybercrime agencies.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
