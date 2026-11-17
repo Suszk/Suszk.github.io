@@ -873,6 +873,17 @@ a.tk:hover *{color:inherit!important}
 .lg-track li:hover .tool-i text{fill:var(--b)}
 @keyframes lgscroll{to{transform:translateX(calc(-50% - 5px))}}
 @media (prefers-reduced-motion:reduce){.lg-track{animation:none;flex-wrap:wrap;width:auto;padding:0 14px}.lg-track li[aria-hidden]{display:none}}
+
+/* ===== Live builds ===== */
+.livebuilds{margin:0 0 22px}
+.livebuilds ul{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.livebuilds a{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;column-gap:10px;padding:12px 16px;border-radius:16px;background:var(--soft);color:var(--fg);text-decoration:none;
+  border:1px solid transparent;transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .2s,background .2s}
+.livebuilds b{font-size:15px}.livebuilds span{grid-column:1;font-size:13px;color:var(--muted)}
+.livebuilds i{grid-column:2;grid-row:1/3;align-self:center;font-style:normal;font-size:18px;color:var(--pop);transition:transform .25s}
+.livebuilds a:hover{background:var(--surface);border-color:var(--pop);transform:translateY(-2px)}
+.livebuilds a:hover i{transform:translate(3px,-3px)}
+@media (max-width:760px){.livebuilds ul{grid-template-columns:1fr 1fr}}
 </style>
 
 <a class="skip" href="#work">Skip to work</a>
@@ -892,9 +903,9 @@ a.tk:hover *{color:inherit!important}
   <div class="view" data-view="home">
   <section class="hero">
     <div class="hero-main">
-      <p class="label hi-tag"><span class="wave" aria-hidden="true">👋</span> UX Strategy Consultant · Toronto</p>
+      <p class="label hi-tag"><span class="wave" aria-hidden="true">👋</span> UX research &amp; design · AI prototyping · Toronto</p>
       <h1>Hi, I'm Sushmita. I&nbsp;design experiences people <span class="key">actually use.</span></h1>
-      <p class="lede">UX strategy, research and AI prototyping. Strategy consultant at Revolution X Studio.</p>
+      <p class="lede">I research, design and prototype AI-powered products, from discovery to a working build. Strategy consultant at Revolution X Studio.</p>
       <div class="cta">
         <a class="btn primary" href="#work">See my work <span aria-hidden="true">→</span></a>
         <a class="btn" href="https://www.linkedin.com/in/saisushmitakarri/" target="_blank" rel="noopener">LinkedIn</a>
@@ -902,8 +913,8 @@ a.tk:hover *{color:inherit!important}
       </div>
     </div>
     <aside class="bento" aria-label="At a glance">
-      <a class="bt-tile t-blue" href="#work"><span class="t-k">Case studies</span><b class="t-big">8</b><span class="t-s">From research to a working build <span aria-hidden="true">↗</span></span></a>
-      <div class="bt-tile t-lime"><span class="t-k"><i class="pulse" aria-hidden="true"></i>Available</span><b>Open to UX strategy &amp; consulting roles</b><span class="t-s">Toronto · Dubai</span></div>
+      <a class="bt-tile t-blue" href="#work"><span class="t-k">Case studies</span><b class="t-big">8</b><span class="t-s">6 live links <span aria-hidden="true">↗</span></span></a>
+      <div class="bt-tile t-lime"><span class="t-k"><i class="pulse" aria-hidden="true"></i>Available</span><b>Open to UX research, design &amp; AI product roles</b><span class="t-s">Toronto · Dubai</span></div>
       <div class="bt-tile t-dark"><span class="t-k">Local time</span><b class="t-clock" id="clock">Toronto</b><span class="t-s">Toronto, Canada</span></div>
       <div class="bt-tile t-soft"><span class="t-k">Experience</span><ul class="t-list"><li>Revolution X Studio</li><li>City of Toronto</li><li>Amazon</li></ul></div>
     </aside>
@@ -921,23 +932,32 @@ a.tk:hover *{color:inherit!important}
       <p class="label">Click a project to open the full case study</p>
     </div>
 
+    <div class="livebuilds"><p class="label">Try the work live</p><ul>
+      <li><a href="https://suszk.github.io/denvibes/" target="_blank" rel="noopener"><b>Denvibes</b><span>Live site · React, Three.js</span><i aria-hidden="true">↗</i></a></li>
+      <li><a href="https://www.figma.com/make/SKGeyH4E95rOA9UoRb7aYA/Bot-About-TO---City-of-Toronto-AI-Mascot-Prototype--Copy-?code-node-id=0-9&amp;p=f&amp;fullscreen=1" target="_blank" rel="noopener"><b>Bot About TO</b><span>AI prototype · Figma Make</span><i aria-hidden="true">↗</i></a></li>
+      <li><a href="https://tgcsb-website.vercel.app/" target="_blank" rel="noopener"><b>TGCSB</b><span>Working site prototype</span><i aria-hidden="true">↗</i></a></li>
+      <li><a href="https://securacy-marketing.vercel.app/" target="_blank" rel="noopener"><b>Securacy</b><span>B2B SaaS site</span><i aria-hidden="true">↗</i></a></li>
+      <li><a href="https://www.figma.com/proto/1M6Iypx0cT21cUwV8s8GJH/?node-id=575-383&amp;page-id=575%3A2&amp;starting-point-node-id=575%3A383&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener"><b>HopIn</b><span>Clickable app prototype</span><i aria-hidden="true">↗</i></a></li>
+      <li><a href="https://www.instagram.com/zatch.shop/" target="_blank" rel="noopener"><b>Zatch</b><span>Brand on Instagram</span><i aria-hidden="true">↗</i></a></li>
+    </ul></div>
     <div class="wgrid">
-      <a class="wcard feat" href="#tgcsb"><span class="sticker s-lime">Government</span>
-        <div class="wmedia"><img src="img/cover-tg.jpg" alt="TGCSB citizen website in a browser, with the 1930 helpline and reading-ease highlights" width="1280" height="800" loading="lazy"></div>
-        <div class="wbody"><p class="label">Government websites · Strategy</p><h3>Cyber help, one click away</h3><p>Telangana Cyber Security Bureau: a citizen site, a national hackathon and a conclave, checked against 5 cybercrime agencies.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
-      </a>
-      <a class="wcard feat alt" href="#hopin"><span class="sticker s-blue">7 usability tests</span>
-        <div class="wmedia"><img src="img/cover-hop.jpg" alt="Redesigned HopIn home screen on a phone, with research highlights" width="1280" height="800" loading="lazy"></div>
-        <div class="wbody"><p class="label">Mobile app · Senior project · Research to prototype</p><h3>Carpooling, redesigned around trust</h3><p>HopIn, a neighbourhood carpooling app: 7 interviews, 25 surveys, 7 usability tests.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
-      </a>
-      <a class="wcard" href="#bot-about-to"><span class="sticker s-lime">Hackathon</span>
+      <a class="wcard feat" href="#bot-about-to"><span class="sticker s-lime">AI prototype</span>
         <div class="wmedia"><img src="img/cover-bot.jpg" alt="Bot About TO chat widget suggesting City data next to a Toronto news article" width="1280" height="800" loading="lazy"></div>
-        <div class="wbody"><p class="label">Hackathon · Civic tech · Team of 4</p><h3>An AI guide to City council news</h3><p>Bot About TO: City of Toronto Data &amp; AI Innovation Challenge, 2025.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
+        <div class="wbody"><p class="label">AI product · Agent concept · Team of 4</p><h3>An AI agent people can trust</h3><p>Bot About TO: an AI messenger that turns council activity and open data into timely stories, designed around the trust, privacy and control concerns our research surfaced. Prototyped in Figma Make.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="wcard" href="#denvibes"><span class="sticker s-blue">Live 3D</span>
+      <a class="wcard feat alt" href="#zatch"><span class="sticker s-blue">E-commerce</span>
+        <div class="wmedia"><img src="img/cover-za.jpg" alt="Zatch app launch posts and screens" width="1280" height="800" loading="lazy"></div>
+        <div class="wbody"><p class="label">E-commerce · Live shopping app · Product strategy</p><h3>Live shopping, built on trust</h3><p>Zatch: buyers watch, bargain and buy in real time. Replaces an 8-step reel-to-purchase journey where buyers drop off over trust.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
+      </a>
+      <a class="wcard" href="#denvibes"><span class="sticker s-blue">Live build</span>
         <div class="wmedia"><img src="img/cover-dv.jpg" alt="Denvibes agency website on a laptop and a phone, with the headline Welcome to our den" width="1280" height="800" loading="lazy"></div>
         <div class="wbody"><p class="label">Agency website · UX/UI · Live 3D</p><h3>An agency site, clear in seconds</h3><p>Denvibes: research and Laws of UX through to a React build you can try live.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
       </a>
+      <a class="wcard" href="#tgcsb"><span class="sticker s-lime">Government</span>
+        <div class="wmedia"><img src="img/cover-tg.jpg" alt="TGCSB citizen website in a browser, with the 1930 helpline and reading-ease highlights" width="1280" height="800" loading="lazy"></div>
+        <div class="wbody"><p class="label">Government websites · Strategy</p><h3>Cyber help, one click away</h3><p>Telangana Cyber Security Bureau: a citizen site, a national hackathon and a conclave, checked against 5 cybercrime agencies.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></div>
+      </a>
+    
     </div>
 
 
@@ -945,7 +965,7 @@ a.tk:hover *{color:inherit!important}
 
     <h3 class="subhead">Other work</h3>
     <div class="more" style="margin-top:16px">
-      <a class="proj proj-link qcard" href="#zatch"><div class="pthumb"><img src="img/cover-za.jpg" alt="Zatch app launch posts and screens" loading="lazy" width="640" height="400"></div><p class="label">App design · Brand building</p><h3>Zatch</h3><p>A live shopping app for India that lets you bargain like a real bazaar, from buyer research to brand.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
+      <a class="proj proj-link qcard" href="#hopin"><div class="pthumb"><img src="img/cover-hop.jpg" alt="Redesigned HopIn home screen on a phone" loading="lazy" width="640" height="400"></div><p class="label">Mobile app · Research to prototype</p><h3>HopIn</h3><p>Carpooling redesigned around trust: 7 interviews, 25 surveys, 7 usability tests.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link qcard" href="#securacy"><div class="pthumb"><img src="img/sec-hero.jpg" alt="Securacy website hero" loading="lazy" width="640" height="400"></div><p class="label">B2B SaaS · Messaging</p><h3>Securacy</h3><p>Explaining AI threat modeling to engineers and executives in one scroll.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link qcard" href="#green-campus"><div class="pthumb"><img src="img/gcc-product.jpg" alt="Green Campus Co-op product page" loading="lazy" width="640" height="400"></div><p class="label">Website revamp · Team of 4</p><h3>Green Campus Co-op</h3><p>Making fair trade easy to understand and buy for a York University co-op.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
       <a class="proj proj-link qcard" href="#st-lawrence"><div class="pthumb"><img src="img/slm-journey.jpg" alt="St Lawrence Market journey map" loading="lazy" width="640" height="400"></div><p class="label">Website redesign · Group project</p><h3>St Lawrence Market</h3><p>Planning a market visit around a busy parent's weekend.</p><span class="wgo">Read case study <span aria-hidden="true">→</span></span></a>
@@ -1128,7 +1148,7 @@ a.tk:hover *{color:inherit!important}
         </div>
       </div>
     </article>
-    <a class="nextcase" href="#bot-about-to"><span class="label">Next case study</span><b>Bot About TO <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#securacy"><span class="label">Next case study</span><b>Securacy <span aria-hidden="true">→</span></b></a>
   </section>
 
   <section class="view" id="zatch" data-view="zatch" hidden>
@@ -1330,7 +1350,7 @@ a.tk:hover *{color:inherit!important}
         </div>
       </div>
     </article>
-    <a class="nextcase" href="#securacy"><span class="label">Next case study</span><b>Securacy <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#denvibes"><span class="label">Next case study</span><b>Denvibes <span aria-hidden="true">→</span></b></a>
   </section>
 
   <section class="view" id="tgcsb" data-view="tgcsb" hidden>
@@ -1722,7 +1742,7 @@ a.tk:hover *{color:inherit!important}
         <p class="note" style="grid-column:1 / -1">Group project with Sanket, MJ, Gouri and Jill.</p>
       </div>
     </article>
-    <a class="nextcase" href="#tgcsb"><span class="label">Next case study</span><b>Telangana Cyber Security Bureau <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#bot-about-to"><span class="label">Next case study</span><b>Bot About TO <span aria-hidden="true">→</span></b></a>
   </section>
 
 
@@ -1874,7 +1894,7 @@ a.tk:hover *{color:inherit!important}
         </div>
       </div>
     </article>
-    <a class="nextcase" href="#denvibes"><span class="label">Next case study</span><b>Denvibes <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#zatch"><span class="label">Next case study</span><b>Zatch <span aria-hidden="true">→</span></b></a>
   </section>
 
   <section class="view" id="zatch-brand" data-view="zatch-brand" hidden>
@@ -2083,7 +2103,7 @@ a.tk:hover *{color:inherit!important}
         </div>
       </div>
     </article>
-    <a class="nextcase" href="#zatch"><span class="label">Next case study</span><b>Zatch <span aria-hidden="true">→</span></b></a>
+    <a class="nextcase" href="#tgcsb"><span class="label">Next case study</span><b>Telangana Cyber Security Bureau <span aria-hidden="true">→</span></b></a>
   </section>
 
   <section class="view" id="zatch-social" data-view="zatch-social" hidden>
@@ -2520,7 +2540,7 @@ document.getElementById('copy').addEventListener('click', function(){
   window.addEventListener('hashchange',function(){ setTimeout(all,60); }); all();
 
   // Previous / next between case studies, plus left/right arrow keys
-  var order=['tgcsb','hopin','bot-about-to','denvibes','zatch','securacy','green-campus','st-lawrence','service-blueprint','storyboard','audit-311','tgcsb-copy','zatch-brand','zatch-social'];
+  var order=['bot-about-to','zatch','denvibes','tgcsb','hopin','securacy','green-campus','st-lawrence','service-blueprint','storyboard','audit-311','tgcsb-copy','zatch-brand','zatch-social'];
   var names={};
   order.forEach(function(id){ var v=document.getElementById(id); if(!v) return; var h=v.querySelector('h3'); names[id]=h?h.textContent.split(':')[0].trim():id; });
   order.forEach(function(id,i){
