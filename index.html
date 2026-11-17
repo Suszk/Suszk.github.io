@@ -885,33 +885,6 @@ a.tk:hover *{color:inherit!important}
 .livebuilds a:hover i{transform:translate(3px,-3px)}
 @media (max-width:760px){.livebuilds ul{grid-template-columns:1fr 1fr}}
 
-/* ===== A/B test block ===== */
-.abt{margin-top:32px;padding:clamp(20px,3vw,32px);border-radius:var(--r);background:var(--soft)}
-.abt-h{font-size:clamp(22px,2.4vw,28px);margin:6px 0 8px}
-.abt-sub{color:var(--muted);max-width:62ch;margin:0}
-.abt-tabs{display:inline-flex;gap:4px;padding:4px;margin:18px 0 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
-.abt-tabs button{font:600 14px var(--body);padding:8px 16px;border-radius:999px;border:0;background:none;color:var(--fg);cursor:pointer}
-.abt-tabs button[aria-selected="true"]{background:var(--fg);color:var(--bg)}
-.abt-stage{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:center}
-.abt-mock{border-radius:16px;overflow:hidden;background:#F3F1EC;color:#111;border:1px solid #e3e0d8;animation:abin .35s ease}
-@keyframes abin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.mk-nav{display:flex;align-items:center;gap:12px;padding:10px 16px;font-size:12px;border-bottom:1px solid #e3e0d8}
-.mk-nav b{letter-spacing:.1em}.mk-nav span{flex:1;color:#666}.mk-nav i{font-style:normal;background:#D4FF3F;padding:4px 10px;border-radius:999px;font-weight:600}
-.mk-hero{padding:22px 20px 24px}
-.mk-hero small{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.08em}
-.mk-hero strong{display:block;font-size:clamp(24px,3.2vw,38px);line-height:1.02;letter-spacing:-.03em;margin:8px 0}
-.mk-hero em{font-family:Georgia,serif;font-style:italic;text-decoration:underline;text-decoration-color:#D4FF3F;text-decoration-thickness:4px}
-.mk-hero p{margin:0 0 12px;font-size:13px;color:#444}
-.mk-proof{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}.mk-proof span{font-size:11.5px;font-weight:600;padding:4px 9px;border-radius:999px;background:#fff;border:1px solid #e3e0d8}
-.mk-cta{display:flex;gap:8px}.mk-cta span{font-size:12px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid #ccc}.mk-cta .pri{background:#111;color:#fff;border-color:#111}
-.abt-why{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-.abt-why li{background:var(--surface);border-radius:14px;padding:12px 14px;font-size:15px}
-.abt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
-.abt-grid div{background:var(--surface);border-radius:14px;padding:14px}
-.abt-grid span{display:block;font-size:13px;font-weight:700;color:var(--pop);margin-bottom:4px}
-.abt-grid p{margin:0;font-size:14.5px;line-height:1.45}
-.abt-note{margin:14px 0 0;font-size:14px;color:var(--muted)}
-@media (max-width:760px){.abt-stage,.abt-grid{grid-template-columns:1fr}}
 
 /* ===== Declutter ===== */
 .hero-field{display:none!important}
@@ -2012,7 +1985,7 @@ a.tk:hover *{color:inherit!important}
         <div><span class="label">Outcome</span><p>A clear, fast-to-scan site: one main action, proof up front, and interactive 3D that shows the work instead of describing it.</p></div>
         <span class="rt">4 min read</span>
       </div>
-      <div class="methods"><span class="label">Methods</span><span class="m">Heuristic audit</span><span class="m">Competitor review</span><span class="m">Problem statement</span><span class="m">Sitemap &amp; user flows</span><span class="m">Laws of UX</span><span class="m">Design system</span><span class="m">Prototyping</span><span class="m">Accessibility checks</span><span class="m">A/B test plan</span></div>
+      <div class="methods"><span class="label">Methods</span><span class="m">Heuristic audit</span><span class="m">Competitor review</span><span class="m">Problem statement</span><span class="m">Sitemap &amp; user flows</span><span class="m">Laws of UX</span><span class="m">Design system</span><span class="m">Prototyping</span><span class="m">Accessibility checks</span></div>
       <div class="roleline"><span class="label">My role</span><b>End to end: research, UX, visual design and front-end build · 2026</b></div>
       <nav class="rail" aria-label="Design process"><button type="button" data-go="dv-st1"><span>01</span>Research</button><button type="button" data-go="dv-st2"><span>02</span>Define</button><button type="button" data-go="dv-st3"><span>03</span>Ideate</button><button type="button" data-go="dv-st4"><span>04</span>Design</button><button type="button" data-go="dv-st5"><span>05</span>Test</button><button type="button" data-go="dv-st6"><span>06</span>Deliver</button></nav>
       <div class="body">
@@ -2114,70 +2087,6 @@ a.tk:hover *{color:inherit!important}
           </ol>
         </div>
         <figure class="fig"><img src="img/denvibes/mobile.jpg" alt="Denvibes homepage on a phone, with stacked headline and full-width buttons" loading="lazy" width="780" height="1688" style="max-width:360px;margin-inline:auto"><figcaption>Mobile first: the same message and action on a small screen.</figcaption></figure>
-        <div class="abt" id="dv-ab">
-          <p class="label">A/B test · planned for the live site</p>
-          <h3 class="abt-h">Does stating the offer and proof up front get more enquiries?</h3>
-          <p class="abt-sub">The audit showed visitors leave before they understand what Denvibes does. The redesign leads with a bold welcome. A test settles whether a plainer, proof-first hero converts better.</p>
-          <div class="abt-tabs" role="tablist" aria-label="Choose a variant">
-            <button type="button" role="tab" aria-selected="true" data-v="a">A · Current hero</button>
-            <button type="button" role="tab" aria-selected="false" data-v="b">B · Proof-first hero</button>
-          </div>
-          <div class="abt-stage">
-            <div class="abt-mock" data-panel="a">
-              <div class="mk-nav"><b>DEN</b><span>Services · Work · Insights</span><i>Let's chat</i></div>
-              <div class="mk-hero"><small>Creative agency · UAE</small><strong>Welcome to<br>our <em>den.</em></strong><p>Get your brand a voice of its own.</p><div class="mk-cta"><span class="pri">Start a project</span><span>See our work</span></div></div>
-            </div>
-            <div class="abt-mock" data-panel="b" hidden>
-              <div class="mk-nav"><b>DEN</b><span>Services · Work · Insights</span><i>Let's chat</i></div>
-              <div class="mk-hero"><small>Creative agency · UAE</small><strong>Strategy, design<br>and event stands.</strong><p>One team for your brand, website, interiors and exhibitions.</p><div class="mk-proof"><span>18 projects</span><span>6 services</span><span>Live 3D demos</span></div><div class="mk-cta"><span class="pri">Start a project</span><span>See our work</span></div></div>
-            </div>
-            <ul class="abt-why" data-panel-why="a"><li><b>Bet:</b> a memorable brand moment makes the agency stand out.</li><li><b>Risk:</b> the offer only becomes clear on the second screen.</li></ul>
-            <ul class="abt-why" data-panel-why="b" hidden><li><b>Bet:</b> naming the services and proof in the first screen builds trust faster.</li><li><b>Risk:</b> less distinctive; may feel like every other agency.</li></ul>
-          </div>
-          <div class="abt-grid">
-            <div><span>Hypothesis</span><p>If the first screen names the services and shows proof, more visitors will start an enquiry, because they understand the offer before scrolling.</p></div>
-            <div><span>Primary metric</span><p>Share of homepage visitors who click <b>Start a project</b> and open the contact form.</p></div>
-            <div><span>Guardrails</span><p>Scroll depth, clicks into service pages and bounce rate must not drop.</p></div>
-            <div><span>Sample &amp; split</span><p>50/50 random split. About <b>2,500 visitors per variant</b> to detect a lift from 3% to 4.5% (95% confidence, 80% power).</p></div>
-            <div><span>Duration</span><p>At least two full weeks so weekday and weekend traffic are both covered. No peeking before the sample is reached.</p></div>
-            <div><span>Decision</span><p>Ship B if it wins on the primary metric with no guardrail drop. Otherwise keep A and test the CTA wording next.</p></div>
-          </div>
-          <p class="abt-note">Status: designed, not yet run. Results will be added here once the test reaches its sample.</p>
-        </div>
-
-        <div class="stage" id="dv-st6" data-stage="6"><span class="stage-n">06</span><span class="stage-name">Deliver</span><span class="stage-q">What changed?</span></div>
-        <p class="label">Result</p>
-        <div class="change"><p><span class="mark">The first two screens answer "what, proof, how to start".</span> Every service, project and article is one click or one shortcut away.</p></div>
-        <figure class="fig"><img src="img/denvibes/insights.jpg" alt="Insights section with article cards such as You have 50 milliseconds" loading="lazy" width="1440" height="900"><figcaption>Insights turn the agency's thinking into content that builds trust.</figcaption></figure>
-      </div>
-      <div class="case-foot">
-        <p>Explore the full site: 6 service pages, 18 projects, 7 articles and two live 3D demos.</p>
-        <a class="btn primary" href="https://suszk.github.io/denvibes/" target="_blank" rel="noopener">Open the live site ↗</a>
-      </div>
-      <div class="body">
-        <p class="label">What I'd do next</p>
-        <div>
-          <ul class="findings">
-            <li><b>Run the A/B test</b>Launch the proof-first hero test above and publish the result.</li><li><b>Test with 5 clients</b>Watch five prospective clients find a service and start a project, and note where they hesitate.</li>
-            <li><b>Measure enquiries</b>Track which pages lead to the contact form, and simplify the ones that don't.</li>
-            <li><b>Lighter 3D on mobile</b>Set a performance budget so the 3D demos load fast on slower phones.</li>
-          </ul>
-        </div>
-      </div>
-    </article>
-    <a class="nextcase" href="#tgcsb"><span class="label">Next case study</span><b>Telangana Cyber Security Bureau <span aria-hidden="true">→</span></b></a>
-  </section>
-
-  <section class="view" id="zatch-social" data-view="zatch-social" hidden>
-    <a class="back" href="#work"><span aria-hidden="true">←</span> All work</a>
-    <article class="case zsocial" aria-labelledby="zatch-social-h">
-      <div class="cover">
-        <div class="intro">
-          <p class="label">Concept · Social content strategy</p>
-          <h3 id="zatch-social-h">Zatch launch: social content plan</h3>
-          <p class="sub">A two-week plan to get buyers and sellers talking about live bargaining before the Hyderabad beta.</p>
-          <div class="tags"><span class="tag">Content strategy</span><span class="tag">Social media</span><span class="tag">Campaign planning</span></div>
-        </div>
         <div class="stats"><div class="stat"><strong>4</strong><span>content pillars</span></div><div class="stat"><strong>2</strong><span>week calendar</span></div><div class="stat"><strong>12</strong><span>planned posts</span></div><div class="stat"><strong>50+</strong><span>seller goal for beta</span></div></div>
       </div>
       <div class="body">
@@ -2705,13 +2614,6 @@ if(h&&!reduce){var n=0;(function wrap(el){[].slice.call(el.childNodes).forEach(f
 var ms=document.querySelectorAll('.mark');
 if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('mark-in');io.unobserve(e.target)}})},{threshold:.6});ms.forEach(function(m){io.observe(m)})}else ms.forEach(function(m){m.classList.add('mark-in')});
 })();
-</script>
-<script>
-(function(){var w=document.getElementById('dv-ab');if(!w)return;
-w.querySelectorAll('.abt-tabs button').forEach(function(b){b.addEventListener('click',function(){var v=b.dataset.v;
- w.querySelectorAll('.abt-tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});
- w.querySelectorAll('[data-panel]').forEach(function(p){p.hidden=p.dataset.panel!==v});
- w.querySelectorAll('[data-panel-why]').forEach(function(p){p.hidden=p.dataset.panelWhy!==v})})});})();
 </script>
 
 </body>
