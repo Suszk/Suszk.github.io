@@ -10,33 +10,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: { ref: tmp-crawl }
-      - name: Tools
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq libheif-examples imagemagick >/dev/null
       - name: Drive photos
         run: |
           set +e
+          pip install -q pillow pillow-heif
           mkdir -p _tmp/drive
           for id in 1KDm-FHmAbos6MbbBto9JfEw4wAsSHQ4- 1wpvV25I5EJP43nuMURfND_l05lqq6xqy 1cMmhJOhPifalYX7A30ogoLpv_EioLYpJ 10hzjvLpmzdUSnnokhymBfC3w0vVLVhZK 17yEtopbdbBowp1cwmHf6GdkceWsClnA5 12_Yw24Gmme7zfKp4asdLKP9BhQMaFDoI 10s5CJCGtLtNzmMepUZC128-QMr_2JtzR 1Qe6BOYbz97UNo6JNjDRGLegwLBK1WEde 1VbkABticCo-URxQpHfVZ9B07RQRaolKJ 15QgO7dPd1iYL4fKCSIHjMEXLRT345-VA 1OC6iRP13gHDyfibwFyvRtoYaSX8NyxjX 1gOO1N7scARh8Is5qxFtsHlLK0oSs_4W0; do
-            curl -sSL -m 60 -o "/tmp/$id.bin" "https://drive.usercontent.google.com/download?id=$id&export=download&confirm=t"
-            file "/tmp/$id.bin"
-            heif-convert -q 90 "/tmp/$id.bin" "/tmp/$id.jpg" >/dev/null 2>&1 && convert "/tmp/$id.jpg" -auto-orient -resize 2000x2000\> -quality 84 "_tmp/drive/$id.jpg"
+            curl -sSL -m 90 -c /tmp/ck -b /tmp/ck -o "/tmp/$id.bin" "https://drive.usercontent.google.com/download?id=$id&export=download&confirm=t&authuser=0"
+            echo "$id $(stat -c%s /tmp/$id.bin) $(file -b /tmp/$id.bin | cut -c1-60)" | tee -a _tmp/drive/log.txt
+            if ! file /tmp/$id.bin | grep -qiE 'heif|heic|iso media|jpeg'; then
+              curl -sSL -m 90 -o "/tmp/$id.bin" "https://drive.google.com/uc?export=download&id=$id"
+              echo "  retry $(stat -c%s /tmp/$id.bin) $(file -b /tmp/$id.bin | cut -c1-60)" | tee -a _tmp/drive/log.txt
+            fi
           done
+          python3 - <<'PY'
+          import glob, os
+          from PIL import Image, ImageOps
+          import pillow_heif; pillow_heif.register_heif_opener()
+          for f in glob.glob('/tmp/*.bin'):
+              try:
+                  im = ImageOps.exif_transpose(Image.open(f)).convert('RGB'); im.thumbnail((2000,2000))
+                  im.save('_tmp/drive/' + os.path.basename(f)[:-4] + '.jpg', quality=84)
+              except Exception as e:
+                  open('_tmp/drive/log.txt','a').write(f'ERR {f} {e}\n')
+          PY
           ls -la _tmp/drive
-      - name: denvibes.com home
-        run: |
-          set +e
-          UA="Mozilla/5.0 (Macintosh) AppleWebKit/537.36 Chrome/126 Safari/537.36"
-          mkdir -p _tmp/site
-          curl -sSL -m 30 -A "$UA" https://denvibes.com/ -o _tmp/site/home.html
-          sed 's/\\\//\//g; s/&quot;/"/g; s/&#038;/\&/g' _tmp/site/home.html | grep -oE 'https?://[^"'"'"' )<>,]+\.(png|jpe?g|webp|svg|gif|mp4|webm|mov)' | awk '!s[$0]++' > _tmp/site/urls.txt
-          wc -l _tmp/site/urls.txt
-          i=0; while read u; do i=$((i+1)); ext="${u##*.}"; out="_tmp/site/a$(printf %03d $i).$ext"
-            curl -sSfL -m 120 -A "$UA" -o "$out" "$u" && echo -e "$(basename $out)\t$(stat -c%s $out)\t$u" >> _tmp/site/dl.tsv || rm -f "$out"
-          done < _tmp/site/urls.txt
-          # drop huge non-video files, keep everything else
-          find _tmp/site -name '*.mp4' -size +95M -delete
-          du -sh _tmp
       - name: Commit
         run: |
           git config user.name github-actions; git config user.email github-actions@users.noreply.github.com
-          git add -A _tmp; git commit -qm "tmp: drive+site" || true; git push origin HEAD:tmp-crawl
+          git add -A _tmp; git commit -qm "tmp: drive2" || true; git push origin HEAD:tmp-crawl
