@@ -11,10 +11,11 @@ jobs:
       - uses: actions/checkout@v4
         with: { ref: tmp-crawl }
       - run: |
+          set +e
           UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
           : > _tmp/links.tsv
           while read u; do
-            c=$(curl -sL -o /dev/null -m 25 -A "$UA" -H "Accept: text/html" -w "%{http_code} %{url_effective}" "$u")
+            c=$(curl -sL -o /dev/null -m 25 -A "$UA" -H "Accept: text/html" -w "%{http_code} %{url_effective}" "$u" || echo "ERR")
             echo -e "$c\t$u" >> _tmp/links.tsv
           done < _tmp/ext.txt
           cat _tmp/links.tsv
